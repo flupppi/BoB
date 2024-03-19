@@ -11,6 +11,7 @@ public class HealthComponent : MonoBehaviour
     private bool m_isInvincible = false;
 
     public event Action OnDeath;
+    public event Action OnHealthChange;
 
     public float Health {
         get => m_currentHealth;
@@ -31,8 +32,10 @@ public class HealthComponent : MonoBehaviour
     }
 
     public void TakeDamage(float damage) {
-        if(!m_isInvincible)
+        if (!m_isInvincible) {
             Health -= damage;
+            OnHealthChange?.Invoke();
+        }
 
         if (Health <= 0) {
             m_isDead = true;
