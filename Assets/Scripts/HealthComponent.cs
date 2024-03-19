@@ -7,7 +7,11 @@ public class HealthComponent : MonoBehaviour
 {
     [SerializeField, Range(0, 10000)] private float m_MaxHealth = 100.0f;
     private float m_currentHealth;
+    private bool m_isDead = false;
     private bool m_isInvincible = false;
+
+    public event Action OnDeath;
+    public event Action OnHealthChange;
 
     public float Health {
         get => m_currentHealth;
@@ -22,12 +26,24 @@ public class HealthComponent : MonoBehaviour
         m_currentHealth = m_MaxHealth;
     }
 
+    [ContextMenu("Kill")]
+    private void Kill() {
+        TakeDamage(m_MaxHealth);
+    }
+
     public void TakeDamage(float damage) {
-        if(!m_isInvincible)
+        if (!m_isInvincible) {
             Health -= damage;
+            OnHealthChange?.Invoke();
+        }
+
+        if (Health <= 0) {
+            m_isDead = true;
+            OnDeath?.Invoke();
+        }
     }
 
     public bool IsAlive() {
-        return m_currentHealth > 0;
+        return !m_isDead;
     }
 }
