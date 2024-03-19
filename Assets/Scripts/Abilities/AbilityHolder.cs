@@ -103,7 +103,7 @@ enum AbilityState {
     Active
 }
 
-enum AbilitySpecifier {
+public enum AbilitySpecifier {
     NormalAttack = 0,
     HeavyAttack = 1,
     AOEAttack = 2,

@@ -12,6 +12,7 @@ public class AbilityBase : ScriptableObject
     public AbilityBase[] Upgrades;
     public Animation animation;
     public Image icon;
+    public AbilitySpecifier AbilitySlot;
 
     public virtual void Activate(GameObject parent) {}
 }
