@@ -38,4 +38,15 @@ public class MenuManager : MonoBehaviour
         Application.Quit();
 
     }
+
+    public void ContinueButtonClicked()
+    {
+        Debug.Log("Continue not yet implemented");
+    }
+
+    public void ToMainMenuButtonClicked()
+    {
+        SceneManager.LoadScene("Menu Scene");
+
+    }
 }
