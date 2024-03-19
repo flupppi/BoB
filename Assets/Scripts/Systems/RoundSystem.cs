@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class RoundSystem : MonoBehaviour {
     [SerializeField] private SpawnerSystem m_spawnerSystem;
+    [SerializeField] private UpgradeSystem m_upgradeSystem;
     private int m_maxRounds;
     private int m_currentRound = 0;
     private int m_enemyCount = 0;
@@ -66,6 +67,7 @@ public class RoundSystem : MonoBehaviour {
         OnUpgradePhaseStart?.Invoke();
 
         // Enable Upgrade table
+        m_upgradeSystem.Enable();
 
         return true;
     }

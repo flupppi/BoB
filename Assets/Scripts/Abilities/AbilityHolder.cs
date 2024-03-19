@@ -14,6 +14,11 @@ public class AbilityHolder : MonoBehaviour {
     public AbilityBase[] Abilities => m_abilities;
     public float[] Cooldowns => m_cooldowns;
 
+    public void UpgradeAbility(AbilityBase ability) {
+        m_abilities[(int)ability.AbilitySlot] = ability;
+        // Change Visuals Here
+    }
+
     void Start() {
         m_inputReader = GetComponent<InputReader>();
 
@@ -53,9 +58,12 @@ public class AbilityHolder : MonoBehaviour {
                 }
 
                 // Switch State if ability was used
-                if (m_activeAbility != null) {
+                if (m_activeAbility != null && m_abilities[(int)m_activeAbility]) {
                     m_activeTime = m_abilities[(int)m_activeAbility].activeTime;
                     m_currentState = AbilityState.Active;
+                    Debug.LogError(m_abilities[(int)m_activeAbility].abilityName);
+                    
+                    // Start Animation here?
                 }
                 
 
