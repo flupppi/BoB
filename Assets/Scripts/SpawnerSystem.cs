@@ -26,7 +26,6 @@ public class SpawnerSystem : MonoBehaviour {
 
         m_currentWave++;
     }
-
 }
 
 [Serializable]
