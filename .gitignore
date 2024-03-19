@@ -545,3 +545,6 @@ FodyWeavers.xsd
 .history/
 
 # End of https://mrkandreev.name/snippets/gitignore-generator/#Rider,Unity,VisualStudio,VisualStudioCode
+.vscode/settings.json
+.vscode/launch.json
+.vscode/extensions.json
