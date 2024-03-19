@@ -12,8 +12,14 @@ public class AbilityHolder : MonoBehaviour {
 
 
     void Update() {
-        switch () {
-            
+        switch (m_currentState) {
+            case AbilityState.Waiting:
+                break;
+            case AbilityState.Active:
+                break;
+            default:
+                Debug.Log("AbilityHolder State machine Error");
+                break;
         }
     }
 
