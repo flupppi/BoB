@@ -131,10 +131,55 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 120578761915006355, guid: 101990813a0077544816330c6f7915c1,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 120578761915006355, guid: 101990813a0077544816330c6f7915c1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632178107754623220, guid: 101990813a0077544816330c6f7915c1,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632178107754623220, guid: 101990813a0077544816330c6f7915c1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052167440071131185, guid: 101990813a0077544816330c6f7915c1,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3919302100317239179, guid: 101990813a0077544816330c6f7915c1,
         type: 3}
       propertyPath: m_Name
       value: Game HUD Canvas Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 4357063670148847821, guid: 101990813a0077544816330c6f7915c1,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4537430006028012338, guid: 101990813a0077544816330c6f7915c1,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4537430006028012338, guid: 101990813a0077544816330c6f7915c1,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6501277859098555936, guid: 101990813a0077544816330c6f7915c1,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7896340851669458718, guid: 101990813a0077544816330c6f7915c1,
         type: 3}
@@ -234,6 +279,11 @@ PrefabInstance:
     - target: {fileID: 7896340851669458718, guid: 101990813a0077544816330c6f7915c1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9009001677010026236, guid: 101990813a0077544816330c6f7915c1,
+        type: 3}
+      propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -686,18 +736,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40e3781a0580e1046b895f88f5df3cb0, type: 3}
---- !u!114 &1690944377 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4200309237841288865, guid: 40e3781a0580e1046b895f88f5df3cb0,
-    type: 3}
-  m_PrefabInstance: {fileID: 1690944376}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e315bfae6cc3084da14b4df70bceda9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3710408557539316028
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -706,16 +744,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 585427478307675367, guid: 8f0b60dc0d747e944b5abdf38dba30f9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1690944377}
-    - target: {fileID: 3007656354582912191, guid: 8f0b60dc0d747e944b5abdf38dba30f9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1690944377}
     - target: {fileID: 4784932987000493704, guid: 8f0b60dc0d747e944b5abdf38dba30f9,
         type: 3}
       propertyPath: m_Name

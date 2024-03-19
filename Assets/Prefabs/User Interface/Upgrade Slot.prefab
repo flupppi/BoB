@@ -279,6 +279,7 @@ GameObject:
   - component: {fileID: 5636102117902592104}
   - component: {fileID: 6313143189036563492}
   - component: {fileID: 4898683987498025543}
+  - component: {fileID: 8546515835249050794}
   m_Layer: 5
   m_Name: Upgrade Slot
   m_TagString: Untagged
@@ -346,6 +347,28 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8546515835249050794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4698288271870563608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2461b270e15a514a83abc2da2cce0b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 1052918317988334911}
+  title: {fileID: 640039276044573544}
+  description: {fileID: 4009906723355507805}
+  background: {fileID: 4898683987498025543}
+  UpgradeSelectedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  UpgradeDeselectedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5345411793871507704
 GameObject:
   m_ObjectHideFlags: 0

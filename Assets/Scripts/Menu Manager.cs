@@ -11,17 +11,24 @@ public class MenuManager : MonoBehaviour
 
     private void Awake()
     {
+        SceneManager.sceneLoaded += OnSceneLoaded;
         foreach (Menu menu in FindObjectsOfType<Menu>())
         {
             menus.Add(menu);
         }
-            
+
     }
 
-    private void OnRemovingSelectionClick()
+    private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
     {
-        ToggleMenuAdditively("Modify");
+        menus.Clear();
+        foreach (Menu menu in FindObjectsOfType<Menu>())
+        {
+            menus.Add(menu);
+        }
     }
+
+
 
     void SetUIActive(bool active)
     {
@@ -93,7 +100,6 @@ public class MenuManager : MonoBehaviour
         else
             Debug.LogError("Menu: " + menuName + " is not a Menu!");
     }
-
     public void ToggleMenuAdditively(Menu menuToShow)
     {
         if (menus.Contains(menuToShow) == false)
