@@ -8,6 +8,12 @@ using UnityEngine.UI;
 public class MenuManager : MonoBehaviour
 {
     [SerializeField] private static List<Menu> menus = new();
+    [SerializeField] private UpgradeSystem upgradeSystem;
+    [SerializeField] private RoundSystem roundSystem;
+    [SerializeField] private GameObject player;
+
+    private HealthComponent healthComponent;
+    private AbilityHolder abilityHolder;
 
     private void Awake()
     {
@@ -17,6 +23,65 @@ public class MenuManager : MonoBehaviour
             menus.Add(menu);
         }
 
+    }
+
+    void Start() {
+        HUDMenu hud = (HUDMenu)SearchMenu("Game HUD");
+        UpgradeMenu upgradeMenu = (UpgradeMenu)SearchMenu("Upgrade");
+
+        healthComponent = player.GetComponent<HealthComponent>();
+        SetHealth(hud);
+        abilityHolder = player.GetComponent<AbilityHolder>();
+
+        healthComponent.OnHealthChange += () => {
+            SetHealth(hud);
+        };
+
+        upgradeSystem.OnOpenUpgradeWindow += (upgrades) => {
+            upgradeMenu.gameObject.SetActive(false);
+            ToggleMenuAdditively("Upgrade");
+            
+
+            for (int i = 0; i < upgradeMenu.slots.Length; i++) {
+                upgradeMenu.slots[i].icon = upgrades[i].icon;
+                upgradeMenu.slots[i].title.text = upgrades[i].abilityName;
+                upgradeMenu.slots[i].description.text = upgrades[i].description;
+            }
+        };
+
+        upgradeSystem.OnCloseWindow += () => {
+            ToggleMenuAdditively("Upgrade");
+            ShowMenu("Game HUD");
+        };
+
+        upgradeSystem.OnUpgrade += () => {
+            hud.skillIconNormal = abilityHolder.Abilities[0]?.icon;
+            hud.skillIconHeavy = abilityHolder.Abilities[1]?.icon;
+            hud.skillIconAOE = abilityHolder.Abilities[2]?.icon;
+            hud.skillIconShortDistance = abilityHolder.Abilities[3]?.icon;
+        };
+
+        abilityHolder.OnCooldownUpdate += (cooldowns) => {
+            hud.cooldownNormal = GetAbilityCooldown(0, cooldowns);
+            hud.cooldownHeavy = GetAbilityCooldown(1, cooldowns);
+            hud.cooldownAOE = GetAbilityCooldown(2, cooldowns);
+            hud.cooldownShortDistance = GetAbilityCooldown(3, cooldowns);
+            hud.dashFill = GetAbilityCooldown(4, cooldowns);
+        };
+
+        // roundSystem.OnFinish += (() => ShowMenu("EndScreen"));
+    }
+
+    private float GetAbilityCooldown(int ability, in float[] currentCooldown) {
+        if (abilityHolder.Abilities[ability]) {
+            return Get01Value(currentCooldown[ability], abilityHolder.Abilities[ability].cooldown);
+        }
+
+        return 1.0f;
+    }
+
+    private void SetHealth(HUDMenu hud) {
+        hud.healthFill = Get01Value(healthComponent.Health, healthComponent.MaxHealth);
     }
 
     private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
@@ -149,5 +214,9 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("Menu Scene");
 
+    }
+
+    private float Get01Value(float value, float max) {
+        return value / max;
     }
 }

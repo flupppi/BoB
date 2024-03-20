@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 7225821193148810901}
   - component: {fileID: 6126705434469078586}
   m_Layer: 0
-  m_Name: Close Combat
+  m_Name: AOE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,7 +139,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 180, y: 0}
+  m_AnchoredPosition: {x: 60, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1165127468299065086
@@ -322,7 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cd6753bf0fccdf43b701e236a9c64a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuName: 
+  menuName: Upgrade
   menuPosition: {x: 0, y: 0}
   menuDidAppear:
     m_PersistentCalls:
@@ -348,7 +348,7 @@ GameObject:
   - component: {fileID: 6353206536330338653}
   - component: {fileID: 1942555026413113084}
   m_Layer: 0
-  m_Name: Aerial
+  m_Name: ShortDistance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -372,7 +372,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 60, y: 0}
+  m_AnchoredPosition: {x: -60, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9153109980872500951
@@ -611,7 +611,7 @@ GameObject:
   - component: {fileID: 7634160942740349062}
   - component: {fileID: 4904943342086019205}
   m_Layer: 0
-  m_Name: Continous
+  m_Name: Normal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -635,7 +635,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -60, y: 0}
+  m_AnchoredPosition: {x: 180, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1342786303525362504
@@ -1014,7 +1014,7 @@ GameObject:
   - component: {fileID: 5551919881320804303}
   - component: {fileID: 6633032410313134470}
   m_Layer: 0
-  m_Name: Charged
+  m_Name: Heavy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1265,25 +1265,25 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   rectTransform: {fileID: 0}
-  healthFill: 0.611
-  dashFill: 0.426
-  cheerFill: 0.866
+  healthFill: 0.602
+  dashFill: 0.487
+  cheerFill: 0.783
   healthBar: {fileID: 5023751227425982233}
   cheerBar: {fileID: 8855099609713832376}
   dashBar: {fileID: 6901946302352932063}
   dashCounter: {fileID: 0}
-  fillIndicatorContinous: {fileID: 4904943342086019205}
-  fillIndicatorCharged: {fileID: 6633032410313134470}
-  fillIndicatorAerial: {fileID: 1942555026413113084}
-  fillIndicatorClose: {fileID: 6126705434469078586}
-  skillIconConinous: {fileID: 7634160942740349062}
-  skillIconCharged: {fileID: 5551919881320804303}
-  skillIconAerial: {fileID: 6353206536330338653}
-  skillIconClose: {fileID: 7225821193148810901}
-  cooldownContinous: 0
-  cooldownCharged: 0
-  cooldownAerial: 0
-  cooldownClose: 0
+  fillIndicatorNormal: {fileID: 4904943342086019205}
+  fillIndicatorHeavy: {fileID: 6633032410313134470}
+  fillIndicatorShortDistance: {fileID: 1942555026413113084}
+  fillIndicatorAOE: {fileID: 6126705434469078586}
+  skillIconNormal: {fileID: 7634160942740349062}
+  skillIconHeavy: {fileID: 5551919881320804303}
+  skillIconShortDistance: {fileID: 6353206536330338653}
+  skillIconAOE: {fileID: 7225821193148810901}
+  cooldownNormal: 0.934
+  cooldownHeavy: 1
+  cooldownShortDistance: 0.641
+  cooldownAOE: 0.592
 --- !u!1 &6874791127154989564
 GameObject:
   m_ObjectHideFlags: 0

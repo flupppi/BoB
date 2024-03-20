@@ -13,6 +13,7 @@ public class HealthComponent : MonoBehaviour
     public event Action OnDeath;
     public event Action OnHealthChange;
 
+    public float MaxHealth => m_MaxHealth;
     public float Health {
         get => m_currentHealth;
         set => m_currentHealth = Mathf.Clamp(value, 0, m_MaxHealth);
@@ -29,6 +30,13 @@ public class HealthComponent : MonoBehaviour
     [ContextMenu("Kill")]
     private void Kill() {
         TakeDamage(m_MaxHealth);
+    }
+
+    [ContextMenu("Take Damage")]
+    private void TakeSomeDamage()
+    {
+        TakeDamage(20);
+        Debug.LogError(Health);
     }
 
     public void TakeDamage(float damage) {

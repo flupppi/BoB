@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class AbilityHolder : MonoBehaviour {
 
     public AbilityBase[] Abilities => m_abilities;
     public float[] Cooldowns => m_cooldowns;
+    public event Action<float[]> OnCooldownUpdate;
 
     public void UpgradeAbility(AbilityBase ability) {
         m_abilities[(int)ability.AbilitySlot] = ability;
@@ -61,6 +63,7 @@ public class AbilityHolder : MonoBehaviour {
                 if (m_activeAbility != null && m_abilities[(int)m_activeAbility]) {
                     m_activeTime = m_abilities[(int)m_activeAbility].activeTime;
                     m_currentState = AbilityState.Active;
+                    m_abilities[(int)m_activeAbility].Activate(gameObject);
                     Debug.LogError(m_abilities[(int)m_activeAbility].abilityName);
                     
                     // Start Animation here?
@@ -88,6 +91,8 @@ public class AbilityHolder : MonoBehaviour {
             if(m_abilities[i])
                 m_cooldowns[i] = Mathf.Clamp(m_cooldowns[i] - Time.deltaTime, 0, m_abilities[i].cooldown);
         }
+
+        OnCooldownUpdate?.Invoke(Cooldowns);
     }
 
     void OnValidate() {
