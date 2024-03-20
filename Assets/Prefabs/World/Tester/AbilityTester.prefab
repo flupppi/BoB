@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1420142528370911202}
   - component: {fileID: 8506087493590103899}
   - component: {fileID: 2501870226258434101}
+  - component: {fileID: 4286821373384044552}
   - component: {fileID: 7462950800407865151}
   m_Layer: 0
   m_Name: AbilityTester
@@ -342,6 +343,19 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4286821373384044552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3277020590156440643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f70cb6759ebf80e4b982af168ff8c65a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MaxHealth: 100
 --- !u!114 &7462950800407865151
 MonoBehaviour:
   m_ObjectHideFlags: 0
