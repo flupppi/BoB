@@ -684,6 +684,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3277020590156440643, guid: 1c78b2cb935048e47b3fcdce61762b7e,
         type: 3}
+      propertyPath: m_Layer
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 3277020590156440643, guid: 1c78b2cb935048e47b3fcdce61762b7e,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -691,6 +696,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3850223492825786951, guid: 1c78b2cb935048e47b3fcdce61762b7e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 5800197542082759688, guid: 1c78b2cb935048e47b3fcdce61762b7e,
         type: 3}
@@ -1101,7 +1111,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_GenerateLinks: 0
@@ -1771,6 +1781,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 575925410145169392, guid: 1b396df208c0af44db13ae8d9f6a347e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 3324041279049486950, guid: 1b396df208c0af44db13ae8d9f6a347e,
         type: 3}
