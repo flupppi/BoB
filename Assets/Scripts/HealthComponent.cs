@@ -6,8 +6,8 @@ using UnityEngine;
 public class HealthComponent : MonoBehaviour
 {
     [SerializeField, Range(0, 10000)] private float m_MaxHealth = 100.0f;
-    private float m_currentHealth;
-    private bool m_isDead = false;
+    public float m_currentHealth;
+    public bool m_isDead = false;
     private bool m_isInvincible = false;
 
     public event Action OnDeath;

@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 public class UpgradeSystem : MonoBehaviour {
     [SerializeField] private AbilityBase[] m_startAbilities;
-    private bool m_status = true;
+    private bool m_status = false;
     private AbilityBase[] m_upgradableAbilites = new AbilityBase[3];
     private AbilityHolder m_abilityHolder;
 
@@ -26,7 +26,7 @@ public class UpgradeSystem : MonoBehaviour {
         Array.Clear(m_upgradableAbilites, 0, m_upgradableAbilites.Length);
         List<AbilityBase> abilityPool = new ();
 
-        for(int i = 0; i < m_startAbilities.Length; i++) {
+        for (int i = 0; i < m_startAbilities.Length; i++) {
             if(m_startAbilities[i])
                 abilityPool.Add(m_startAbilities[i]);
         }
@@ -34,6 +34,7 @@ public class UpgradeSystem : MonoBehaviour {
         if (m_abilityHolder != null) {
             foreach (AbilityBase currentAbility in m_abilityHolder.Abilities) {
                 if (currentAbility) {
+                    Debug.LogError($"Upgrades: {currentAbility.Upgrades.Length}");
                     foreach (AbilityBase currentAbilityUpgrade in currentAbility.Upgrades)
                     {
                         if (currentAbilityUpgrade) {
@@ -44,11 +45,11 @@ public class UpgradeSystem : MonoBehaviour {
             }
         }
 
-        Debug.Log($"AbilityPool: {abilityPool.Count}" );
+        Debug.LogError($"AbilityPool: {abilityPool.Count}" );
 
         for (int i = 0; i < m_upgradableAbilites.Length; i++) {
             // Eventuell Checken ob kein Index doppelt vorhanden ist
-            int random = Random.Range(0, abilityPool.Count-1);
+            int random = Random.Range(0, abilityPool.Count);
             m_upgradableAbilites[i] = abilityPool[random];
         }
 
@@ -93,12 +94,12 @@ public class UpgradeSystem : MonoBehaviour {
     [ContextMenu("Select 1")]
     private void Select1()
     {
-        SelectAbility(0);
+        SelectAbility(1);
     }
     [ContextMenu("Select 2")]
     private void Select2()
     {
-        SelectAbility(0);
+        SelectAbility(2);
     }
 
 }

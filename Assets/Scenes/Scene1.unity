@@ -589,6 +589,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: AbilityTester
       objectReference: {fileID: 0}
+    - target: {fileID: 7462950800407865151, guid: ba9b819a545b3ef48b2f5c499dca1119,
+        type: 3}
+      propertyPath: m_abilities.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 16c7f84c60e5cda49bf7df5c5b62cf8e,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
