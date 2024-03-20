@@ -11,7 +11,7 @@ public class DeadState : IState
 
     public void OnEnter()
     {
-        EnemyBrain.Destroy(brain.gameObject);// Zerstörung des Spielobjekts des Feindes
+        brain.healthComponent.OnDeath += () => EnemyBrain.Destroy(brain.gameObject);
     }
 
     public void OnExit()
@@ -20,6 +20,7 @@ public class DeadState : IState
 
     public void Tick()
     {
+        brain.healthComponent.Kill();
     }
 
     public Color GizmoColor()

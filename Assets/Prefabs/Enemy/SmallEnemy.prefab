@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 4331083052729763089}
   - component: {fileID: 4905593567507660195}
   - component: {fileID: 3966366611862798870}
+  - component: {fileID: 4851749861507695390}
   - component: {fileID: 5775577485337266077}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: SmallEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,11 +123,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dcba75688557414088bb0df47f72037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthComponent: {fileID: 4851749861507695390}
   navMeshAgent: {fileID: 5775577485337266077}
-  attackRange: 1
-  movementSpeed: 5
+  attackRange: 2
+  attackCooldown: 100
+  movementSpeed: 7.5
   target: {fileID: 0}
   distanceToTarget: Infinity
+  attacking: 0
+  readyToAttack: 1
+--- !u!114 &4851749861507695390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575925410145169392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f70cb6759ebf80e4b982af168ff8c65a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MaxHealth: 100
 --- !u!195 &5775577485337266077
 NavMeshAgent:
   m_ObjectHideFlags: 0
