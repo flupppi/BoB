@@ -55,7 +55,6 @@ public class InputReader : MonoBehaviour
 
     public void OnStandardAttack(InputAction.CallbackContext context)
     {
-        Debug.Log("StandardAttack pressed");
         if (context.performed)
         {
             StandardAttack = true;
@@ -68,7 +67,6 @@ public class InputReader : MonoBehaviour
 
     public void OnHeavyAttack(InputAction.CallbackContext context)
     {
-        Debug.Log("HeavyAttack pressed");
         if (context.performed)
         {
             HeavyAttack = true;
@@ -81,7 +79,6 @@ public class InputReader : MonoBehaviour
 
     public void OnDash(InputAction.CallbackContext context)
     {
-        Debug.Log("Dash pressed");
         if (context.performed)
         {
             Dash = true;
@@ -94,7 +91,6 @@ public class InputReader : MonoBehaviour
 
     public void OnAOEAttack(InputAction.CallbackContext context)
     {
-        Debug.Log("AoeAttack pressed");
         if (context.performed)
         {
             AOEAttack = true;
@@ -107,7 +103,6 @@ public class InputReader : MonoBehaviour
 
     public void OnShortDistanceAttack(InputAction.CallbackContext context)
     {
-        Debug.Log("ShortDistanceAttack pressed");
         if (context.performed)
         {
             ShortDistanceAttack = true;
@@ -120,9 +115,7 @@ public class InputReader : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-         MovementValue = context.ReadValue<Vector2>();
-         Debug.Log("Movement: " + MovementValue);
-
+        MovementValue = context.ReadValue<Vector2>();
         if (context.performed)
         {
             Move = true;
@@ -136,8 +129,6 @@ public class InputReader : MonoBehaviour
     public void OnAim(InputAction.CallbackContext context)
     {
         AimValue = context.ReadValue<Vector2>();
-        Debug.Log("Aim: " + AimValue);
-
         if (context.performed)
         {
             Aim = true;
