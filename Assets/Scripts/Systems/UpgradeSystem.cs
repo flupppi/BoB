@@ -41,6 +41,7 @@ public class UpgradeSystem : MonoBehaviour {
                     {
                         if (currentAbilityUpgrade) {
                             abilityPool.Add(currentAbilityUpgrade);
+                            Debug.LogError($"{currentAbilityUpgrade.abilityName}");
                         }
                     }
                 }
