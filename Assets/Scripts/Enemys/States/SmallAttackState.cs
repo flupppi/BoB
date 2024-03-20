@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class SmallAttackState : IState
 {
-    private EnemyBrain brain;
+    private SmallEnemyBrain brain;
 
-    public SmallAttackState(EnemyBrain brain)
+    public SmallAttackState(SmallEnemyBrain brain)
     {
         this.brain = brain;
     }
@@ -26,6 +26,14 @@ public class SmallAttackState : IState
     public void Explode()
     {
         Debug.Log("Jetzt Explosion!");
+        Object.Instantiate(brain.explosionsEffekt,brain.transform.position, brain.transform.rotation);
+        Collider[] colliders = Physics.OverlapSphere(brain.transform.position, brain.explosionsRadius);
+        foreach(Collider col in colliders){
+            if(col.tag == "Player"){
+                col.gameObject.GetComponent<HealthComponent>().TakeDamage(brain.explosionsDamage);
+                break;
+            }
+        }
         brain.healthComponent.Kill();
     }
 

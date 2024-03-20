@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class SmallEnemyBrain : EnemyBrain
 {
+    public GameObject explosionsEffekt;
+    public float explosionsRadius = 5f;
+    public float explosionsDamage = 50f;
     void Start()
     {
         stateMachine = new StateMachine();
