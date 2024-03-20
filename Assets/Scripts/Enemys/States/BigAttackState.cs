@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class BigAttackState : IState
 {
-    private EnemyBrain brain;
+    private BigEnemyBrain brain;
 
-    public BigAttackState(EnemyBrain brain)
+    public BigAttackState(BigEnemyBrain brain)
     {
         this.brain = brain;
     }
@@ -13,6 +13,7 @@ public class BigAttackState : IState
     public void OnEnter()
     {
         brain.navMeshAgent.enabled = false;
+        brain.beam.enabled = true;
     }
 
     public void OnExit()
@@ -30,7 +31,16 @@ public class BigAttackState : IState
         if (!brain.readyToAttack || brain.attacking) return;
         brain.readyToAttack = false;
         brain.attacking = true;
-        Debug.Log("BigEnemy Attack!");
+        
+        brain.beam.enabled = true;
+        Ray ray  = new Ray(brain.muzzlePoint.position, brain.muzzlePoint.forward);
+        bool cast = Physics.Raycast(ray, out RaycastHit hit, brain.beamMaxLength);
+        Vector3 hitPosition = cast ? hit.point : brain.muzzlePoint.position + brain.muzzlePoint.forward * brain.beamMaxLength;
+
+        brain.beam.SetPosition(0, brain.muzzlePoint.position);
+        brain.beam.SetPosition(1, hitPosition);
+
+
         brain.InvokeResetAttack();
     }
 

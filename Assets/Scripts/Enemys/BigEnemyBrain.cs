@@ -1,6 +1,10 @@
 using System;
+using UnityEngine;
 public class BigEnemyBrain : EnemyBrain
 {
+    public LineRenderer beam;
+    public Transform muzzlePoint;
+    public float beamMaxLength = 20f;
     void Start()
     {
         stateMachine = new StateMachine();
