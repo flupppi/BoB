@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Rendering.HighDefinition;
 
 public class MidAttackState : IState
 {
@@ -33,6 +34,7 @@ public class MidAttackState : IState
         brain.readyToAttack = false;
         brain.attacking = true;
         Debug.Log("MidEnemy Attack!");
+        brain.animator.SetTrigger("Attack");
         brain.InvokeResetAttack();
     }
 

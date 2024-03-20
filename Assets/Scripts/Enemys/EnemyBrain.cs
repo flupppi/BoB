@@ -6,6 +6,7 @@ public abstract class EnemyBrain : MonoBehaviour
     protected StateMachine stateMachine; // State Machine des Gegners
     public HealthComponent healthComponent;
     public NavMeshAgent navMeshAgent;
+    public Animator animator;
     public float attackRange = 1;
     public float attackCooldown = 1;
     public float movementSpeed = 5;
