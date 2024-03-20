@@ -67,7 +67,8 @@ public class UpgradeSystem : MonoBehaviour {
     void OnTriggerEnter(Collider triggerCollider) {
         if (m_status && triggerCollider.gameObject.tag == "Player") {
             m_abilityHolder = triggerCollider.gameObject.GetComponent<AbilityHolder>();
-            GetRandomUpgrades();
+            PrintRandomAbilities();
+            // GetRandomUpgrades();
             OnOpenUpgradeWindow?.Invoke(m_upgradableAbilites);
         }
     }
