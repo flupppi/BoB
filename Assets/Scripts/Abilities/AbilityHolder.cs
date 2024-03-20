@@ -61,6 +61,7 @@ public class AbilityHolder : MonoBehaviour {
                 if (m_activeAbility != null && m_abilities[(int)m_activeAbility]) {
                     m_activeTime = m_abilities[(int)m_activeAbility].activeTime;
                     m_currentState = AbilityState.Active;
+                    m_abilities[(int)m_activeAbility].Activate(gameObject);
                     Debug.LogError(m_abilities[(int)m_activeAbility].abilityName);
                     
                     // Start Animation here?
