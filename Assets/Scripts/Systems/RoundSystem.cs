@@ -90,7 +90,7 @@ public class RoundSystem : MonoBehaviour {
 
         OnRoundStart += (x) => Debug.Log($"Round {x} started");
         OnUpgradePhaseStart += () => Debug.Log("Round finished");
-        OnFinish += () => Debug.Log("Finished");
+        OnFinish += () => Debug.LogError("Finished");
 
         StartNextRound();
     }
