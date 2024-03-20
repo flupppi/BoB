@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2501870226258434101}
   - component: {fileID: 8506087493590103899}
   - component: {fileID: 7042584898655468082}
+  - component: {fileID: 531620358661823734}
   - component: {fileID: 5800197542082759688}
   m_Layer: 0
   m_Name: Player
@@ -325,6 +326,19 @@ MonoBehaviour:
   characterController: {fileID: 2501870226258434101}
   controllerDeadZone: 0.1
   rotateSmoothing: 1000
+--- !u!114 &531620358661823734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3277020590156440643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f70cb6759ebf80e4b982af168ff8c65a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MaxHealth: 100
 --- !u!114 &5800197542082759688
 MonoBehaviour:
   m_ObjectHideFlags: 0

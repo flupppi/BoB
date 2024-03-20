@@ -27,7 +27,7 @@ public class HealthComponent : MonoBehaviour
     }
 
     [ContextMenu("Kill")]
-    private void Kill() {
+    public void Kill() {
         TakeDamage(m_MaxHealth);
     }
 
