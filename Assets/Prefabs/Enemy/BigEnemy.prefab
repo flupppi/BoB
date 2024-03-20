@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 1258980476974008953}
   - component: {fileID: 2372752073838770418}
   - component: {fileID: 4895689107596541899}
-  m_Layer: 0
+  m_Layer: 27
   m_Name: BigEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 6797537424662199427}
   - component: {fileID: 8036797134808085994}
   - component: {fileID: 2564945330361792804}
-  m_Layer: 0
+  m_Layer: 27
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
