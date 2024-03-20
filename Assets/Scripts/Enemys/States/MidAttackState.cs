@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MidAttackState : IState
 {
@@ -13,10 +14,12 @@ public class MidAttackState : IState
     public void OnEnter()
     {
         brain.navMeshAgent.enabled = false;
+        brain.GetComponent<NavMeshObstacle>().enabled = true;
     }
 
     public void OnExit()
     {
+        brain.GetComponent<NavMeshObstacle>().enabled = false;
     }
 
     public void Tick()
