@@ -31,6 +31,7 @@ public class SmallAttackState : IState
         foreach(Collider col in colliders){
             if(col.tag == "Player"){
                 col.gameObject.GetComponent<HealthComponent>().TakeDamage(brain.explosionsDamage);
+                break;
             }
         }
         brain.healthComponent.Kill();
