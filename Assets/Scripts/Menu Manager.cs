@@ -32,6 +32,7 @@ public class MenuManager : MonoBehaviour
         healthComponent = player.GetComponent<HealthComponent>();
         SetHealth(hud);
         abilityHolder = player.GetComponent<AbilityHolder>();
+        SetAbilitiesIcons(hud);
 
         healthComponent.OnHealthChange += () => {
             SetHealth(hud);
@@ -43,9 +44,9 @@ public class MenuManager : MonoBehaviour
             
 
             for (int i = 0; i < upgradeMenu.slots.Length; i++) {
-                upgradeMenu.slots[i].icon = upgrades[i].icon;
-                upgradeMenu.slots[i].title.text = upgrades[i].abilityName;
-                upgradeMenu.slots[i].description.text = upgrades[i].description;
+                upgradeMenu.slots[i].icon = upgrades[i]?.icon;
+                upgradeMenu.slots[i].title.text = upgrades[i]?.abilityName;
+                upgradeMenu.slots[i].description.text = upgrades[i]?.description;
             }
         };
 
@@ -54,22 +55,24 @@ public class MenuManager : MonoBehaviour
             ShowMenu("Game HUD");
         };
 
-        upgradeSystem.OnUpgrade += () => {
-            hud.skillIconNormal = abilityHolder.Abilities[0]?.icon;
-            hud.skillIconHeavy = abilityHolder.Abilities[1]?.icon;
-            hud.skillIconAOE = abilityHolder.Abilities[2]?.icon;
-            hud.skillIconShortDistance = abilityHolder.Abilities[3]?.icon;
-        };
+        upgradeSystem.OnUpgrade += () => { SetAbilitiesIcons(hud); };
 
         abilityHolder.OnCooldownUpdate += (cooldowns) => {
             hud.cooldownNormal = GetAbilityCooldown(0, cooldowns);
             hud.cooldownHeavy = GetAbilityCooldown(1, cooldowns);
             hud.cooldownAOE = GetAbilityCooldown(2, cooldowns);
             hud.cooldownShortDistance = GetAbilityCooldown(3, cooldowns);
-            hud.dashFill = GetAbilityCooldown(4, cooldowns);
+            hud.dashFill = 1 - GetAbilityCooldown(4, cooldowns);
         };
 
         // roundSystem.OnFinish += (() => ShowMenu("EndScreen"));
+    }
+
+    private void SetAbilitiesIcons(HUDMenu hud) {
+        hud.skillIconNormal = abilityHolder.Abilities[0]?.icon;
+        hud.skillIconHeavy = abilityHolder.Abilities[1]?.icon;
+        hud.skillIconAOE = abilityHolder.Abilities[2]?.icon;
+        hud.skillIconShortDistance = abilityHolder.Abilities[3]?.icon;
     }
 
     private float GetAbilityCooldown(int ability, in float[] currentCooldown) {
