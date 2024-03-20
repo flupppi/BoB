@@ -7,7 +7,6 @@ public class NormalShoot : AbilityBase {
     [SerializeField] private GameObject bullet;
     [SerializeField] private float bulletSpeed;
     [SerializeField] private float damage;
-    [SerializeField] private float bulletLifeTime;
     public override void Activate(GameObject parent) {
         AbilityHolder abilityHolder = parent.GetComponent<AbilityHolder>();
         
@@ -17,7 +16,5 @@ public class NormalShoot : AbilityBase {
         
         Projectile projectileComponent = spawnedBullet.GetComponent<Projectile>();
         projectileComponent.Direction = abilityHolder.AbilityLocations[0].forward;
-        
-        Destroy(spawnedBullet, bulletLifeTime);
     }
 }
