@@ -16,11 +16,12 @@ MonoBehaviour:
   description: Stronger normal Shot
   cooldown: 0.2
   activeTime: 0
-  Upgrades: []
+  Upgrades:
+  - {fileID: 11400000, guid: ab65e3983fc676b40af90b100429a8d4, type: 2}
+  - {fileID: 11400000, guid: 75766e2db161dd4488201e2cc7bf67a9, type: 2}
   animation: {fileID: 0}
   icon: {fileID: 0}
   AbilitySlot: 0
   bullet: {fileID: 5080790508642040586, guid: 1ed71c9ccddda324db89051681836db8, type: 3}
   bulletSpeed: 100
   damage: 70
-  bulletLifeTime: 4

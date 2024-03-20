@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 2563614694631389093}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.646, z: 0.997}
+  m_LocalPosition: {x: 0, y: 0.646, z: 1.443}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,12 +44,11 @@ GameObject:
   - component: {fileID: 6200924596892774658}
   - component: {fileID: 3682262215680076749}
   - component: {fileID: 7042584898655468082}
-  - component: {fileID: 1420142528370911202}
   - component: {fileID: 8506087493590103899}
   - component: {fileID: 2501870226258434101}
   - component: {fileID: 4286821373384044552}
   - component: {fileID: 7462950800407865151}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: AbilityTester
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -162,22 +161,6 @@ MonoBehaviour:
   characterController: {fileID: 2501870226258434101}
   controllerDeadZone: 0.1
   rotateSmoothing: 1000
---- !u!114 &1420142528370911202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3277020590156440643}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 207d685df7362e04f810ae5620d2a962, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputReader: {fileID: 7042584898655468082}
-  characterController: {fileID: 2501870226258434101}
-  dashDuration: 0.2
-  dashSpeed: 50
 --- !u!114 &8506087493590103899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,6 +371,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MaxHealth: 100
+  m_currentHealth: 0
+  m_isDead: 0
 --- !u!114 &7462950800407865151
 MonoBehaviour:
   m_ObjectHideFlags: 0
