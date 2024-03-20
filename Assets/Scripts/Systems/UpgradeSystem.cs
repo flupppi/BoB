@@ -12,6 +12,7 @@ public class UpgradeSystem : MonoBehaviour {
 
     public event Action<AbilityBase[]> OnOpenUpgradeWindow;
     public event Action OnCloseWindow;
+    public event Action OnUpgrade;
 
     public void Enable() {
         m_status = true;
@@ -58,10 +59,12 @@ public class UpgradeSystem : MonoBehaviour {
         UpgradeAbility(ability);
         Disable();
         OnCloseWindow?.Invoke();
+        m_abilityHolder.gameObject.GetComponent<CharacterController>().enabled = true;
     }
 
     private void UpgradeAbility(int ability) {
         m_abilityHolder.UpgradeAbility(m_upgradableAbilites[ability]);
+        OnUpgrade?.Invoke();
     }
 
     void OnTriggerEnter(Collider triggerCollider) {
@@ -70,6 +73,7 @@ public class UpgradeSystem : MonoBehaviour {
             PrintRandomAbilities();
             // GetRandomUpgrades();
             OnOpenUpgradeWindow?.Invoke(m_upgradableAbilites);
+            m_abilityHolder.gameObject.GetComponent<CharacterController>().enabled = false;
         }
     }
 

@@ -23,24 +23,24 @@ public class HUDMenu : Menu
 
     [Header("Skills")]
 
-    public Slider fillIndicatorContinous;
-    public Slider fillIndicatorCharged;
-    public Slider fillIndicatorAerial;
-    public Slider fillIndicatorClose;
+    public Slider fillIndicatorNormal;
+    public Slider fillIndicatorHeavy;
+    public Slider fillIndicatorShortDistance;
+    public Slider fillIndicatorAOE;
 
-    public Image skillIconConinous;
-    public Image skillIconCharged;
-    public Image skillIconAerial;
-    public Image skillIconClose;
+    public Image skillIconNormal;
+    public Image skillIconHeavy;
+    public Image skillIconShortDistance;
+    public Image skillIconAOE;
 
     [Range(0, 1)]
-    public float cooldownContinous;
+    public float cooldownNormal;
     [Range(0, 1)]
-    public float cooldownCharged;
+    public float cooldownHeavy;
     [Range(0, 1)]
-    public float cooldownAerial;
+    public float cooldownShortDistance;
     [Range(0, 1)] 
-    public float cooldownClose;
+    public float cooldownAOE;
 
 
     public void Awake()
@@ -61,10 +61,10 @@ public class HUDMenu : Menu
         dashBar.value = dashFill;
         cheerBar.value = cheerFill;
 
-        fillIndicatorAerial.value = cooldownAerial;
-        fillIndicatorCharged.value = cooldownCharged;
-        fillIndicatorContinous.value = cooldownContinous;
-        fillIndicatorClose.value = cooldownClose;
+        fillIndicatorShortDistance.value = cooldownShortDistance;
+        fillIndicatorHeavy.value = cooldownHeavy;
+        fillIndicatorNormal.value = cooldownNormal;
+        fillIndicatorAOE.value = cooldownAOE;
 
     }
 }
