@@ -93,6 +93,10 @@ public class UpgradeSystem : MonoBehaviour {
     }
 
     public void SelectAbility(int ability) {
+        int index = Array.IndexOf(m_startAbilities, m_upgradableAbilites[ability]);
+        if (index != -1) {
+            m_startAbilities[index] = null;
+        }
         UpgradeAbility(ability);
         Disable();
         OnCloseWindow?.Invoke();

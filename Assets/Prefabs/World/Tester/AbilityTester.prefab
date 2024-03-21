@@ -419,7 +419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_abilities:
   - {fileID: 11400000, guid: 87e9c0d951a8747438c5d4ef46c7efe6, type: 2}
-  - {fileID: 11400000, guid: 972eb446e0fc9e6498af3bfa12eebf36, type: 2}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 11400000, guid: 16c7f84c60e5cda49bf7df5c5b62cf8e, type: 2}

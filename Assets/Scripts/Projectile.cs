@@ -60,6 +60,7 @@ public class Projectile : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider triggerCollider) {
+
         if (triggerCollider.gameObject.tag == "Enemy" && m_explodeOnTouch) {
             Explode();
         }
@@ -87,16 +88,30 @@ public class Projectile : MonoBehaviour {
             if (enemyRB) {
                 enemyRB.isKinematic = false;
                 enemyRB.AddExplosionForce(m_explosionForce, transform.position, m_explosionRange);
-                Invoke("EnableKinemetic", 2.0f);
+                StartCoroutine(ExecuteAfterTime(enemyRB, 1.0f));
             }
 
         }
 
-        Destroy(gameObject, 0.05f);
+        MeshRenderer[] meshs = gameObject.GetComponentsInChildren<MeshRenderer>();
+
+        foreach (MeshRenderer meshRenderer in meshs) {
+            meshRenderer.enabled = false;
+        }
+
+        gameObject.GetComponent<CapsuleCollider>().enabled = false;
+        Destroy(gameObject, 2.0f);
     }
 
-    private void EnableKinemetic(Rigidbody rb) {
+    private void EnableKinematic(Rigidbody rb) {
         rb.isKinematic = true;
+    }
+
+    IEnumerator ExecuteAfterTime(Rigidbody rb, float time) {
+        yield return new WaitForSeconds(time);
+
+        if(rb)
+            EnableKinematic(rb);
     }
 
     private void OnDrawGizmosSelected() {
