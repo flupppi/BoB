@@ -6,6 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(InputReader))]
 public class AbilityHolder : MonoBehaviour {
     [SerializeField] private AbilityBase[] m_abilities = new AbilityBase[5];
+    [SerializeField] private Transform[] m_abilityLocations = new Transform[5];
     private float[] m_cooldowns = new float[5];
     private AbilityState m_currentState = AbilityState.Waiting;
     private InputReader m_inputReader;
@@ -13,6 +14,7 @@ public class AbilityHolder : MonoBehaviour {
     private int? m_activeAbility = 0;
 
     public AbilityBase[] Abilities => m_abilities;
+    public Transform[] AbilityLocations => m_abilityLocations;
     public float[] Cooldowns => m_cooldowns;
     public event Action<float[]> OnCooldownUpdate;
 
@@ -64,7 +66,7 @@ public class AbilityHolder : MonoBehaviour {
                     m_activeTime = m_abilities[(int)m_activeAbility].activeTime;
                     m_currentState = AbilityState.Active;
                     m_abilities[(int)m_activeAbility].Activate(gameObject);
-                    Debug.LogError(m_abilities[(int)m_activeAbility].abilityName);
+                    // Debug.LogError(m_abilities[(int)m_activeAbility].abilityName);
                     
                     // Start Animation here?
                 }

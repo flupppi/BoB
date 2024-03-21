@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -65,7 +66,18 @@ public class MenuManager : MonoBehaviour
             hud.dashFill = 1 - GetAbilityCooldown(4, cooldowns);
         };
 
+        upgradeMenu.slots[0].GetComponent<Button>().onClick = GenerateSelectButtonEvent(upgradeSystem, 0);
+        upgradeMenu.slots[1].GetComponent<Button>().onClick = GenerateSelectButtonEvent(upgradeSystem, 1);
+        upgradeMenu.slots[2].GetComponent<Button>().onClick = GenerateSelectButtonEvent(upgradeSystem, 2);
+
         // roundSystem.OnFinish += (() => ShowMenu("EndScreen"));
+    }
+
+    private Button.ButtonClickedEvent GenerateSelectButtonEvent(UpgradeSystem upgradeSystem, int number) {
+        Button.ButtonClickedEvent buttonEvent = new Button.ButtonClickedEvent();
+        buttonEvent.AddListener((() => upgradeSystem.SelectAbility(number)));
+
+        return buttonEvent;
     }
 
     private void SetAbilitiesIcons(HUDMenu hud) {

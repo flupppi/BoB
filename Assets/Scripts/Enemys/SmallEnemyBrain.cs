@@ -3,7 +3,9 @@ using UnityEngine;
 
 public class SmallEnemyBrain : EnemyBrain
 {
-    private float health = 1f;
+    public GameObject explosionsEffekt;
+    public float explosionsRadius = 5f;
+    public float explosionsDamage = 50f;
     void Start()
     {
         stateMachine = new StateMachine();
@@ -11,18 +13,21 @@ public class SmallEnemyBrain : EnemyBrain
         //STATES
         var idleState = new IdleState(this);
         var moveToTargetState = new MoveToTargetState(this);
+        var attackState = new SmallAttackState(this);
         var deadState = new DeadState(this);
 
         //TRANSITIONS
         Any(deadState, Dead());
         At(idleState, moveToTargetState, HasTarget());
+        At(moveToTargetState, attackState, InAttackRange());
         
         //START STATE
         stateMachine.SetState(idleState);
 
         //CONDITIONS & FUNCTIONS
         Func<bool> HasTarget() => () => target != null;
-        Func<bool> Dead() => () => health <= 0f;
+        Func<bool> Dead() => () => healthComponent.Health <= 0f;
+        Func<bool> InAttackRange() => () => distanceToTarget <= attackRange;
 
         void At(IState from, IState to, Func<bool> condition) => stateMachine.AddTransition(from, to, condition);
         void Any(IState to, Func<bool> condition) => stateMachine.AddAnyTransition(to, condition);

@@ -1,12 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class UpgradeSystem : MonoBehaviour {
     [SerializeField] private AbilityBase[] m_startAbilities;
-    private bool m_status = true;
+    private bool m_status = false;
     private AbilityBase[] m_upgradableAbilites = new AbilityBase[3];
     private AbilityHolder m_abilityHolder;
 
@@ -26,7 +28,7 @@ public class UpgradeSystem : MonoBehaviour {
         Array.Clear(m_upgradableAbilites, 0, m_upgradableAbilites.Length);
         List<AbilityBase> abilityPool = new ();
 
-        for(int i = 0; i < m_startAbilities.Length; i++) {
+        for (int i = 0; i < m_startAbilities.Length; i++) {
             if(m_startAbilities[i])
                 abilityPool.Add(m_startAbilities[i]);
         }
@@ -34,25 +36,60 @@ public class UpgradeSystem : MonoBehaviour {
         if (m_abilityHolder != null) {
             foreach (AbilityBase currentAbility in m_abilityHolder.Abilities) {
                 if (currentAbility) {
+                    // Debug.LogError($"Upgrades: {currentAbility.Upgrades.Length}");
                     foreach (AbilityBase currentAbilityUpgrade in currentAbility.Upgrades)
                     {
                         if (currentAbilityUpgrade) {
                             abilityPool.Add(currentAbilityUpgrade);
+                            Debug.LogError($"{currentAbilityUpgrade.abilityName}");
                         }
                     }
                 }
             }
         }
 
-        Debug.Log($"AbilityPool: {abilityPool.Count}" );
+        // Debug.LogError($"AbilityPool: {abilityPool.Count}" );
+
+        List<int> randomNumbers = GetNewRandom(abilityPool.Count);
 
         for (int i = 0; i < m_upgradableAbilites.Length; i++) {
             // Eventuell Checken ob kein Index doppelt vorhanden ist
-            int random = Random.Range(0, abilityPool.Count-1);
-            m_upgradableAbilites[i] = abilityPool[random];
+            //int random =  Random.Range(0, abilityPool.Count);
+            
+            m_upgradableAbilites[i] = abilityPool[randomNumbers[i]];
         }
 
         return m_upgradableAbilites;
+    }
+
+    private List<int> GetNewRandom(int max) {
+        List<int> randomNumbers = new List<int>();
+
+        if (max < 3) {
+            Debug.LogError("Max zu klein");
+            return new List<int>();
+        }
+
+        while (randomNumbers.Count < 3)
+        {
+            int random = Random.Range(0, max);
+            if (!(HasNumber(randomNumbers, random)))
+            {
+                randomNumbers.Add(random);
+            }
+        }
+
+        return randomNumbers;
+    }
+
+    private bool HasNumber(List<int> list, int number) {
+        foreach (int currNumber in list) {
+            if (currNumber == number) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public void SelectAbility(int ability) {
@@ -93,12 +130,12 @@ public class UpgradeSystem : MonoBehaviour {
     [ContextMenu("Select 1")]
     private void Select1()
     {
-        SelectAbility(0);
+        SelectAbility(1);
     }
     [ContextMenu("Select 2")]
     private void Select2()
     {
-        SelectAbility(0);
+        SelectAbility(2);
     }
 
 }
