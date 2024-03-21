@@ -88,7 +88,7 @@ public class Projectile : MonoBehaviour {
     private void Explode() {
         if (m_explosion != null) {
             //Instantiate(m_explosion, transform.position, Quaternion.identity);
-            // m_explosion.Play();
+            m_explosion.Play();
         }
 
         Collider[] enemies = Physics.OverlapSphere(transform.position, m_explosionRange, m_layer);
@@ -97,34 +97,23 @@ public class Projectile : MonoBehaviour {
             enemies[i].GetComponent<HealthComponent>().TakeDamage(m_damage);
 
             Rigidbody enemyRB = enemies[i].GetComponent<Rigidbody>();
+            KinematicController kc = enemies[i].GetComponent<KinematicController>();
 
             if (enemyRB) {
-                enemyRB.isKinematic = false;
+                kc.DisableKinematic();
                 enemyRB.AddExplosionForce(m_explosionForce, transform.position, m_explosionRange);
-                StartCoroutine(ExecuteAfterTime(enemyRB, 1.0f));
             }
 
         }
 
-        MeshRenderer[] meshs = gameObject.GetComponentsInChildren<MeshRenderer>();
+        //MeshRenderer[] meshs = gameObject.GetComponentsInChildren<MeshRenderer>();
 
-        foreach (MeshRenderer meshRenderer in meshs) {
-            meshRenderer.enabled = false;
-        }
+        //foreach (MeshRenderer meshRenderer in meshs) {
+        //    meshRenderer.enabled = false;
+        //}
 
-        gameObject.GetComponent<CapsuleCollider>().enabled = false;
-        Destroy(gameObject, 2.0f);
-    }
-
-    private void EnableKinematic(Rigidbody rb) {
-        rb.isKinematic = true;
-    }
-
-    IEnumerator ExecuteAfterTime(Rigidbody rb, float time) {
-        yield return new WaitForSeconds(time);
-
-        if(rb)
-            EnableKinematic(rb);
+        //gameObject.GetComponent<CapsuleCollider>().enabled = false;
+        Destroy(gameObject);
     }
 
     private void OnDrawGizmosSelected() {

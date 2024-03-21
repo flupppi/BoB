@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class AbilityBase : ScriptableObject
 {
-    public string abilityName;
+    public Image nameIcon;
     [TextArea] public string description;
     public float cooldown;
     public float activeTime;
     public AbilityBase[] Upgrades;
     public Animation animation;
-    public Image icon;
+    public Image abilityIcon;
     public AbilitySpecifier AbilitySlot;
 
     public virtual void Activate(GameObject parent) {}

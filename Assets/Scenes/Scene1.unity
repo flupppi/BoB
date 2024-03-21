@@ -136,11 +136,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnTester
       objectReference: {fileID: 0}
-    - target: {fileID: 4873985830189755061, guid: 937eadc19afe57c4bb59ac512ff9db8f,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
     - target: {fileID: 7847462335682537460, guid: 937eadc19afe57c4bb59ac512ff9db8f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -595,6 +590,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5650374672779004120, guid: 5a491584865a2a349af977b3246bb5b3,
+        type: 3}
+      propertyPath: m_startAbilities.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -5650374672779004120, guid: 5a491584865a2a349af977b3246bb5b3,
+        type: 3}
+      propertyPath: m_startAbilities.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 972eb446e0fc9e6498af3bfa12eebf36,
+        type: 2}
+    - target: {fileID: -5650374672779004120, guid: 5a491584865a2a349af977b3246bb5b3,
+        type: 3}
+      propertyPath: m_startAbilities.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4ba046be537bdc345886282ada391b9c,
+        type: 2}
+    - target: {fileID: -5650374672779004120, guid: 5a491584865a2a349af977b3246bb5b3,
+        type: 3}
+      propertyPath: m_startAbilities.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: dc1261a4a90ca6043b6138bec74a5d79,
+        type: 2}
     - target: {fileID: 23292072778592057, guid: 5a491584865a2a349af977b3246bb5b3,
         type: 3}
       propertyPath: m_Name
@@ -732,9 +750,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7462950800407865151, guid: ba9b819a545b3ef48b2f5c499dca1119,
         type: 3}
-      propertyPath: m_abilities.Array.data[4]
+      propertyPath: m_abilities.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: 16c7f84c60e5cda49bf7df5c5b62cf8e,
+      objectReference: {fileID: 11400000, guid: dc1261a4a90ca6043b6138bec74a5d79,
         type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1010,6 +1028,7 @@ GameObject:
   - component: {fileID: 1386524122}
   - component: {fileID: 1386524121}
   - component: {fileID: 1386524120}
+  - component: {fileID: 1386524124}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -1103,6 +1122,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -29.092, z: 0}
+--- !u!54 &1386524124
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386524119}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1695267760
 GameObject:
   m_ObjectHideFlags: 0
@@ -1115,6 +1161,7 @@ GameObject:
   - component: {fileID: 1695267763}
   - component: {fileID: 1695267762}
   - component: {fileID: 1695267761}
+  - component: {fileID: 1695267765}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -1209,6 +1256,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1695267765
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695267760}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1868141620
 GameObject:
   m_ObjectHideFlags: 0

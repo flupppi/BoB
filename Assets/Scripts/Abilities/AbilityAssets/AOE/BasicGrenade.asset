@@ -16,7 +16,8 @@ MonoBehaviour:
   description: Basic Grenade
   cooldown: 5
   activeTime: 0.1
-  Upgrades: []
+  Upgrades:
+  - {fileID: 11400000, guid: 1e95663348df78042b854b07004fae6b, type: 2}
   animation: {fileID: 0}
   icon: {fileID: 0}
   AbilitySlot: 2
