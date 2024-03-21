@@ -24,6 +24,7 @@ public class Projectile : MonoBehaviour {
     private CapsuleCollider m_collider;
     private int m_collisions;
     private PhysicMaterial m_physicsMaterial;
+    private bool isColliding;
 
     public Vector3 Direction { get; set; } = Vector3.forward;
 
@@ -60,6 +61,8 @@ public class Projectile : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider triggerCollider) {
+        if (isColliding) return;
+        isColliding = true;
 
         if (triggerCollider.gameObject.tag == "Enemy" && m_explodeOnTouch) {
             Explode();

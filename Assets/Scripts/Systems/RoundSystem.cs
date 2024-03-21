@@ -96,6 +96,7 @@ public class RoundSystem : MonoBehaviour {
     }
 
     void Update() {
+        Debug.Log($"Round: {m_currentRound}, Enemies: {m_enemyCount}");
         if (AllEnemiesDead()) {
             EndRound();
         }

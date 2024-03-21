@@ -377,6 +377,11 @@ PrefabInstance:
     - target: {fileID: 7934754326675235270, guid: 54dce7b1881c7de419a23673815fcb50,
         type: 3}
       propertyPath: m_enemyWaves.Array.data[2].m_enemies.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934754326675235270, guid: 54dce7b1881c7de419a23673815fcb50,
+        type: 3}
+      propertyPath: m_enemyWaves.Array.data[3].m_enemies.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7934754326675235270, guid: 54dce7b1881c7de419a23673815fcb50,
@@ -399,6 +404,18 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 7934754326675235270, guid: 54dce7b1881c7de419a23673815fcb50,
         type: 3}
+      propertyPath: m_enemyWaves.Array.data[2].m_enemies.Array.data[1]
+      value: 
+      objectReference: {fileID: 575925410145169392, guid: 1b396df208c0af44db13ae8d9f6a347e,
+        type: 3}
+    - target: {fileID: 7934754326675235270, guid: 54dce7b1881c7de419a23673815fcb50,
+        type: 3}
+      propertyPath: m_enemyWaves.Array.data[3].m_enemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 2705791169656201954, guid: 9ab06377f82a4ca45a0848c7188d3ce1,
+        type: 3}
+    - target: {fileID: 7934754326675235270, guid: 54dce7b1881c7de419a23673815fcb50,
+        type: 3}
       propertyPath: m_enemyWaves.Array.data[0].m_enemyPositions.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -410,6 +427,11 @@ PrefabInstance:
     - target: {fileID: 7934754326675235270, guid: 54dce7b1881c7de419a23673815fcb50,
         type: 3}
       propertyPath: m_enemyWaves.Array.data[2].m_enemyPositions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934754326675235270, guid: 54dce7b1881c7de419a23673815fcb50,
+        type: 3}
+      propertyPath: m_enemyWaves.Array.data[3].m_enemyPositions.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7934754326675235270, guid: 54dce7b1881c7de419a23673815fcb50,
@@ -440,6 +462,26 @@ PrefabInstance:
     - target: {fileID: 7934754326675235270, guid: 54dce7b1881c7de419a23673815fcb50,
         type: 3}
       propertyPath: m_enemyWaves.Array.data[2].m_enemyPositions.Array.data[0].z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934754326675235270, guid: 54dce7b1881c7de419a23673815fcb50,
+        type: 3}
+      propertyPath: m_enemyWaves.Array.data[2].m_enemyPositions.Array.data[1].y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934754326675235270, guid: 54dce7b1881c7de419a23673815fcb50,
+        type: 3}
+      propertyPath: m_enemyWaves.Array.data[2].m_enemyPositions.Array.data[1].z
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934754326675235270, guid: 54dce7b1881c7de419a23673815fcb50,
+        type: 3}
+      propertyPath: m_enemyWaves.Array.data[3].m_enemyPositions.Array.data[0].y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934754326675235270, guid: 54dce7b1881c7de419a23673815fcb50,
+        type: 3}
+      propertyPath: m_enemyWaves.Array.data[3].m_enemyPositions.Array.data[0].z
       value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
