@@ -10,16 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b01149f4c8cdeea4d99fd5ad10aef0a4, type: 3}
-  m_Name: BasicBazooka
+  m_Name: BazookaCD
   m_EditorClassIdentifier: 
-  abilityName: Bazooka
+  abilityName: BazookaCD
   description: 
-  cooldown: 5
+  cooldown: 3
   activeTime: 0.2
-  Upgrades:
-  - {fileID: 11400000, guid: 8ceedf6120a86764dbce3fe556e6a54c, type: 2}
-  - {fileID: 11400000, guid: 038b4d76b0f262e4a8a78d180e97234e, type: 2}
-  - {fileID: 11400000, guid: 8e9f4a57528598f469ddf3706df00109, type: 2}
+  Upgrades: []
   animation: {fileID: 0}
   icon: {fileID: 0}
   AbilitySlot: 1
