@@ -13,7 +13,7 @@ public class Projectile : MonoBehaviour {
     [SerializeField] private bool m_useGravity;
     [SerializeField] private int m_maxCollisions = 1;
 
-    [SerializeField] private GameObject m_explosion;
+    [SerializeField] private ParticleSystem m_explosion;
     [SerializeField] private bool m_explosive;
     [SerializeField] private bool m_explodeOnTouch;
     [SerializeField] private float m_explosionForce;
@@ -67,15 +67,28 @@ public class Projectile : MonoBehaviour {
 
         if (triggerCollider.gameObject.tag == "Enemy" && !m_explosive) {
             triggerCollider.gameObject.GetComponent<HealthComponent>()?.TakeDamage(m_damage);
+
+            
+        }
+
+        if (!m_explosive) {
+            if (m_explosion != null)
+            {
+                m_explosion.transform.parent = null;
+                m_explosion.Play();
+            }
+
             Destroy(gameObject);
         }
+
 
         m_collisions++;
     }
 
     private void Explode() {
         if (m_explosion != null) {
-            Instantiate(m_explosion, transform.position, Quaternion.identity);
+            //Instantiate(m_explosion, transform.position, Quaternion.identity);
+            // m_explosion.Play();
         }
 
         Collider[] enemies = Physics.OverlapSphere(transform.position, m_explosionRange, m_layer);

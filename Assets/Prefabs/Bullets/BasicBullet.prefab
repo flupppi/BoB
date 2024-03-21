@@ -49,7 +49,7 @@ ParticleSystem:
   serializedVersion: 8
   lengthInSec: 1
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 2
   cullingMode: 3
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
@@ -39534,7 +39534,7 @@ MonoBehaviour:
   m_bounciness: 0
   m_useGravity: 0
   m_maxCollisions: 1
-  m_explosion: {fileID: 0}
+  m_explosion: {fileID: 783943145804038872}
   m_explosive: 0
   m_explodeOnTouch: 0
   m_explosionForce: 0
