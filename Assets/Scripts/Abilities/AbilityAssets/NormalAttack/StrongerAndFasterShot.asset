@@ -20,7 +20,4 @@ MonoBehaviour:
   animation: {fileID: 0}
   icon: {fileID: 0}
   AbilitySlot: 0
-  bullet: {fileID: 5080790508642040586, guid: 1ed71c9ccddda324db89051681836db8, type: 3}
-  bulletSpeed: 100
-  damage: 70
-  bulletLifeTime: 4
+  bullet: {fileID: 5886145607175591562, guid: d2fd7acd5db90b94bb6fd5608592a41b, type: 3}
