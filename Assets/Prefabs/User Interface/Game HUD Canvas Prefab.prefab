@@ -287,7 +287,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 936313507385262574}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -323,15 +323,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuName: Upgrade
-  menuPosition: {x: 0, y: 0}
+  menuPosition: {x: 0, y: 25}
   menuDidAppear:
     m_PersistentCalls:
       m_Calls: []
   menuWillDisappear:
     m_PersistentCalls:
       m_Calls: []
-  rectTransform: {fileID: 0}
-  defaultSelected: {fileID: 0}
+  rectTransform: {fileID: 6057368200339043183}
+  defaultSelected: {fileID: 3030851859155381418}
   slots:
   - {fileID: 2136748161114717464}
   - {fileID: 7678934370961116302}
@@ -1265,7 +1265,7 @@ MonoBehaviour:
   menuWillDisappear:
     m_PersistentCalls:
       m_Calls: []
-  rectTransform: {fileID: 0}
+  rectTransform: {fileID: 5988048018013808868}
   defaultSelected: {fileID: 0}
   healthFill: 0.056
   dashFill: 0.487
@@ -2956,7 +2956,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 7727073047788878258}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 3030851859155381418}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2461b270e15a514a83abc2da2cce0b4, type: 3}
@@ -2965,6 +2965,12 @@ MonoBehaviour:
 --- !u!224 &2669340438973534682 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5636102117902592104, guid: aa29ee12fe292e1469d0184344ddbab0,
+    type: 3}
+  m_PrefabInstance: {fileID: 7727073047788878258}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3030851859155381418 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4698288271870563608, guid: aa29ee12fe292e1469d0184344ddbab0,
     type: 3}
   m_PrefabInstance: {fileID: 7727073047788878258}
   m_PrefabAsset: {fileID: 0}

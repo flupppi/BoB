@@ -51,6 +51,14 @@ public class InputReader : MonoBehaviour
         {
             Menu = false;
         }
+        if (Menu = true)
+        {
+            MenuManager.ShowMenu("Options");
+        }
+        else
+        {
+            MenuManager.ShowMenu("Game HUD");
+        }
     }
 
     public void OnStandardAttack(InputAction.CallbackContext context)

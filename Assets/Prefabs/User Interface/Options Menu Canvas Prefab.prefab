@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 441129633508337578}
   - component: {fileID: 4563799009807088102}
   - component: {fileID: 764668528937945079}
+  - component: {fileID: 5768223157100684181}
   m_Layer: 5
-  m_Name: Background Panel
+  m_Name: Options Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,6 +78,30 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5768223157100684181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528929559272106674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c068a9b8a44a80340a59fb4aa1e77733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuName: Options
+  menuPosition: {x: 0, y: 0}
+  menuDidAppear:
+    m_PersistentCalls:
+      m_Calls: []
+  menuWillDisappear:
+    m_PersistentCalls:
+      m_Calls: []
+  rectTransform: {fileID: 441129633508337578}
+  defaultSelected: {fileID: 6338831613265413460}
+  backToMainMenuButton: {fileID: 3007656354582912191}
+  continueButton: {fileID: 585427478307675367}
 --- !u!1 &4004097361079435133
 GameObject:
   m_ObjectHideFlags: 0

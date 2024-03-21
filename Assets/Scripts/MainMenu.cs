@@ -20,11 +20,6 @@ public class MainMenu : Menu
 
     }
 
-    private void OnControlsButtonClicked()
-    {
-        MenuManager.ShowMenu("Description");
-    }
-
     public void Start()
     {
         base.Start();

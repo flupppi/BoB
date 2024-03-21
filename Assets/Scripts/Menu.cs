@@ -23,7 +23,7 @@ public class Menu : MonoBehaviour
 
     }
 
-    public void OnMenuWillDisappear()
+    public virtual void OnMenuWillDisappear()
     {
         rectTransform.anchoredPosition = new Vector2(3000, 3000);
     }
@@ -34,7 +34,7 @@ public class Menu : MonoBehaviour
 
     }
 
-    public void OnMenuDidAppear()
+    public virtual void OnMenuDidAppear()
     {
         if (defaultSelected != null)
         {

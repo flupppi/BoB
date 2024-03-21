@@ -12,6 +12,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private UpgradeSystem upgradeSystem;
     [SerializeField] private RoundSystem roundSystem;
     [SerializeField] private GameObject player;
+    private bool isInGame = false;
 
     private HealthComponent healthComponent;
     private AbilityHolder abilityHolder;
@@ -23,74 +24,85 @@ public class MenuManager : MonoBehaviour
         {
             menus.Add(menu);
         }
-
     }
 
     void Start() {
-        HUDMenu hud = (HUDMenu)SearchMenu("Game HUD");
-        
 
-        // Add Events to the Player
-        if (player) {
-            healthComponent = player.GetComponent<HealthComponent>();
-            SetHealth(hud);
-            abilityHolder = player.GetComponent<AbilityHolder>();
-            SetAbilitiesIcons(hud);
-
-            healthComponent.OnHealthChange += () => {
+            HUDMenu hud = (HUDMenu)SearchMenu("Game HUD");
+            
+            // Add Events to the Player
+            if (player)
+            {
+                healthComponent = player.GetComponent<HealthComponent>();
                 SetHealth(hud);
-            };
+                abilityHolder = player.GetComponent<AbilityHolder>();
+                SetAbilitiesIcons(hud);
 
-            healthComponent.OnDeath += () => {
-                SceneManager.LoadScene("Menu Scene");
-            };
-
-            abilityHolder.OnCooldownUpdate += (cooldowns) => {
-                hud.cooldownNormal = GetAbilityCooldown(0, cooldowns);
-                hud.cooldownHeavy = GetAbilityCooldown(1, cooldowns);
-                hud.cooldownAOE = GetAbilityCooldown(2, cooldowns);
-                hud.cooldownShortDistance = GetAbilityCooldown(3, cooldowns);
-                hud.dashFill = 1 - GetAbilityCooldown(4, cooldowns);
-            };
-        }
-
-        // Add events to UpgradeMenu
-        if (upgradeSystem) {
-            UpgradeMenu upgradeMenu = (UpgradeMenu)SearchMenu("Upgrade");
-
-            upgradeSystem.OnOpenUpgradeWindow += (upgrades) => {
-                upgradeMenu.gameObject.SetActive(false);
-                ToggleMenuAdditively("Upgrade");
-
-
-                for (int i = 0; i < upgradeMenu.slots.Length; i++)
+                healthComponent.OnHealthChange += () =>
                 {
-                    upgradeMenu.slots[i].icon.sprite = upgrades[i]?.abilityIcon;
-                    upgradeMenu.slots[i].nameIcon.sprite = upgrades[i]?.nameIcon;
-                    // upgradeMenu.slots[i].title.text = upgrades[i]?.abilityName;
-                    upgradeMenu.slots[i].description.text = upgrades[i]?.description;
-                }
-            };
+                    SetHealth(hud);
+                };
 
-            upgradeSystem.OnCloseWindow += () => {
-                ToggleMenuAdditively("Upgrade");
-                ShowMenu("Game HUD");
-            };
+                healthComponent.OnDeath += () =>
+                {
+                    SceneManager.LoadScene("Menu Scene");
+                };
 
-            upgradeSystem.OnUpgrade += () => { SetAbilitiesIcons(hud); };
+                abilityHolder.OnCooldownUpdate += (cooldowns) =>
+                {
+                    hud.cooldownNormal = GetAbilityCooldown(0, cooldowns);
+                    hud.cooldownHeavy = GetAbilityCooldown(1, cooldowns);
+                    hud.cooldownAOE = GetAbilityCooldown(2, cooldowns);
+                    hud.cooldownShortDistance = GetAbilityCooldown(3, cooldowns);
+                    hud.dashFill = 1 - GetAbilityCooldown(4, cooldowns);
+                };
+            }
+
+            // Add events to UpgradeMenu
+            if (upgradeSystem)
+            {
+                UpgradeMenu upgradeMenu = (UpgradeMenu)SearchMenu("Upgrade");
+
+                upgradeSystem.OnOpenUpgradeWindow += (upgrades) =>
+                {
+                    upgradeMenu.gameObject.SetActive(false);
+                    ToggleMenuAdditively("Upgrade");
+
+
+                    for (int i = 0; i < upgradeMenu.slots.Length; i++)
+                    {
+                        upgradeMenu.slots[i].icon.sprite = upgrades[i]?.abilityIcon;
+                        upgradeMenu.slots[i].nameIcon.sprite = upgrades[i]?.nameIcon;
+                        // upgradeMenu.slots[i].title.text = upgrades[i]?.abilityName;
+                        upgradeMenu.slots[i].description.text = upgrades[i]?.description;
+                    }
+                };
+
+                upgradeSystem.OnCloseWindow += () =>
+                {
+                    ToggleMenuAdditively("Upgrade");
+                    ShowMenu("Game HUD");
+                };
+
+                upgradeSystem.OnUpgrade += () => { SetAbilitiesIcons(hud); };
 
 
 
-            upgradeMenu.slots[0].GetComponent<Button>().onClick = GenerateSelectButtonEvent(upgradeSystem, 0);
-            upgradeMenu.slots[1].GetComponent<Button>().onClick = GenerateSelectButtonEvent(upgradeSystem, 1);
-            upgradeMenu.slots[2].GetComponent<Button>().onClick = GenerateSelectButtonEvent(upgradeSystem, 2);
-        }
+                upgradeMenu.slots[0].GetComponent<Button>().onClick = GenerateSelectButtonEvent(upgradeSystem, 0);
+                upgradeMenu.slots[1].GetComponent<Button>().onClick = GenerateSelectButtonEvent(upgradeSystem, 1);
+                upgradeMenu.slots[2].GetComponent<Button>().onClick = GenerateSelectButtonEvent(upgradeSystem, 2);
+            }
 
-        // Add events to roundSystem
-        if (roundSystem) {
-            roundSystem.OnFinish += (() => SceneManager.LoadScene("Menu Scene"));
-        }
-        
+            // Add events to roundSystem
+            if (roundSystem)
+            {
+                roundSystem.OnFinish += (() => SceneManager.LoadScene("Menu Scene"));
+            }
+
+        if (isInGame)
+            ShowMenu("Game HUD");
+        else if (!isInGame)
+            ShowMenu("Main Menu");
     }
 
     private Button.ButtonClickedEvent GenerateSelectButtonEvent(UpgradeSystem upgradeSystem, int number) {
@@ -125,6 +137,13 @@ public class MenuManager : MonoBehaviour
         foreach (Menu menu in FindObjectsOfType<Menu>())
         {
             menus.Add(menu);
+        }
+        if (arg0.name == "Main Game")
+        {
+            isInGame = true;
+        }else if(arg0.name == "Menu Scene")
+        {
+            isInGame = false;
         }
     }
 
@@ -221,16 +240,16 @@ public class MenuManager : MonoBehaviour
                     otherMenu.gameObject.SetActive(true);
                     otherMenu.menuDidAppear.Invoke();
                 }
-                else
-                {
-                    if (otherMenu.gameObject.activeInHierarchy)
-                    {
-                        if (otherMenu.gameObject.TryGetComponent<Menu>(out _))
-                        {
-                            otherMenu.gameObject.SetActive(false);
-                        }
-                    }
-                }
+                //else
+                //{
+                //    if (otherMenu.gameObject.activeInHierarchy)
+                //    {
+                //        if (otherMenu.gameObject.TryGetComponent<Menu>(out _))
+                //        {
+                //            otherMenu.gameObject.SetActive(false);
+                //        }
+                //    }
+                //}
             }
         }
     }
