@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 69d735c116a51604b8a6dde8ef7e71ec
+guid: 86bb2066757d91a4b992fb0a6589c0bc
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pojo's Metal Shader_v2
+    second: {fileID: 2100000, guid: 03140b3adc5db8d4592ff21906c2f284, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
