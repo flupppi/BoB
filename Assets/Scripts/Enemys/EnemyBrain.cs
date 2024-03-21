@@ -25,6 +25,11 @@ public abstract class EnemyBrain : MonoBehaviour
         Invoke(nameof(ResetAttack), attackCooldown);
     }
 
+    public void InvokeResetAttack(float cooldown)
+    {
+        Invoke(nameof(ResetAttack), cooldown);
+    }
+
     public void ResetAttack()
     {
         attacking = false;
