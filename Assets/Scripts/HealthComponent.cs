@@ -40,6 +40,7 @@ public class HealthComponent : MonoBehaviour
     }
 
     public void TakeDamage(float damage) {
+        Debug.Log("Enemy got damaged");
         if (!m_isInvincible) {
             Health -= damage;
             OnHealthChange?.Invoke();

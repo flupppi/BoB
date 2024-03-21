@@ -28,49 +28,68 @@ public class MenuManager : MonoBehaviour
 
     void Start() {
         HUDMenu hud = (HUDMenu)SearchMenu("Game HUD");
-        UpgradeMenu upgradeMenu = (UpgradeMenu)SearchMenu("Upgrade");
+        
 
-        healthComponent = player.GetComponent<HealthComponent>();
-        SetHealth(hud);
-        abilityHolder = player.GetComponent<AbilityHolder>();
-        SetAbilitiesIcons(hud);
-
-        healthComponent.OnHealthChange += () => {
+        // Add Events to the Player
+        if (player) {
+            healthComponent = player.GetComponent<HealthComponent>();
             SetHealth(hud);
-        };
+            abilityHolder = player.GetComponent<AbilityHolder>();
+            SetAbilitiesIcons(hud);
 
-        upgradeSystem.OnOpenUpgradeWindow += (upgrades) => {
-            upgradeMenu.gameObject.SetActive(false);
-            ToggleMenuAdditively("Upgrade");
-            
+            healthComponent.OnHealthChange += () => {
+                SetHealth(hud);
+            };
 
-            for (int i = 0; i < upgradeMenu.slots.Length; i++) {
-                upgradeMenu.slots[i].icon = upgrades[i]?.icon;
-                upgradeMenu.slots[i].title.text = upgrades[i]?.abilityName;
-                upgradeMenu.slots[i].description.text = upgrades[i]?.description;
-            }
-        };
+            healthComponent.OnDeath += () => {
+                SceneManager.LoadScene("Menu Scene");
+            };
 
-        upgradeSystem.OnCloseWindow += () => {
-            ToggleMenuAdditively("Upgrade");
-            ShowMenu("Game HUD");
-        };
+            abilityHolder.OnCooldownUpdate += (cooldowns) => {
+                hud.cooldownNormal = GetAbilityCooldown(0, cooldowns);
+                hud.cooldownHeavy = GetAbilityCooldown(1, cooldowns);
+                hud.cooldownAOE = GetAbilityCooldown(2, cooldowns);
+                hud.cooldownShortDistance = GetAbilityCooldown(3, cooldowns);
+                hud.dashFill = 1 - GetAbilityCooldown(4, cooldowns);
+            };
+        }
 
-        upgradeSystem.OnUpgrade += () => { SetAbilitiesIcons(hud); };
+        // Add events to UpgradeMenu
+        if (upgradeSystem) {
+            UpgradeMenu upgradeMenu = (UpgradeMenu)SearchMenu("Upgrade");
 
-        abilityHolder.OnCooldownUpdate += (cooldowns) => {
-            hud.cooldownNormal = GetAbilityCooldown(0, cooldowns);
-            hud.cooldownHeavy = GetAbilityCooldown(1, cooldowns);
-            hud.cooldownAOE = GetAbilityCooldown(2, cooldowns);
-            hud.cooldownShortDistance = GetAbilityCooldown(3, cooldowns);
-            hud.dashFill = 1 - GetAbilityCooldown(4, cooldowns);
-        };
+            upgradeSystem.OnOpenUpgradeWindow += (upgrades) => {
+                upgradeMenu.gameObject.SetActive(false);
+                ToggleMenuAdditively("Upgrade");
 
-        upgradeMenu.slots[0].GetComponent<Button>().onClick = GenerateSelectButtonEvent(upgradeSystem, 0);
-        upgradeMenu.slots[1].GetComponent<Button>().onClick = GenerateSelectButtonEvent(upgradeSystem, 1);
-        upgradeMenu.slots[2].GetComponent<Button>().onClick = GenerateSelectButtonEvent(upgradeSystem, 2);
 
-        // roundSystem.OnFinish += (() => ShowMenu("EndScreen"));
+                for (int i = 0; i < upgradeMenu.slots.Length; i++)
+                {
+                    upgradeMenu.slots[i].icon = upgrades[i]?.abilityIcon;
+                    // upgradeMenu.slots[i].title.text = upgrades[i]?.abilityName;
+                    upgradeMenu.slots[i].description.text = upgrades[i]?.description;
+                }
+            };
+
+            upgradeSystem.OnCloseWindow += () => {
+                ToggleMenuAdditively("Upgrade");
+                ShowMenu("Game HUD");
+            };
+
+            upgradeSystem.OnUpgrade += () => { SetAbilitiesIcons(hud); };
+
+
+
+            upgradeMenu.slots[0].GetComponent<Button>().onClick = GenerateSelectButtonEvent(upgradeSystem, 0);
+            upgradeMenu.slots[1].GetComponent<Button>().onClick = GenerateSelectButtonEvent(upgradeSystem, 1);
+            upgradeMenu.slots[2].GetComponent<Button>().onClick = GenerateSelectButtonEvent(upgradeSystem, 2);
+        }
+
+        // Add events to roundSystem
+        if (roundSystem) {
+            roundSystem.OnFinish += (() => SceneManager.LoadScene("Menu Scene"));
+        }
+        
     }
 
     private Button.ButtonClickedEvent GenerateSelectButtonEvent(UpgradeSystem upgradeSystem, int number) {
@@ -81,10 +100,10 @@ public class MenuManager : MonoBehaviour
     }
 
     private void SetAbilitiesIcons(HUDMenu hud) {
-        hud.skillIconNormal = abilityHolder.Abilities[0]?.icon;
-        hud.skillIconHeavy = abilityHolder.Abilities[1]?.icon;
-        hud.skillIconAOE = abilityHolder.Abilities[2]?.icon;
-        hud.skillIconShortDistance = abilityHolder.Abilities[3]?.icon;
+        hud.skillIconNormal = abilityHolder.Abilities[0]?.abilityIcon;
+        hud.skillIconHeavy = abilityHolder.Abilities[1]?.abilityIcon;
+        hud.skillIconAOE = abilityHolder.Abilities[2]?.abilityIcon;
+        hud.skillIconShortDistance = abilityHolder.Abilities[3]?.abilityIcon;
     }
 
     private float GetAbilityCooldown(int ability, in float[] currentCooldown) {

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class Menu : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class Menu : MonoBehaviour
     // Invoked when a menu is removed from the screen.
     public UnityEvent menuWillDisappear = new();
     public  RectTransform rectTransform;
+    public GameObject defaultSelected;
 
     public void Awake()
     {
@@ -34,6 +36,11 @@ public class Menu : MonoBehaviour
 
     public void OnMenuDidAppear()
     {
+        if (defaultSelected != null)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(defaultSelected);
+        }
 
         rectTransform.anchoredPosition = menuPosition;
     }

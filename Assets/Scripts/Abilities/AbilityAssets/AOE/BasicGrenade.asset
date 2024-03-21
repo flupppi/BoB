@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eab6b4119879214c8a867f5b4f07365, type: 3}
   m_Name: BasicGrenade
   m_EditorClassIdentifier: 
-  abilityName: Grenade
+  nameIcon: {fileID: 0}
   description: Basic Grenade
   cooldown: 5
   activeTime: 0.1
-  Upgrades: []
+  Upgrades:
+  - {fileID: 11400000, guid: 1e95663348df78042b854b07004fae6b, type: 2}
+  - {fileID: 11400000, guid: f0e9a3104556e964bb7b4ebee45b0100, type: 2}
   animation: {fileID: 0}
-  icon: {fileID: 0}
+  abilityIcon: {fileID: 0}
   AbilitySlot: 2
   bullet: {fileID: 219284826548497702, guid: a8da07e091a5d1b4891557be2a03b88c, type: 3}

@@ -10,7 +10,6 @@ public class MainMenu : Menu
     public Button startGameButton;
     public Button exitGameButton;
     public Button optionsButton;
-    public Button controlsButton;
 
     public void Awake()
     {
@@ -18,7 +17,6 @@ public class MainMenu : Menu
         startGameButton.onClick.AddListener(OnStartButtonClicked);
         exitGameButton.onClick.AddListener(OnExitButtonClicked);
         optionsButton.onClick.AddListener(OnOptionsButtonClicked);
-        controlsButton.onClick.AddListener(OnControlsButtonClicked);
 
     }
 
