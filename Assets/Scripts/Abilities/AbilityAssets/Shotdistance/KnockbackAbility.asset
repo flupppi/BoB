@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf1449cd727f9ce42a8795a01766ebb1, type: 3}
+  m_Name: KnockbackAbility
+  m_EditorClassIdentifier: 
+  abilityName: Knockback
+  description: Knockbacks enemies
+  cooldown: 3
+  activeTime: 0.2
+  Upgrades:
+  - {fileID: 11400000, guid: 91d71235e01c9e04392e7c85cbe19c04, type: 2}
+  - {fileID: 11400000, guid: aa7c0d898d9664441a5c03c47e9bbef4, type: 2}
+  - {fileID: 11400000, guid: 5b0e17705b197204cb369ca9d2a8b232, type: 2}
+  animation: {fileID: 0}
+  icon: {fileID: 0}
+  AbilitySlot: 3
+  m_maxAngleDegrees: 45
+  m_distance: 20
+  m_force: 15
+  m_upwardsForce: 5
+  m_enableKinematicAfterTime: 1
+  m_layer:
+    serializedVersion: 2
+    m_Bits: 134217728

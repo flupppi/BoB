@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eab6b4119879214c8a867f5b4f07365, type: 3}
   m_Name: GrenadeCD
   m_EditorClassIdentifier: 
-  abilityName: Grenade
-  description: Basic Grenade
-  cooldown: 5
+  abilityName: GrenadeCD
+  description: Cooldown Reduction Grenade
+  cooldown: 3
   activeTime: 0.1
   Upgrades: []
   animation: {fileID: 0}
