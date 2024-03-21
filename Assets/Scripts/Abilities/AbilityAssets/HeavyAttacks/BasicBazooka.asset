@@ -16,7 +16,10 @@ MonoBehaviour:
   description: 
   cooldown: 5
   activeTime: 0.2
-  Upgrades: []
+  Upgrades:
+  - {fileID: 11400000, guid: 8ceedf6120a86764dbce3fe556e6a54c, type: 2}
+  - {fileID: 11400000, guid: 038b4d76b0f262e4a8a78d180e97234e, type: 2}
+  - {fileID: 11400000, guid: 8e9f4a57528598f469ddf3706df00109, type: 2}
   animation: {fileID: 0}
   icon: {fileID: 0}
   AbilitySlot: 1

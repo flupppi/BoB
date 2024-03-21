@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
 
 public class UpgradeSystem : MonoBehaviour {
@@ -93,10 +94,14 @@ public class UpgradeSystem : MonoBehaviour {
     }
 
     public void SelectAbility(int ability) {
+        int index = Array.IndexOf(m_startAbilities, m_upgradableAbilites[ability]);
+        if (index != -1) {
+            m_startAbilities[index] = null;
+        }
         UpgradeAbility(ability);
         Disable();
         OnCloseWindow?.Invoke();
-        m_abilityHolder.gameObject.GetComponent<CharacterController>().enabled = true;
+        m_abilityHolder.gameObject.GetComponent<PlayerInput>().enabled = true;
     }
 
     private void UpgradeAbility(int ability) {
@@ -110,7 +115,7 @@ public class UpgradeSystem : MonoBehaviour {
             PrintRandomAbilities();
             // GetRandomUpgrades();
             OnOpenUpgradeWindow?.Invoke(m_upgradableAbilites);
-            m_abilityHolder.gameObject.GetComponent<CharacterController>().enabled = false;
+            m_abilityHolder.gameObject.GetComponent<PlayerInput>().enabled = false;
         }
     }
 
