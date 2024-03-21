@@ -16,7 +16,10 @@ public class KnockbackAbility : AbilityBase {
 
     private List<GameObject> enemiesHit = new List<GameObject>();
     public override void Activate(GameObject parent) {
-        m_particleSystem.Play();
+        if (m_particleSystem) {
+            m_particleSystem?.Play();
+        }
+        
         enemiesHit.Clear();
         Vector3 forward = parent.transform.TransformDirection(Vector3.forward);
 
