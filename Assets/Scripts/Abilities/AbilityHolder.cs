@@ -11,7 +11,7 @@ public class AbilityHolder : MonoBehaviour {
     private AbilityState m_currentState = AbilityState.Waiting;
     private InputReader m_inputReader;
     private float m_activeTime = 0.0f;
-    private int? m_activeAbility = 0;
+    private int? m_activeAbility = null;
 
     public AbilityBase[] Abilities => m_abilities;
     public Transform[] AbilityLocations => m_abilityLocations;
