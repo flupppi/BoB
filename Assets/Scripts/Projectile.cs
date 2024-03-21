@@ -82,12 +82,21 @@ public class Projectile : MonoBehaviour {
         for (int i = 0; i < enemies.Length; i++) {
             enemies[i].GetComponent<HealthComponent>().TakeDamage(m_damage);
 
-            if (enemies[i].GetComponent<Rigidbody>()) {
-                enemies[i].GetComponent<Rigidbody>().AddExplosionForce(m_explosionForce, transform.position, m_explosionRange);
+            Rigidbody enemyRB = enemies[i].GetComponent<Rigidbody>();
+
+            if (enemyRB) {
+                enemyRB.isKinematic = false;
+                enemyRB.AddExplosionForce(m_explosionForce, transform.position, m_explosionRange);
+                Invoke("EnableKinemetic", 2.0f);
             }
+
         }
 
         Destroy(gameObject, 0.05f);
+    }
+
+    private void EnableKinemetic(Rigidbody rb) {
+        rb.isKinematic = true;
     }
 
     private void OnDrawGizmosSelected() {
