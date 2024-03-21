@@ -48,9 +48,9 @@ GameObject:
   - component: {fileID: 7042584898655468082}
   - component: {fileID: 531620358661823734}
   - component: {fileID: 5800197542082759688}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -387,8 +387,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_abilities:
   - {fileID: 11400000, guid: 87e9c0d951a8747438c5d4ef46c7efe6, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 972eb446e0fc9e6498af3bfa12eebf36, type: 2}
+  - {fileID: 11400000, guid: 4ba046be537bdc345886282ada391b9c, type: 2}
   - {fileID: 0}
   - {fileID: 11400000, guid: 16c7f84c60e5cda49bf7df5c5b62cf8e, type: 2}
   m_abilityLocations:
