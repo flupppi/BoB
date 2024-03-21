@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58e25343eddb8cc489db36885bb2002f, type: 3}
   m_Name: StrongerAndFasterShot
   m_EditorClassIdentifier: 
-  abilityName: StrongerAndFasterShot
-  description: Stronger normal Shot
+  nameIcon: {fileID: 1143413094, guid: f3f74a2e800ea1749a52f7f1a76bf663, type: 3}
+  description: Stronger and Faster Normal Shot
   cooldown: 0.1
   activeTime: 0
   Upgrades: []
   animation: {fileID: 0}
-  icon: {fileID: 0}
+  abilityIcon: {fileID: -1446971611, guid: 516dcf3883a867c43883665df16d4b6c, type: 3}
+  descriptionIcon: {fileID: 0}
   AbilitySlot: 0
   bullet: {fileID: 5886145607175591562, guid: d2fd7acd5db90b94bb6fd5608592a41b, type: 3}
