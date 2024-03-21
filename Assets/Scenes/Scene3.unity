@@ -2584,6 +2584,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1258980476974008953, guid: 9ab06377f82a4ca45a0848c7188d3ce1,
         type: 3}
+      propertyPath: hitMask.m_Bits
+      value: 268435456
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258980476974008953, guid: 9ab06377f82a4ca45a0848c7188d3ce1,
+        type: 3}
       propertyPath: healthComponent
       value: 
       objectReference: {fileID: 5179045458050532031}
