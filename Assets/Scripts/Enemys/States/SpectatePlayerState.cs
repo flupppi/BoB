@@ -26,7 +26,6 @@ public class SpectatePlayerState : IState
 
     public void Tick()
     {
-        
         if(timer > 0f){
             timer -= Time.deltaTime;
         }

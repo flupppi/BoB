@@ -37,6 +37,7 @@ public class BigAttackState : IState
     public void Tick()
     {
         if(timerDelay > 0f){
+            LaserPointer();
             timerDelay -= Time.deltaTime;
         }
         else{
@@ -97,6 +98,14 @@ public class BigAttackState : IState
             brain.DoneAttack2 = false;
             brain.Attack = false;
         }
+    }
+
+    private void LaserPointer(){
+        Ray ray  = new Ray(brain.muzzlePoint.position, brain.muzzlePoint.forward);
+        bool cast = Physics.Raycast(ray, out RaycastHit hit, brain.beamMaxLength, brain.hitMaskBeam);
+        Vector3 hitPosition = cast ? hit.point : brain.muzzlePoint.position + brain.muzzlePoint.forward * brain.beamMaxLength;
+        brain.laserpointer.SetPosition(0, brain.muzzlePoint.position);
+        brain.laserpointer.SetPosition(1, hitPosition);
     }
 
     public Color GizmoColor()
