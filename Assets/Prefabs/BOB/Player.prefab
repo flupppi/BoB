@@ -369,9 +369,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_abilities:
   - {fileID: 11400000, guid: 87e9c0d951a8747438c5d4ef46c7efe6, type: 2}
-  - {fileID: 11400000, guid: 972eb446e0fc9e6498af3bfa12eebf36, type: 2}
-  - {fileID: 11400000, guid: 4ba046be537bdc345886282ada391b9c, type: 2}
-  - {fileID: 11400000, guid: dc1261a4a90ca6043b6138bec74a5d79, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 11400000, guid: 16c7f84c60e5cda49bf7df5c5b62cf8e, type: 2}
   m_abilityLocations:
   - {fileID: 608715081540029887}
