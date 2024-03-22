@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 262.38358, g: 325.10843, b: 430.30963, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -367,7 +367,7 @@ PrefabInstance:
     - target: {fileID: 7934754326675235270, guid: 54dce7b1881c7de419a23673815fcb50,
         type: 3}
       propertyPath: m_enemyWaves.Array.data[0].m_enemies.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7934754326675235270, guid: 54dce7b1881c7de419a23673815fcb50,
         type: 3}
@@ -387,6 +387,18 @@ PrefabInstance:
     - target: {fileID: 7934754326675235270, guid: 54dce7b1881c7de419a23673815fcb50,
         type: 3}
       propertyPath: m_enemyWaves.Array.data[0].m_enemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 575925410145169392, guid: 1b396df208c0af44db13ae8d9f6a347e,
+        type: 3}
+    - target: {fileID: 7934754326675235270, guid: 54dce7b1881c7de419a23673815fcb50,
+        type: 3}
+      propertyPath: m_enemyWaves.Array.data[0].m_enemies.Array.data[1]
+      value: 
+      objectReference: {fileID: 575925410145169392, guid: 1b396df208c0af44db13ae8d9f6a347e,
+        type: 3}
+    - target: {fileID: 7934754326675235270, guid: 54dce7b1881c7de419a23673815fcb50,
+        type: 3}
+      propertyPath: m_enemyWaves.Array.data[0].m_enemies.Array.data[2]
       value: 
       objectReference: {fileID: 575925410145169392, guid: 1b396df208c0af44db13ae8d9f6a347e,
         type: 3}
@@ -417,7 +429,7 @@ PrefabInstance:
     - target: {fileID: 7934754326675235270, guid: 54dce7b1881c7de419a23673815fcb50,
         type: 3}
       propertyPath: m_enemyWaves.Array.data[0].m_enemyPositions.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7934754326675235270, guid: 54dce7b1881c7de419a23673815fcb50,
         type: 3}
@@ -442,6 +454,26 @@ PrefabInstance:
     - target: {fileID: 7934754326675235270, guid: 54dce7b1881c7de419a23673815fcb50,
         type: 3}
       propertyPath: m_enemyWaves.Array.data[0].m_enemyPositions.Array.data[0].y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934754326675235270, guid: 54dce7b1881c7de419a23673815fcb50,
+        type: 3}
+      propertyPath: m_enemyWaves.Array.data[0].m_enemyPositions.Array.data[1].x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934754326675235270, guid: 54dce7b1881c7de419a23673815fcb50,
+        type: 3}
+      propertyPath: m_enemyWaves.Array.data[0].m_enemyPositions.Array.data[1].y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934754326675235270, guid: 54dce7b1881c7de419a23673815fcb50,
+        type: 3}
+      propertyPath: m_enemyWaves.Array.data[0].m_enemyPositions.Array.data[2].x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934754326675235270, guid: 54dce7b1881c7de419a23673815fcb50,
+        type: 3}
+      propertyPath: m_enemyWaves.Array.data[0].m_enemyPositions.Array.data[2].y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7934754326675235270, guid: 54dce7b1881c7de419a23673815fcb50,
@@ -693,7 +725,7 @@ PrefabInstance:
     - target: {fileID: -5650374672779004120, guid: 5a491584865a2a349af977b3246bb5b3,
         type: 3}
       propertyPath: m_startAbilities.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -5650374672779004120, guid: 5a491584865a2a349af977b3246bb5b3,
         type: 3}
@@ -712,6 +744,12 @@ PrefabInstance:
       propertyPath: m_startAbilities.Array.data[2]
       value: 
       objectReference: {fileID: 11400000, guid: dc1261a4a90ca6043b6138bec74a5d79,
+        type: 2}
+    - target: {fileID: -5650374672779004120, guid: 5a491584865a2a349af977b3246bb5b3,
+        type: 3}
+      propertyPath: m_startAbilities.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: e64210670b03b7348989d12cfc77d349,
         type: 2}
     - target: {fileID: 23292072778592057, guid: 5a491584865a2a349af977b3246bb5b3,
         type: 3}
@@ -855,6 +893,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800197542082759688, guid: 1c78b2cb935048e47b3fcdce61762b7e,
+        type: 3}
+      propertyPath: m_abilities.Array.data[3]
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
