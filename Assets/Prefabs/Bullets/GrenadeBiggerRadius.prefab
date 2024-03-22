@@ -13,6 +13,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: GrenadeBiggerRadius
       objectReference: {fileID: 0}
+    - target: {fileID: 3405764804233877491, guid: a8da07e091a5d1b4891557be2a03b88c,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: eb553146281da264db8a906b58e17303,
+        type: 2}
+    - target: {fileID: 4895448411824556604, guid: a8da07e091a5d1b4891557be2a03b88c,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: eb553146281da264db8a906b58e17303,
+        type: 2}
     - target: {fileID: 5991834930846647643, guid: a8da07e091a5d1b4891557be2a03b88c,
         type: 3}
       propertyPath: m_explosionRange
