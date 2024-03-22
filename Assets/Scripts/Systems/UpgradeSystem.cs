@@ -9,6 +9,9 @@ using Random = UnityEngine.Random;
 
 public class UpgradeSystem : MonoBehaviour {
     [SerializeField] private AbilityBase[] m_startAbilities;
+    [SerializeField] private bool m_healAfterUpgrade = false;
+    [SerializeField] private float m_healAmount = 25.0f;
+
     private bool m_status = false;
     private AbilityBase[] m_upgradableAbilites = new AbilityBase[3];
     private AbilityHolder m_abilityHolder;
@@ -101,7 +104,12 @@ public class UpgradeSystem : MonoBehaviour {
         UpgradeAbility(ability);
         Disable();
         OnCloseWindow?.Invoke();
+
         m_abilityHolder.gameObject.GetComponent<PlayerInput>().enabled = true;
+
+        if (m_healAfterUpgrade && m_abilityHolder.gameObject.TryGetComponent<HealthComponent>(out HealthComponent healthComponent)) {
+            healthComponent.Heal(m_healAmount);
+        }
     }
 
     private void UpgradeAbility(int ability) {
