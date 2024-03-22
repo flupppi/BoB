@@ -63,8 +63,12 @@ MonoBehaviour:
   m_enemyWaves:
   - m_enemies:
     - {fileID: 575925410145169392, guid: 1b396df208c0af44db13ae8d9f6a347e, type: 3}
+    - {fileID: 575925410145169392, guid: 1b396df208c0af44db13ae8d9f6a347e, type: 3}
+    - {fileID: 575925410145169392, guid: 1b396df208c0af44db13ae8d9f6a347e, type: 3}
     m_enemyPositions:
     - {x: 5, y: 1, z: 0}
+    - {x: 8, y: 1, z: 0}
+    - {x: 10, y: 1, z: 0}
   - m_enemies:
     - {fileID: 5962132032059053824, guid: 15d7e19987631b842bf2e70b30f4aae0, type: 3}
     m_enemyPositions:
