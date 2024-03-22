@@ -18,8 +18,9 @@ public class BigEnemyBrain : EnemyBrain
     public bool DoneAttack1 { get; set; } = false;
     public bool DoneAttack2 { get; set; } = false;
     public bool Attack { get; set; } = false;
-    void Start()
-    {
+    public GameObject healthpack;
+    void Start() {
+        healthComponent.OnDeath += () => Instantiate(healthpack, transform.position, Quaternion.identity);
         healthComponent.OnDeath += () => Destroy(gameObject);
         stateMachine = new StateMachine();
 

@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7160483178707424147}
   - component: {fileID: 7416786158965502999}
   - component: {fileID: 5978878631322596532}
-  - component: {fileID: 182682071468538823}
-  - component: {fileID: 5991834930846647643}
+  - component: {fileID: 7067350296230205666}
+  - component: {fileID: 1102305701061590195}
   m_Layer: 29
   m_Name: Grenade
   m_TagString: Untagged
@@ -114,7 +114,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &182682071468538823
+--- !u!136 &7067350296230205666
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,11 +133,11 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.5
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5991834930846647643
+--- !u!114 &1102305701061590195
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,9 +151,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speed: 10
   m_damage: 30
-  m_maxLifeTime: 6
+  m_maxLifeTime: 3
   m_isBouncy: 1
-  m_bounciness: 0.695
+  m_bounciness: 1
   m_useGravity: 1
   m_maxCollisions: 5
   m_explosion: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8063850777932765124}
-  - component: {fileID: 3446724107020559702}
+  - component: {fileID: 5834706395017793705}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -196,14 +196,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8100048540106771705}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &3446724107020559702
+--- !u!135 &5834706395017793705
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3879590356379500756}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 9d2194492b95f4a47909bdc47abf4117, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

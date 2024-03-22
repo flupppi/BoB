@@ -238,6 +238,8 @@ MonoBehaviour:
   beamDelay: 0.25
   muzzlePoint: {fileID: 6789421078619238669}
   beamMaxLength: 150
+  healthpack: {fileID: 8396780118589956143, guid: df359c245ba9b2a47934f3e8ee531e58,
+    type: 3}
 --- !u!114 &2372752073838770418
 MonoBehaviour:
   m_ObjectHideFlags: 0
