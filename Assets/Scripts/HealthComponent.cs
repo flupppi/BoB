@@ -16,8 +16,12 @@ public class HealthComponent : MonoBehaviour
     public float MaxHealth => m_MaxHealth;
     public float Health {
         get => m_currentHealth;
-        set => m_currentHealth = Mathf.Clamp(value, 0, m_MaxHealth);
+        private set {
+            m_currentHealth = Mathf.Clamp(value, 0, m_MaxHealth);
+            OnHealthChange?.Invoke();
+        }
     }
+
     public bool Invincible {
         get => m_isInvincible;
         set => m_isInvincible = value;
@@ -43,12 +47,17 @@ public class HealthComponent : MonoBehaviour
         Debug.Log("Enemy got damaged");
         if (!m_isInvincible) {
             Health -= damage;
-            OnHealthChange?.Invoke();
         }
 
         if (Health <= 0 && !m_isDead) {
             m_isDead = true;
             OnDeath?.Invoke();
+        }
+    }
+
+    public void Heal(float amount) {
+        if (!m_isDead) {
+            Health += amount;
         }
     }
 

@@ -83,6 +83,10 @@ public class Projectile : MonoBehaviour {
 
             Destroy(gameObject);
         }
+        else
+        {
+            Explode();
+        }
 
 
         m_collisions++;
@@ -91,6 +95,7 @@ public class Projectile : MonoBehaviour {
     private void Explode() {
         if (m_explosion != null) {
             //Instantiate(m_explosion, transform.position, Quaternion.identity);
+            m_explosion.transform.parent = null;
             m_explosion.Play();
         }
 
