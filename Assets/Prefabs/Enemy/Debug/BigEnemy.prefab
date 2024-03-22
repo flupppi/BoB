@@ -216,14 +216,14 @@ MonoBehaviour:
   healthComponent: {fileID: 2372752073838770418}
   navMeshAgent: {fileID: 4895689107596541899}
   animator: {fileID: 0}
-  attackRange: 50
+  attackRange: 75
   attackCooldown: 10
-  movementSpeed: 5
+  movementSpeed: 25
   target: {fileID: 0}
   distanceToTarget: Infinity
   attacking: 0
   readyToAttack: 1
-  aimMovementSpeed: 2.5
+  aimMovementSpeed: 15
   hitMaskBeam:
     serializedVersion: 2
     m_Bits: 268435456
@@ -231,13 +231,13 @@ MonoBehaviour:
   smallBeam: {fileID: 2748684264566106544}
   bigBeam: {fileID: 2477886302546895001}
   smallBeamDamage: 1
-  bigBeamDamage: 5
-  timeBetweenBeam: 1
+  bigBeamDamage: 10
+  timeBetweenBeam: 2.5
   smallBeamDuration: 1.5
-  bigBeamDuration: 3
-  beamDelay: 0.5
+  bigBeamDuration: 4
+  beamDelay: 0.25
   muzzlePoint: {fileID: 6789421078619238669}
-  beamMaxLength: 50
+  beamMaxLength: 150
 --- !u!114 &2372752073838770418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,9 +264,9 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
-  m_Acceleration: 8
+  m_Acceleration: 80
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 400
   m_StoppingDistance: 10
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1

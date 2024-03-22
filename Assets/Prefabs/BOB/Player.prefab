@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 315d5a0d77a2fe246a1811ceec68e858, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 25
   characterController: {fileID: 1945089913032369900}
   animator: {fileID: 1392211562646231533}
   lowerBody: {fileID: 3585471870551787753}
@@ -432,7 +432,7 @@ PrefabInstance:
     - target: {fileID: 237460632932788583, guid: e9e85f6b586cb5e48a99ad39639ec7d6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.999999
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 237460632932788583, guid: e9e85f6b586cb5e48a99ad39639ec7d6,
         type: 3}
