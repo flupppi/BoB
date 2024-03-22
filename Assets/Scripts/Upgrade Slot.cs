@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class UpgradeSlot : MonoBehaviour
 {
     public Image icon;
+    public Image nameIcon;
     public TMP_Text title;
     public TMP_Text description;
     public Image background;

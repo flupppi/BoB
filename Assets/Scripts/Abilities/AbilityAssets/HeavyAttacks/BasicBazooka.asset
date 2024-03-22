@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01149f4c8cdeea4d99fd5ad10aef0a4, type: 3}
   m_Name: BasicBazooka
   m_EditorClassIdentifier: 
-  abilityName: Bazooka
-  description: 
+  nameIcon: {fileID: -39178684, guid: 255b6567b4e22944e8671244eaf0270f, type: 3}
+  description: Shoots a Rocket Missile
   cooldown: 5
   activeTime: 0.2
   Upgrades:
@@ -21,6 +21,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 038b4d76b0f262e4a8a78d180e97234e, type: 2}
   - {fileID: 11400000, guid: 8e9f4a57528598f469ddf3706df00109, type: 2}
   animation: {fileID: 0}
-  icon: {fileID: 0}
+  abilityIcon: {fileID: -288766681, guid: 8beea08aa1ba2db4aa9f05b364b7bbc2, type: 3}
+  descriptionIcon: {fileID: 0}
   AbilitySlot: 1
   bullet: {fileID: 5080790508642040586, guid: f77afd477b902044d96039adc8b4f687, type: 3}

@@ -11,7 +11,7 @@ public class DeadState : IState
 
     public void OnEnter()
     {
-        brain.healthComponent.OnDeath += () => EnemyBrain.Destroy(brain.gameObject);
+        // brain.healthComponent.OnDeath += () => EnemyBrain.Destroy(brain.gameObject);
     }
 
     public void OnExit()

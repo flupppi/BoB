@@ -5,14 +5,13 @@ using UnityEngine.InputSystem;
 
 public class InputReader : MonoBehaviour
 {
-    [SerializeField]
-    private float speed;
-    [SerializeField]
-    private CharacterController characterController;
-    [SerializeField]
-    private float controllerDeadZone = 0.1f;
-    [SerializeField]
-    private float rotateSmoothing = 1000f;
+    [SerializeField] private float speed;
+    [SerializeField] private CharacterController characterController;
+    [SerializeField] private Animator animator;
+    [SerializeField] private GameObject lowerBody;
+    [SerializeField] private GameObject upperBody;
+    [SerializeField] private float controllerDeadZone = 0.1f;
+    [SerializeField] private float rotateSmoothing = 1000f;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
     private float gravityValue = -9.81f;
@@ -50,6 +49,14 @@ public class InputReader : MonoBehaviour
         else if (context.canceled)
         {
             Menu = false;
+        }
+        if (Menu = true)
+        {
+            MenuManager.ShowMenu("Options");
+        }
+        else
+        {
+            MenuManager.ShowMenu("Game HUD");
         }
     }
 
@@ -141,6 +148,7 @@ public class InputReader : MonoBehaviour
     
     private void MovePlayer(){
         Vector3 movement =  new Vector3(MovementValue.x, 0, MovementValue.y);
+        
         characterController.Move(movement * speed * Time.fixedDeltaTime);
 
         playerVelocity.y += gravityValue * Time.fixedDeltaTime;

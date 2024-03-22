@@ -24,6 +24,7 @@ public class Projectile : MonoBehaviour {
     private CapsuleCollider m_collider;
     private int m_collisions;
     private PhysicMaterial m_physicsMaterial;
+    private bool isColliding;
 
     public Vector3 Direction { get; set; } = Vector3.forward;
 
@@ -60,6 +61,8 @@ public class Projectile : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider triggerCollider) {
+        if (isColliding) return;
+        isColliding = true;
 
         if (triggerCollider.gameObject.tag == "Enemy" && m_explodeOnTouch) {
             Explode();
@@ -80,6 +83,10 @@ public class Projectile : MonoBehaviour {
 
             Destroy(gameObject);
         }
+        else
+        {
+            Explode();
+        }
 
 
         m_collisions++;
@@ -88,13 +95,15 @@ public class Projectile : MonoBehaviour {
     private void Explode() {
         if (m_explosion != null) {
             //Instantiate(m_explosion, transform.position, Quaternion.identity);
+            m_explosion.transform.parent = null;
             m_explosion.Play();
         }
 
         Collider[] enemies = Physics.OverlapSphere(transform.position, m_explosionRange, m_layer);
 
         for (int i = 0; i < enemies.Length; i++) {
-            enemies[i].GetComponent<HealthComponent>().TakeDamage(m_damage);
+            if (enemies[i].GetComponent<HealthComponent>())
+                enemies[i].GetComponent<HealthComponent>().TakeDamage(m_damage);
 
             Rigidbody enemyRB = enemies[i].GetComponent<Rigidbody>();
             KinematicController kc = enemies[i].GetComponent<KinematicController>();
@@ -106,13 +115,6 @@ public class Projectile : MonoBehaviour {
 
         }
 
-        //MeshRenderer[] meshs = gameObject.GetComponentsInChildren<MeshRenderer>();
-
-        //foreach (MeshRenderer meshRenderer in meshs) {
-        //    meshRenderer.enabled = false;
-        //}
-
-        //gameObject.GetComponent<CapsuleCollider>().enabled = false;
         Destroy(gameObject);
     }
 

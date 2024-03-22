@@ -8,6 +8,7 @@ public class SmallEnemyBrain : EnemyBrain
     public float explosionsDamage = 50f;
     void Start()
     {
+        healthComponent.OnDeath += () => Destroy(gameObject);
         stateMachine = new StateMachine();
 
         //STATES

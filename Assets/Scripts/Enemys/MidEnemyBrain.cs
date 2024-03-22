@@ -5,6 +5,7 @@ public class MidEnemyBrain : EnemyBrain
 {
     void Start()
     {
+        healthComponent.OnDeath += () => Destroy(gameObject);
         stateMachine = new StateMachine();
 
         //STATES
