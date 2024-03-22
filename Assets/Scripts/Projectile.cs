@@ -14,6 +14,8 @@ public class Projectile : MonoBehaviour {
     [SerializeField] private int m_maxCollisions = 1;
 
     [SerializeField] private ParticleSystem m_explosion;
+    [SerializeField] private AudioSource m_explosionAudioSource;
+    [SerializeField] private AudioClip m_shotAudioClip;
     [SerializeField] private bool m_explosive;
     [SerializeField] private bool m_explodeOnTouch;
     [SerializeField] private float m_explosionForce;
@@ -29,6 +31,8 @@ public class Projectile : MonoBehaviour {
     public Vector3 Direction { get; set; } = Vector3.forward;
 
     void Start() {
+        AudioSource.PlayClipAtPoint(m_shotAudioClip, transform.position);
+
         m_rb = GetComponent<Rigidbody>();
         m_collider = GetComponent<CapsuleCollider>();
 
@@ -79,6 +83,7 @@ public class Projectile : MonoBehaviour {
             {
                 m_explosion.transform.parent = null;
                 m_explosion.Play();
+                AudioSource.PlayClipAtPoint(m_explosionAudioSource.clip, transform.position);
             }
 
             Destroy(gameObject);
@@ -97,6 +102,8 @@ public class Projectile : MonoBehaviour {
             //Instantiate(m_explosion, transform.position, Quaternion.identity);
             m_explosion.transform.parent = null;
             m_explosion.Play();
+            AudioSource.PlayClipAtPoint(m_explosionAudioSource.clip, transform.position);
+
         }
 
         Collider[] enemies = Physics.OverlapSphere(transform.position, m_explosionRange, m_layer);

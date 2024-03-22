@@ -129,6 +129,8 @@ MonoBehaviour:
   m_useGravity: 0
   m_maxCollisions: 1
   m_explosion: {fileID: 0}
+  m_explosionAudioSource: {fileID: 0}
+  m_shotAudioClip: {fileID: 8300000, guid: 38e422d51a291df4c8b692035b7dd4fc, type: 3}
   m_explosive: 0
   m_explodeOnTouch: 0
   m_explosionForce: 0
