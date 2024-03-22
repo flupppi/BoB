@@ -7,6 +7,7 @@ using UnityEngine;
 public class AbilityHolder : MonoBehaviour {
     [SerializeField] private AbilityBase[] m_abilities = new AbilityBase[5];
     [SerializeField] private Transform[] m_abilityLocations = new Transform[5];
+    [SerializeField] private Transform m_aimLocation;
     private float[] m_cooldowns = new float[5];
     private AbilityState m_currentState = AbilityState.Waiting;
     private InputReader m_inputReader;
@@ -15,6 +16,7 @@ public class AbilityHolder : MonoBehaviour {
 
     public AbilityBase[] Abilities => m_abilities;
     public Transform[] AbilityLocations => m_abilityLocations;
+    public Transform AimLocation => m_aimLocation;
     public float[] Cooldowns => m_cooldowns;
     public event Action<float[]> OnCooldownUpdate;
 
