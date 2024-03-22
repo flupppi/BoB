@@ -109,13 +109,6 @@ public class Projectile : MonoBehaviour {
 
         }
 
-        //MeshRenderer[] meshs = gameObject.GetComponentsInChildren<MeshRenderer>();
-
-        //foreach (MeshRenderer meshRenderer in meshs) {
-        //    meshRenderer.enabled = false;
-        //}
-
-        //gameObject.GetComponent<CapsuleCollider>().enabled = false;
         Destroy(gameObject);
     }
 
