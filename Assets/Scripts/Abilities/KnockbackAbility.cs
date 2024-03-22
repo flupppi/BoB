@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using System.Threading.Tasks;
 using UnityEngine;
+using Quaternion = UnityEngine.Quaternion;
+using Vector3 = UnityEngine.Vector3;
 
 [CreateAssetMenu]
 public class KnockbackAbility : AbilityBase {
@@ -14,14 +17,19 @@ public class KnockbackAbility : AbilityBase {
 
     [SerializeField] private ParticleSystem m_particleSystem;
 
+    private Transform m_aimLocation;
     private List<GameObject> enemiesHit = new List<GameObject>();
     public override void Activate(GameObject parent) {
         if (m_particleSystem) {
             m_particleSystem?.Play();
         }
-        
+
+        AbilityHolder abilityHolder = parent.GetComponent<AbilityHolder>();
+        if (!abilityHolder.AimLocation) return;
+        m_aimLocation = abilityHolder.AimLocation;
+
         enemiesHit.Clear();
-        Vector3 forward = parent.transform.TransformDirection(Vector3.forward);
+        Vector3 forward = m_aimLocation.forward;
 
         for (float currentAngle = 0.0f; currentAngle < m_maxAngleDegrees; currentAngle++)
         {
@@ -30,17 +38,18 @@ public class KnockbackAbility : AbilityBase {
             Debug.DrawRay(parent.transform.position, positiveRotatedVector * m_distance, Color.blue);
             Debug.DrawRay(parent.transform.position, negativeRotatedVector * m_distance, Color.blue);
             RaycastHit hit;
-            if (Physics.Raycast(parent.transform.position, positiveRotatedVector, out hit, m_distance, m_layer, QueryTriggerInteraction.Collide)) {
+            if (Physics.Raycast(m_aimLocation.position, positiveRotatedVector, out hit, m_distance, m_layer)) {
                OnHit(hit, positiveRotatedVector);
             }
 
-            if (Physics.Raycast(parent.transform.position, negativeRotatedVector, out hit, m_distance, m_layer, QueryTriggerInteraction.Collide)) {
+            if (Physics.Raycast(m_aimLocation.position, negativeRotatedVector, out hit, m_distance, m_layer)) {
                 OnHit(hit, negativeRotatedVector);
             }
         }
     }
 
     private void OnHit(RaycastHit hit, Vector3 direction) {
+        Debug.LogError("ENEMY HIT");
         if (!enemiesHit.Contains(hit.transform.gameObject) && hit.transform.gameObject.CompareTag("Enemy")) {
             Rigidbody enemyRB = hit.transform.GetComponent<Rigidbody>();
             KinematicController kc = hit.transform.GetComponent<KinematicController>();

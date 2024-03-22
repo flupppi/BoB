@@ -127,7 +127,7 @@ public class UpgradeSystem : MonoBehaviour {
 
         for (int i = 0; i < m_startAbilities.Length; i++)
         {
-            if (m_startAbilities[i].AbilitySlot == slot) {
+            if (m_startAbilities[i]?.AbilitySlot == slot) {
                 m_startAbilities[i] = null;
             }
         }
