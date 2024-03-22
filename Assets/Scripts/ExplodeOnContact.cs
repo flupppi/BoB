@@ -6,6 +6,7 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 [RequireComponent(typeof(Collider))]
 public class ExplodeOnContact : MonoBehaviour {
     [SerializeField] private ParticleSystem m_explosion;
+    [SerializeField] private AudioSource m_explosionAudioSource;
     [SerializeField] private float m_damage;
     [SerializeField] private float m_explosionRange;
     [SerializeField] private float m_explosionForce;
@@ -29,6 +30,7 @@ public class ExplodeOnContact : MonoBehaviour {
         if (m_explosion != null)
         {
             m_explosion.Play();
+            AudioSource.PlayClipAtPoint(m_explosionAudioSource.clip, transform.position);
         }
 
         Collider[] enemies = Physics.OverlapSphere(transform.position, m_explosionRange, m_layer);
