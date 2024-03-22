@@ -46,7 +46,7 @@ public class HealthComponent : MonoBehaviour
             OnHealthChange?.Invoke();
         }
 
-        if (Health <= 0) {
+        if (Health <= 0 && !m_isDead) {
             m_isDead = true;
             OnDeath?.Invoke();
         }
