@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEditor.Experimental.GraphView.GraphView;
 
-[RequireComponent(typeof(Collider))]
+//[RequireComponent(typeof(Collider))]
 public class ExplodeOnContact : MonoBehaviour {
     [SerializeField] private ParticleSystem m_explosion;
     [SerializeField] private AudioSource m_explosionAudioSource;
@@ -16,17 +16,30 @@ public class ExplodeOnContact : MonoBehaviour {
     private bool m_triggered;
     void Start() {
         m_collider = GetComponent<Collider>();
-        m_collider.isTrigger = true;
+        // m_collider.isTrigger = true;
     }
 
-    void OnTriggerEnter() {
-        if (m_triggered) return;
-        m_triggered = true;
-
-        Explode();
+    void OnTriggerEnter(Collider triggerCollider)
+    {
+        if (triggerCollider.gameObject.CompareTag("Enemy")) {
+            if (m_triggered) return;
+            m_triggered = true;
+            Explode();
+        }
+            
     }
 
-    private void Explode() {
+    //void OnCollisionEnter(Collision triggerCollider)
+    //{
+    //    if (m_triggered) return;
+    //    m_triggered = true;
+
+    //    if (triggerCollider.gameObject.CompareTag("Enemy"))
+    //        Explode();
+    //}
+
+    private void Explode()
+    {
         if (m_explosion != null)
         {
             m_explosion.Play();
@@ -37,7 +50,7 @@ public class ExplodeOnContact : MonoBehaviour {
 
         for (int i = 0; i < enemies.Length; i++)
         {
-            if(enemies[i].GetComponent<HealthComponent>())
+            if (enemies[i].GetComponent<HealthComponent>())
                 enemies[i].GetComponent<HealthComponent>().TakeDamage(m_damage);
 
             Rigidbody enemyRB = enemies[i].GetComponent<Rigidbody>();
@@ -52,6 +65,6 @@ public class ExplodeOnContact : MonoBehaviour {
         }
 
         Debug.Log("EXPLOSION");
-        Destroy(gameObject);
+        Destroy(gameObject.transform.parent.gameObject);
     }
 }

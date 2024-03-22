@@ -13,8 +13,5 @@ public class LandmineAbility : AbilityBase
 
         if (!abilityHolder.AbilityLocations[3]) return;
         GameObject spawnedBullet = Instantiate(landmine, abilityHolder.AbilityLocations[3].position, Quaternion.identity);
-
-        Projectile projectileComponent = spawnedBullet.GetComponent<Projectile>();
-        projectileComponent.Direction = abilityHolder.AbilityLocations[3].forward;
     }
 }

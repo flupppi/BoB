@@ -22,4 +22,4 @@ MonoBehaviour:
   abilityIcon: {fileID: -1081717364, guid: ab4cb832d91c9e643bedf214ec693365, type: 3}
   descriptionIcon: {fileID: 979460706, guid: ccb81b6caf07e1342a9008f0d3f2b92f, type: 3}
   AbilitySlot: 4
-  dashSpeed: 20
+  dashSpeed: 40
