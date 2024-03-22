@@ -3,7 +3,37 @@ guid: 6f74dc6927888224b85ad22b632ccae9
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ArenaBoden
+    second: {fileID: 2100000, guid: 165b70617ee7209418661fd4dc765f39, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fencing
+    second: {fileID: 2100000, guid: fd29a4497a5c6f74087b580441554d6b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: 5c4eec35b722ef64abd983f62a7e189c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HexagonialArena
+    second: {fileID: 2100000, guid: b7716971daf936b4c8dd384fbaad111b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 2ccaf546c66e8864b91ff608295cade5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane
+    second: {fileID: 2100000, guid: 87279fea7f7d2b44b99ac13c2ce8e88b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
