@@ -127,7 +127,7 @@ Material:
     - _Albedo_Color: {r: 1, g: 1, b: 1, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Emission_Color: {r: 1024, g: 887.4883, b: 0, a: 1}
+    - _Emission_Color: {r: 0.20069477, g: 0.1739397, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &5423513798166804072
 MonoBehaviour:
