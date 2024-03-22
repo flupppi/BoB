@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eab6b4119879214c8a867f5b4f07365, type: 3}
   m_Name: GrenadeCD
   m_EditorClassIdentifier: 
-  abilityName: GrenadeCD
-  description: Cooldown Reduction Grenade
+  nameIcon: {fileID: -1894258793, guid: bab5dc64296672f468d877ef8be362c0, type: 3}
+  description: Grenade with Lower Cooldown
   cooldown: 3
   activeTime: 0.1
   Upgrades: []
   animation: {fileID: 0}
-  icon: {fileID: 0}
+  abilityIcon: {fileID: 1593923451, guid: b3e895ed89c5a2048a95b9bb5b4ecb23, type: 3}
+  descriptionIcon: {fileID: -1532608837, guid: bf5d08f707550a64a91519960815f216, type: 3}
   AbilitySlot: 2
   bullet: {fileID: 219284826548497702, guid: a8da07e091a5d1b4891557be2a03b88c, type: 3}

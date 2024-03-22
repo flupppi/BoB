@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1449cd727f9ce42a8795a01766ebb1, type: 3}
   m_Name: KnockbackCD
   m_EditorClassIdentifier: 
-  abilityName: KnockbackCD
-  description: Knockback has lower Cooldown
+  nameIcon: {fileID: 1724272498, guid: f0e896af132e0ef4b8745d09121de392, type: 3}
+  description: Knockback Has a Lower Cooldown
   cooldown: 1.5
   activeTime: 0.2
   Upgrades: []
   animation: {fileID: 0}
-  icon: {fileID: 0}
+  abilityIcon: {fileID: -1353579045, guid: 5d2579c9137a2604ea30d60c1fb5ed8b, type: 3}
+  descriptionIcon: {fileID: 0}
   AbilitySlot: 3
   m_maxAngleDegrees: 45
   m_distance: 20
@@ -28,3 +29,4 @@ MonoBehaviour:
   m_layer:
     serializedVersion: 2
     m_Bits: 134217728
+  m_particleSystem: {fileID: 0}

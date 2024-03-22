@@ -20,6 +20,7 @@ public class BigEnemyBrain : EnemyBrain
     public bool Attack { get; set; } = false;
     void Start()
     {
+        healthComponent.OnDeath += () => Destroy(gameObject);
         stateMachine = new StateMachine();
 
         //STATES

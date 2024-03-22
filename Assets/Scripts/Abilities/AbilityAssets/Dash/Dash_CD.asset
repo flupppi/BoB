@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1565aea6d0eb83941837a93c7b924227, type: 3}
   m_Name: Dash_CD
   m_EditorClassIdentifier: 
-  abilityName: DashCD
-  description: Dash with lower Cooldown
+  nameIcon: {fileID: -2138764820, guid: d89f0929ba50a0f4ca97e6f14d6896fb, type: 3}
+  description: Dash with Lower Cooldown
   cooldown: 0.5
   activeTime: 0.3
   Upgrades: []
   animation: {fileID: 0}
-  icon: {fileID: 0}
+  abilityIcon: {fileID: 1277681608, guid: 48184139cba6b9b419a7d4309ee74609, type: 3}
+  descriptionIcon: {fileID: -1298651374, guid: 7306a45aee15c874aaeae8d279691534, type: 3}
   AbilitySlot: 4
   dashSpeed: 20
