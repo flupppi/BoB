@@ -156,12 +156,16 @@ public class InputReader : MonoBehaviour
 
         // Richtung der Bewegung überprüfen und lowerBody drehen
         if (movement != Vector3.zero) {
+            animator.SetBool("Move", true);
             Vector3 direction = Vector3.right * MovementValue.x + Vector3.forward * MovementValue.y;
             if(direction.sqrMagnitude > 0.0f){
                 Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
                 rotation *= Quaternion.Euler(0, -90, 0);
                 lowerBody.transform.rotation = Quaternion.RotateTowards(lowerBody.transform.rotation, rotation, rotateSmoothing * Time.fixedDeltaTime);
             }
+        }
+        else{
+            animator.SetBool("Move", false);
         }
     }
 
@@ -171,7 +175,8 @@ public class InputReader : MonoBehaviour
                 Vector3 direction = Vector3.right * AimValue.x + Vector3.forward * AimValue.y;
                 if(direction.sqrMagnitude > 0.0f){
                     Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
-                    transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, rotateSmoothing * Time.fixedDeltaTime);
+                    rotation *= Quaternion.Euler(0, -90, 0);
+                    upperBody.transform.rotation = Quaternion.RotateTowards(upperBody.transform.rotation, rotation, rotateSmoothing * Time.fixedDeltaTime);
                 }
             }
         }
@@ -189,8 +194,9 @@ public class InputReader : MonoBehaviour
 
     private void LookAt(Vector3 point)
     {
-        Vector3 heightCorrectedPoint = new Vector3(point.x, transform.position.y, point.z);
-        transform.LookAt(heightCorrectedPoint);
+        Vector3 heightCorrectedPoint = new Vector3(point.x, upperBody.transform.position.y, point.z);
+        upperBody.transform.LookAt(heightCorrectedPoint);
+        upperBody.transform.rotation *= Quaternion.Euler(0, -90, 0);
     }
 
     public void OnDeviceChange(PlayerInput input){

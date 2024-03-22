@@ -133,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   characterController: {fileID: 1945089913032369900}
-  animator: {fileID: 0}
+  animator: {fileID: 1392211562646231533}
   lowerBody: {fileID: 3585471870551787753}
   upperBody: {fileID: 5010792406657839851}
   controllerDeadZone: 0.1
@@ -557,6 +557,12 @@ PrefabInstance:
 --- !u!4 &700933713069178350 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3330310208461875351, guid: 12c450e4b151a7647ade6dbaca3a12ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 2850096879628146041}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1392211562646231533 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3809962859200711828, guid: 12c450e4b151a7647ade6dbaca3a12ba,
     type: 3}
   m_PrefabInstance: {fileID: 2850096879628146041}
   m_PrefabAsset: {fileID: 0}
