@@ -32,23 +32,23 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _AO_Texture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: a265ef67b8e4850459cea37dc8202db2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Albedo_Texture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: baf9cff0911851949b9d4d51cb038ca4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Emission_Texture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 7ff7fe7fa6bfc474696dfbba1cf48370, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Metallic_Texture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 7eee5e399d084d84caa07e0a78981b19, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal_Texture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 84d97e9ad9d13d148adf7c3f32f09e4d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Smoothness_Texture:
@@ -84,7 +84,7 @@ Material:
     - _DoubleSidedGIMode: 0
     - _DoubleSidedNormalMode: 2
     - _DstBlend: 0
-    - _Emission_Strength: 0
+    - _Emission_Strength: 700
     - _EnableBlendModePreserveSpecularLighting: 1
     - _EnableFogOnTransparent: 1
     - _ExcludeFromTUAndAA: 0
@@ -127,7 +127,7 @@ Material:
     - _Albedo_Color: {r: 1, g: 1, b: 1, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Emission_Color: {r: 0, g: 0, b: 0, a: 0}
+    - _Emission_Color: {r: 0.7490197, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &4250867679503071461
 MonoBehaviour:

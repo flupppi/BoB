@@ -25,9 +25,9 @@ MonoBehaviour:
   descriptionIcon: {fileID: 0}
   AbilitySlot: 3
   m_maxAngleDegrees: 45
-  m_distance: 20
-  m_force: 15
-  m_upwardsForce: 5
+  m_distance: 30
+  m_force: 60
+  m_upwardsForce: 10
   m_enableKinematicAfterTime: 1
   m_layer:
     serializedVersion: 2

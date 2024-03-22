@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1565aea6d0eb83941837a93c7b924227, type: 3}
   m_Name: Dash_CD
   m_EditorClassIdentifier: 
-  nameIcon: {fileID: -2138764820, guid: d89f0929ba50a0f4ca97e6f14d6896fb, type: 3}
+  nameIcon: {fileID: 21300000, guid: efb419b079f62b142a54b1536d50ff43, type: 3}
   description: Dash with Lower Cooldown
   cooldown: 0.5
   activeTime: 0.3
