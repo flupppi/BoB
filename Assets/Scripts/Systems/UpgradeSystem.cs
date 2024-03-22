@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Mathematics;
+using UnityEditor.Playables;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
@@ -32,17 +33,35 @@ public class UpgradeSystem : MonoBehaviour {
         Array.Clear(m_upgradableAbilites, 0, m_upgradableAbilites.Length);
         List<AbilityBase> abilityPool = new ();
 
-        for (int i = 0; i < m_startAbilities.Length; i++) {
-            if(m_startAbilities[i])
-                abilityPool.Add(m_startAbilities[i]);
+        AddStartAbilitiesToUpgradePool(abilityPool);
+        AddUpgradesOfCurrentAbilitiesToUpgradePool(abilityPool);
+
+        // Debug.LogError($"AbilityPool: {abilityPool.Count}" );
+
+        if (abilityPool.Count <= 3) {
+            for (int i = 0; i < abilityPool.Count; i++) {
+                m_upgradableAbilites[i] = abilityPool[i];
+            }
+        }
+        else {
+            List<int> randomNumbers = GetNewRandom(abilityPool.Count);
+            for (int i = 0; i < m_upgradableAbilites.Length; i++)
+            {
+                //int random =  Random.Range(0, abilityPool.Count);
+
+                m_upgradableAbilites[i] = abilityPool[randomNumbers[i]];
+            }
         }
 
+        return m_upgradableAbilites;
+    }
+
+    private void AddUpgradesOfCurrentAbilitiesToUpgradePool(List<AbilityBase> abilityPool) {
         if (m_abilityHolder != null) {
             foreach (AbilityBase currentAbility in m_abilityHolder.Abilities) {
                 if (currentAbility) {
                     // Debug.LogError($"Upgrades: {currentAbility.Upgrades.Length}");
-                    foreach (AbilityBase currentAbilityUpgrade in currentAbility.Upgrades)
-                    {
+                    foreach (AbilityBase currentAbilityUpgrade in currentAbility.Upgrades) {
                         if (currentAbilityUpgrade) {
                             abilityPool.Add(currentAbilityUpgrade);
                             // Debug.LogError($"{currentAbilityUpgrade.abilityName}");
@@ -51,19 +70,13 @@ public class UpgradeSystem : MonoBehaviour {
                 }
             }
         }
+    }
 
-        // Debug.LogError($"AbilityPool: {abilityPool.Count}" );
-
-        List<int> randomNumbers = GetNewRandom(abilityPool.Count);
-
-        for (int i = 0; i < m_upgradableAbilites.Length; i++) {
-            // Eventuell Checken ob kein Index doppelt vorhanden ist
-            //int random =  Random.Range(0, abilityPool.Count);
-            
-            m_upgradableAbilites[i] = abilityPool[randomNumbers[i]];
+    private void AddStartAbilitiesToUpgradePool(List<AbilityBase> abilityPool) {
+        for (int i = 0; i < m_startAbilities.Length; i++) {
+            if (m_startAbilities[i])
+                abilityPool.Add(m_startAbilities[i]);
         }
-
-        return m_upgradableAbilites;
     }
 
     private List<int> GetNewRandom(int max) {
@@ -97,10 +110,7 @@ public class UpgradeSystem : MonoBehaviour {
     }
 
     public void SelectAbility(int ability) {
-        int index = Array.IndexOf(m_startAbilities, m_upgradableAbilites[ability]);
-        if (index != -1) {
-            m_startAbilities[index] = null;
-        }
+        RemoveAbilitesFromStartPool(ability);
         UpgradeAbility(ability);
         Disable();
         OnCloseWindow?.Invoke();
@@ -110,6 +120,23 @@ public class UpgradeSystem : MonoBehaviour {
         if (m_healAfterUpgrade && m_abilityHolder.gameObject.TryGetComponent<HealthComponent>(out HealthComponent healthComponent)) {
             healthComponent.Heal(m_healAmount);
         }
+    }
+
+    private void RemoveAbilitesFromStartPool(int ability) {
+        AbilitySpecifier slot = m_upgradableAbilites[ability].AbilitySlot;
+
+        for (int i = 0; i < m_startAbilities.Length; i++)
+        {
+            if (m_startAbilities[i].AbilitySlot == slot) {
+                m_startAbilities[i] = null;
+            }
+        }
+        //int index = Array.IndexOf(m_startAbilities, m_upgradableAbilites[ability]);
+
+        //if (index != -1) {
+
+        //    m_startAbilities[index] = null;
+        //}
     }
 
     private void UpgradeAbility(int ability) {
