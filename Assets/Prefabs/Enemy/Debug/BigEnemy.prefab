@@ -216,7 +216,7 @@ MonoBehaviour:
   healthComponent: {fileID: 2372752073838770418}
   navMeshAgent: {fileID: 4895689107596541899}
   animator: {fileID: 0}
-  attackRange: 20
+  attackRange: 50
   attackCooldown: 10
   movementSpeed: 5
   target: {fileID: 0}
@@ -396,7 +396,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.5
+    widthMultiplier: 2
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -637,7 +637,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1.5
+    widthMultiplier: 5
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -773,7 +773,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.05
+    widthMultiplier: 0.25
     widthCurve:
       serializedVersion: 2
       m_Curve:

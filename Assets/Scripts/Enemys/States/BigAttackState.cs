@@ -59,46 +59,66 @@ public class BigAttackState : IState
     }
 
     private void SmallBeam(){
-        if(timerDuration  > 0f){
+        if(timerDuration > 0f){
+            brain.laserpointer.enabled = false;
             brain.smallBeam.enabled = true;
             timerDuration -= Time.deltaTime;
-            Ray ray  = new Ray(brain.muzzlePoint.position, brain.muzzlePoint.forward);
-            bool cast = Physics.Raycast(ray, out RaycastHit hit, brain.beamMaxLength, brain.hitMaskBeam);
-            Vector3 hitPosition = cast ? hit.point : brain.muzzlePoint.position + brain.muzzlePoint.forward * brain.beamMaxLength;
-            brain.smallBeam.SetPosition(0, brain.muzzlePoint.position);
+            
+            Vector3 start = brain.muzzlePoint.position;
+            Vector3 direction = brain.muzzlePoint.forward;
+            float radius = brain.smallBeam.startWidth / 2f; // Der Radius ist die Hälfte der Breite des Linerenderers
+            
+            RaycastHit hit;
+            bool cast = Physics.SphereCast(start, radius, direction, out hit, brain.beamMaxLength, brain.hitMaskBeam);
+            
+            Vector3 hitPosition = cast ? hit.point : start + direction * brain.beamMaxLength;
+            
+            brain.smallBeam.SetPosition(0, start);
             brain.smallBeam.SetPosition(1, hitPosition);
-
+            
             if(cast && hit.collider.TryGetComponent(out HealthComponent healthComponent)){
                 healthComponent.TakeDamage(brain.smallBeamDamage * Time.fixedDeltaTime);
             }
         }
         else{
+            brain.laserpointer.enabled = true;
             if(!brain.DoneAttack1) brain.DoneAttack1 = true;
             else if(!brain.DoneAttack2) brain.DoneAttack2 = true;
             brain.Attack = false;
         }
     }
 
+
     private void BigBeam(){
-        if(timerDuration  > 0f){
+        if(timerDuration > 0f){
+            brain.laserpointer.enabled = false;
             brain.bigBeam.enabled = true;
             timerDuration -= Time.deltaTime;
-            Ray ray  = new Ray(brain.muzzlePoint.position, brain.muzzlePoint.forward);
-            bool cast = Physics.Raycast(ray, out RaycastHit hit, brain.beamMaxLength, brain.hitMaskBeam);
-            Vector3 hitPosition = cast ? hit.point : brain.muzzlePoint.position + brain.muzzlePoint.forward * brain.beamMaxLength;
-            brain.bigBeam.SetPosition(0, brain.muzzlePoint.position);
+            
+            Vector3 start = brain.muzzlePoint.position;
+            Vector3 direction = brain.muzzlePoint.forward;
+            float radius = brain.bigBeam.startWidth / 2f; // Der Radius ist die Hälfte der Breite des Linerenderers
+            
+            RaycastHit hit;
+            bool cast = Physics.SphereCast(start, radius, direction, out hit, brain.beamMaxLength, brain.hitMaskBeam);
+            
+            Vector3 hitPosition = cast ? hit.point : start + direction * brain.beamMaxLength;
+            
+            brain.bigBeam.SetPosition(0, start);
             brain.bigBeam.SetPosition(1, hitPosition);
-
+            
             if(cast && hit.collider.TryGetComponent(out HealthComponent healthComponent)){
                 healthComponent.TakeDamage(brain.bigBeamDamage * Time.fixedDeltaTime);
             }
         }
         else{
+            brain.laserpointer.enabled = true;
             brain.DoneAttack1 = false;
             brain.DoneAttack2 = false;
             brain.Attack = false;
         }
     }
+
 
     private void LaserPointer(){
         Ray ray  = new Ray(brain.muzzlePoint.position, brain.muzzlePoint.forward);
