@@ -45,7 +45,7 @@ public class MenuManager : MonoBehaviour
 
                 healthComponent.OnDeath += () =>
                 {
-                    SceneManager.LoadScene("Menu Scene");
+                    MenuManager.ShowMenu("Loose");
                 };
 
                 abilityHolder.OnCooldownUpdate += (cooldowns) =>
@@ -96,7 +96,7 @@ public class MenuManager : MonoBehaviour
             // Add events to roundSystem
             if (roundSystem)
             {
-                roundSystem.OnFinish += (() => SceneManager.LoadScene("Menu Scene"));
+                roundSystem.OnFinish += (() => MenuManager.ShowMenu("Win"));
             }
 
         if (isInGame)
