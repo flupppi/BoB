@@ -345,8 +345,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dc1261a4a90ca6043b6138bec74a5d79, type: 2}
   - {fileID: 11400000, guid: 16c7f84c60e5cda49bf7df5c5b62cf8e, type: 2}
   m_abilityLocations:
-  - {fileID: 3046339421530962053}
   - {fileID: 608715081540029887}
+  - {fileID: 3046339421530962053}
   - {fileID: 3046339421530962053}
   - {fileID: 608715081540029887}
   - {fileID: 0}
