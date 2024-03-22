@@ -153,6 +153,16 @@ public class InputReader : MonoBehaviour
 
         playerVelocity.y += gravityValue * Time.fixedDeltaTime;
         characterController.Move(playerVelocity * Time.fixedDeltaTime);
+
+        // Richtung der Bewegung überprüfen und lowerBody drehen
+        if (movement != Vector3.zero) {
+            Vector3 direction = Vector3.right * MovementValue.x + Vector3.forward * MovementValue.y;
+            if(direction.sqrMagnitude > 0.0f){
+                Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
+                rotation *= Quaternion.Euler(0, -90, 0);
+                lowerBody.transform.rotation = Quaternion.RotateTowards(lowerBody.transform.rotation, rotation, rotateSmoothing * Time.fixedDeltaTime);
+            }
+        }
     }
 
     private void RotatePlayer(){
