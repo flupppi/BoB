@@ -253,8 +253,8 @@ MonoBehaviour:
   healthComponent: {fileID: 5377007622349409980}
   navMeshAgent: {fileID: 6385933685423012566}
   animator: {fileID: 3722733243286256137}
-  attackRange: 2
-  attackCooldown: 3
+  attackRange: 7.5
+  attackCooldown: 1.5
   movementSpeed: 5
   target: {fileID: 0}
   distanceToTarget: Infinity
