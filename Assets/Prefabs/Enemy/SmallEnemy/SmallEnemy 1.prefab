@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4551613638891369293}
-  - component: {fileID: 6766357227579051963}
   - component: {fileID: 1611713747268245376}
   - component: {fileID: 4860943327797843761}
   - component: {fileID: 4557334855933645335}
   - component: {fileID: 3865636023102401889}
   - component: {fileID: 3148367049162960557}
+  - component: {fileID: 2154961868696576115}
   m_Layer: 27
   m_Name: SmallEnemy 1
   m_TagString: Enemy
@@ -38,27 +38,6 @@ Transform:
   - {fileID: 4402517060364462335}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &6766357227579051963
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5825183167029564184}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 4.169015, y: 4.380734, z: 6.888652}
-  m_Center: {x: 0.07167864, y: 1.690367, z: -0.8863063}
 --- !u!114 &1611713747268245376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,7 +53,7 @@ MonoBehaviour:
   healthComponent: {fileID: 4860943327797843761}
   navMeshAgent: {fileID: 4557334855933645335}
   animator: {fileID: 175096308646005264}
-  attackRange: 5
+  attackRange: 10
   attackCooldown: 100
   movementSpeed: 10
   target: {fileID: 0}
@@ -83,7 +62,7 @@ MonoBehaviour:
   readyToAttack: 1
   explosionsEffekt: {fileID: 417761080263594737, guid: 7800b8f6b712bfe49bd663eeb3ebe1e4,
     type: 3}
-  explosionsRadius: 5
+  explosionsRadius: 10
   explosionsDamage: 50
 --- !u!114 &4860943327797843761
 MonoBehaviour:
@@ -99,7 +78,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MaxHealth: 1
   m_currentHealth: 0
-  m_isDead: 1
+  m_isDead: 0
 --- !u!195 &4557334855933645335
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -164,6 +143,29 @@ MonoBehaviour:
   m_autoEnable: 1
   m_autoEnableTime: 0.5
   m_maxTimeToEnable: 1.5
+--- !u!136 &2154961868696576115
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5825183167029564184}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Height: 10
+  m_Direction: 1
+  m_Center: {x: 0, y: 5, z: 0}
 --- !u!1001 &1396792140634980833
 PrefabInstance:
   m_ObjectHideFlags: 0
