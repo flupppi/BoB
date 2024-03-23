@@ -99,13 +99,23 @@ public class MenuManager : MonoBehaviour
             if (roundSystem) {
                 CountdownMenu countdown = (CountdownMenu)SearchMenu("Countdown Menu");
                 roundSystem.OnRoundStart += (x) => hud.round.text = $"Round {x+1}";
-                roundSystem.OnFinish += (() => MenuManager.ShowMenu("Win"));
+                roundSystem.OnFinish += (() => {
+                    MenuManager.ShowMenu("Win");
+                    roundSystem.m_gameTimer.StopTimer();
+                    OptionsMenu menu = (OptionsMenu) SearchMenu("Options");
+                    menu.endTimer.text = roundSystem.m_gameTimer.EndTimer.ToString("0.00");
+                });
 
-                roundSystem.OnCountdownStart += () => ToggleMenuAdditively("Countdown Menu");
+                //ToggleMenuAdditively("Countdown Menu");
+                roundSystem.OnCountdownStart += () => {
+                    // ShowMenu("Game HUD");
+                    ToggleMenuAdditively("Countdown Menu");
+                };
+                // roundSystem.OnCountdownStart += () => Debug.LogError("Counter start");
                 roundSystem.OnCountdownChange += (time) => countdown.SetCountdownImage(time);
-                roundSystem.OnCountdownEnd += () => ToggleMenuAdditively("Countdown Menu");
+                roundSystem.OnCountdownEnd += () => ShowMenu("Game HUD");
 
-            roundSystem.m_gameTimer.OnTimeChange += (time) => hud.timer.text = time.ToString("0.00");
+                roundSystem.m_gameTimer.OnTimeChange += (time) => hud.timer.text = time.ToString("0.00");
             }
 
         if (isInGame)

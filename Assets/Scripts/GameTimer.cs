@@ -7,6 +7,7 @@ public class GameTimer : MonoBehaviour {
     private bool started;
     private float timer;
     public event Action<float> OnTimeChange;
+    public float EndTimer => timer;
 
     public void StartTimer() {
         started = true;

@@ -14,6 +14,5 @@ public class AbilityBase : ScriptableObject
     public Sprite abilityIcon;
     public Sprite descriptionIcon;
     public AbilitySpecifier AbilitySlot;
-
     public virtual void Activate(GameObject parent) {}
 }
