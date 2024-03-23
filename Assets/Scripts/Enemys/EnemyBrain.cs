@@ -19,6 +19,14 @@ public abstract class EnemyBrain : MonoBehaviour
     {
         stateMachine.Tick(); // Aktualisierung der State Machine in jedem Frame
         distanceToTarget = Vector3.Distance(target.position, transform.position);
+
+        if(animator != null){
+            foreach (AnimatorControllerParameter param in animator.parameters)
+            {
+                if (param.name == "MovementSpeed")
+                 animator.SetFloat(param.name, navMeshAgent.speed);
+            }
+        }
     }
     public void InvokeResetAttack()
     {

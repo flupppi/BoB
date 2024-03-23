@@ -6,6 +6,7 @@ using UnityEngine;
 public class RoundSystem : MonoBehaviour {
     [SerializeField] private SpawnerSystem m_spawnerSystem;
     [SerializeField] private UpgradeSystem m_upgradeSystem;
+    [SerializeField] private GameTimer m_gameTimer;
     [SerializeField] private GameObject m_spawnDecals;
     private int m_maxRounds;
     private int m_currentRound = 0;
@@ -33,6 +34,10 @@ public class RoundSystem : MonoBehaviour {
             return false;
 
         Status = RoundStatus.Started;
+
+        if (m_currentRound == 0) {
+            m_gameTimer.StartTimer();
+        }
 
         // Spawn wave and get enemies
         m_spawnerSystem.SpawnNextWave();
