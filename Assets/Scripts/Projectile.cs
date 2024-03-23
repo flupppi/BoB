@@ -27,6 +27,7 @@ public class Projectile : MonoBehaviour {
     private int m_collisions;
     private PhysicMaterial m_physicsMaterial;
     private bool isColliding;
+    private bool exploded;
 
     public Vector3 Direction { get; set; } = Vector3.forward;
 
@@ -75,7 +76,7 @@ public class Projectile : MonoBehaviour {
         if (triggerCollider.gameObject.tag == "Enemy" && !m_explosive) {
             triggerCollider.gameObject.GetComponent<HealthComponent>()?.TakeDamage(m_damage);
 
-            
+
         }
 
         if (!m_explosive) {
@@ -98,6 +99,9 @@ public class Projectile : MonoBehaviour {
     }
 
     private void Explode() {
+        if (exploded) return;
+        exploded = true;
+
         if (m_explosion != null) {
             //Instantiate(m_explosion, transform.position, Quaternion.identity);
             m_explosion.transform.parent = null;
@@ -109,8 +113,11 @@ public class Projectile : MonoBehaviour {
         Collider[] enemies = Physics.OverlapSphere(transform.position, m_explosionRange, m_layer);
 
         for (int i = 0; i < enemies.Length; i++) {
-            if (enemies[i].GetComponent<HealthComponent>())
+            if (enemies[i].GetComponent<HealthComponent>()) {
                 enemies[i].GetComponent<HealthComponent>().TakeDamage(m_damage);
+                // Debug.LogError($"Damage {i}: {m_damage}, Health: {enemies[i].GetComponent<HealthComponent>().Health}");
+            }
+                
 
             Rigidbody enemyRB = enemies[i].GetComponent<Rigidbody>();
             KinematicController kc = enemies[i].GetComponent<KinematicController>();

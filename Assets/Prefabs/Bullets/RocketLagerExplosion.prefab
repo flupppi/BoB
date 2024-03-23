@@ -9876,12 +9876,12 @@ PrefabInstance:
     - target: {fileID: 5268805529684569123, guid: f77afd477b902044d96039adc8b4f687,
         type: 3}
       propertyPath: m_explodeOnTouch
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5268805529684569123, guid: f77afd477b902044d96039adc8b4f687,
         type: 3}
       propertyPath: m_explosionRange
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6459074769079548728, guid: f77afd477b902044d96039adc8b4f687,
         type: 3}

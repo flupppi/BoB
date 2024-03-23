@@ -25,3 +25,6 @@ MonoBehaviour:
   descriptionIcon: {fileID: 0}
   AbilitySlot: 1
   bullet: {fileID: 5080790508642040586, guid: f77afd477b902044d96039adc8b4f687, type: 3}
+  m_layer:
+    serializedVersion: 2
+    m_Bits: 134217728

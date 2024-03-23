@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BazookaCD
   m_EditorClassIdentifier: 
   nameIcon: {fileID: -39178684, guid: 255b6567b4e22944e8671244eaf0270f, type: 3}
-  description: Lower Cooldown
+  description: Cooldown Reduction (LT)
   cooldown: 3
   activeTime: 0.2
   Upgrades: []
@@ -22,3 +22,6 @@ MonoBehaviour:
   descriptionIcon: {fileID: 0}
   AbilitySlot: 1
   bullet: {fileID: 5080790508642040586, guid: f77afd477b902044d96039adc8b4f687, type: 3}
+  m_layer:
+    serializedVersion: 2
+    m_Bits: 134217728

@@ -15040,7 +15040,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9519f082a0f996e448a6016636bbe593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: 15
+  m_speed: 25
   m_damage: 50
   m_maxLifeTime: 5
   m_isBouncy: 0
@@ -15051,9 +15051,9 @@ MonoBehaviour:
   m_explosionAudioSource: {fileID: 2127510918436570614}
   m_shotAudioClip: {fileID: 8300000, guid: 38e422d51a291df4c8b692035b7dd4fc, type: 3}
   m_explosive: 1
-  m_explodeOnTouch: 0
-  m_explosionForce: 100
-  m_explosionRange: 3
+  m_explodeOnTouch: 1
+  m_explosionForce: 200
+  m_explosionRange: 7
   m_layer:
     serializedVersion: 2
     m_Bits: 134217728
