@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: 3e651d5fdf4a5b944b11f45881c3fa4c
+guid: fe7213b395436b94c99fae4edb4bee7f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pojo's Metal Shader_v2
+    second: {fileID: 2100000, guid: 32f0ab40065da4c499fe2b6fd557e70e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pojo's Metal Shader_v2.001
+    second: {fileID: 2100000, guid: 9ea1171921119274f80a5dacd24156e5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -35,7 +45,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.075
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -90,7 +100,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.00075
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
