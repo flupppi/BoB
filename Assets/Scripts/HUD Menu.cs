@@ -42,6 +42,9 @@ public class HUDMenu : Menu
     [Range(0, 1)] 
     public float cooldownAOE;
 
+    public TMP_Text timer;
+    public TMP_Text round;
+
 
     public void Awake()
     {
