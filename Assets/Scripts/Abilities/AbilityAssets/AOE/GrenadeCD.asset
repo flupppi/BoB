@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eab6b4119879214c8a867f5b4f07365, type: 3}
   m_Name: GrenadeCD
   m_EditorClassIdentifier: 
-  nameIcon: {fileID: -1894258793, guid: bab5dc64296672f468d877ef8be362c0, type: 3}
-  description: Grenade with Lower Cooldown
+  nameIcon: {fileID: -94422775, guid: c7d3217b2eb4dba419603506aa140400, type: 3}
+  description: Cooldown Reduction (RB)
   cooldown: 3
   activeTime: 0.1
   Upgrades: []

@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 [CreateAssetMenu]
 public class Bazooka : AbilityBase
 {
     [SerializeField] private GameObject bullet;
+    [SerializeField] private LayerMask m_layer;
 
     private Transform m_aimLocation;
     public override void Activate(GameObject parent) {
@@ -30,8 +32,7 @@ public class Bazooka : AbilityBase
         RaycastHit hit;
         Vector3 target;
         Ray ray = new Ray(m_aimLocation.transform.position, m_aimLocation.forward);
-        if (Physics.Raycast(ray, out hit))
-        {
+        if (Physics.SphereCast(m_aimLocation.transform.position, 2.0f, m_aimLocation.forward, out hit, Mathf.Infinity, m_layer)) {
             target = hit.point;
         }
         else
