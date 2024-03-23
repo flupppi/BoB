@@ -1,9 +1,10 @@
 using System;
 using UnityEngine;
 
-public class MidEnemyBrain : EnemyBrain
+public class Boss : EnemyBrain
 {
     public LayerMask hitMask;
+    public float rollSpeed;
     public float damage = 10f;
     public float damageCooldown = 1f; // Abklingzeit zwischen den Schaden
     void Start()
@@ -13,7 +14,7 @@ public class MidEnemyBrain : EnemyBrain
 
         //STATES
         var idleState = new IdleState(this);
-        var attackState = new MidAttackState(this);
+        var attackState = new BossAttackState(this);
         var deadState = new DeadState(this);
 
         //TRANSITIONS
