@@ -657,6 +657,7 @@ GameObject:
   - component: {fileID: 7934754326675235270}
   - component: {fileID: 3884427048666409030}
   - component: {fileID: 5457101668593797479}
+  - component: {fileID: 1244135752841147344}
   m_Layer: 0
   m_Name: World
   m_TagString: Untagged
@@ -696,6 +697,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_spawnerSystem: {fileID: 7934754326675235270}
   m_upgradeSystem: {fileID: 0}
+  m_gameTimer: {fileID: 1244135752841147344}
   m_spawnDecals: {fileID: 3129143279804572142, guid: 4bb5fb20009146d4582293b8c53bf1af,
     type: 3}
   m_countdownStart: 3
@@ -994,6 +996,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1244135752841147344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582807479568203162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5245ec03b576fa9499098d9f56a14a9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1701241764279139292
 GameObject:
   m_ObjectHideFlags: 0
