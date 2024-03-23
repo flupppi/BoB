@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameIcon: {fileID: 727005493, guid: a59b5d26c2f1302428af6da3cdba52b9, type: 3}
   description: Drop a Landmine (LB)
-  cooldown: 5
+  cooldown: 3
   activeTime: 0.1
   Upgrades: []
   animation: {fileID: 0}

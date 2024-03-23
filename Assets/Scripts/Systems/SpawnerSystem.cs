@@ -26,6 +26,14 @@ public class SpawnerSystem : MonoBehaviour {
 
         m_currentWave++;
     }
+
+    public Vector3[] GetNextWaveEnemyPositions() {
+        int nextWave = m_currentWave  < m_enemyWaves.Length ? m_currentWave : -1;
+
+        if (nextWave == -1) return null;
+
+        return m_enemyWaves[nextWave].EnemyPosition;
+    }
 }
 
 [Serializable]

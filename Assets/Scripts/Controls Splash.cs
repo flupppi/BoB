@@ -34,7 +34,8 @@ public class ControlsSplash : Menu
     {
         base.OnMenuWillDisappear();
         Time.timeScale = 1.0f;
-        roundSystem.StartNextRound();
+        // roundSystem.StartNextRound();
+        roundSystem.StartCoroutine(roundSystem.StartCountdown());
     }
     private void OnContinueButtonClicked()
     {
