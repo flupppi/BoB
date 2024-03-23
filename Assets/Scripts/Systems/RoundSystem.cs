@@ -83,7 +83,8 @@ public class RoundSystem : MonoBehaviour {
         }
     }
 
-    void Start() {
+    void Start()
+    {
         m_maxRounds = m_spawnerSystem.WaveCount;
         OnUpgradePhaseStart += DestroyDeadEnemies;
         m_upgradeSystem.OnCloseWindow += () => StartNextRound();
@@ -92,7 +93,8 @@ public class RoundSystem : MonoBehaviour {
         OnUpgradePhaseStart += () => Debug.Log("Round finished");
         OnFinish += () => Debug.LogError("Finished");
 
-        StartNextRound();
+        MenuManager.ShowMenu("Controls Splash");
+        //StartNextRound();
     }
 
     void Update() {

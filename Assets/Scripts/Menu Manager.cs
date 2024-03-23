@@ -102,7 +102,10 @@ public class MenuManager : MonoBehaviour
             }
 
         if (isInGame)
+        {
             ShowMenu("Controls Splash");
+        }
+
         else if (!isInGame)
             ShowMenu("Main Menu");
     }
