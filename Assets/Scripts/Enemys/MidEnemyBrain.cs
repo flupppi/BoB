@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class MidEnemyBrain : EnemyBrain
 {
+    public LayerMask hitMask;
+    public float damage = 10f;
+    public float damageCooldown = 1f; // Abklingzeit zwischen den Schaden
     void Start()
     {
         healthComponent.OnDeath += () => Destroy(gameObject);
@@ -16,9 +19,7 @@ public class MidEnemyBrain : EnemyBrain
 
         //TRANSITIONS
         Any(deadState, Dead());
-        At(idleState, moveToTargetState, HasTarget());
-        At(moveToTargetState, attackState, InAttackRange());
-        At(attackState, moveToTargetState, NotInAttackRange());
+        At(idleState, attackState, HasTarget());
         
         //START STATE
         stateMachine.SetState(idleState);
@@ -26,9 +27,6 @@ public class MidEnemyBrain : EnemyBrain
         //CONDITIONS & FUNCTIONS
         Func<bool> HasTarget() => () => target != null;
         Func<bool> Dead() => () => healthComponent.Health <= 0f;
-        Func<bool> InAttackRange() => () => distanceToTarget <= attackRange;
-        Func<bool> NotInAttackRange() => () => distanceToTarget > attackRange;
-
 
         void At(IState from, IState to, Func<bool> condition) => stateMachine.AddTransition(from, to, condition);
         void Any(IState to, Func<bool> condition) => stateMachine.AddAnyTransition(to, condition);
