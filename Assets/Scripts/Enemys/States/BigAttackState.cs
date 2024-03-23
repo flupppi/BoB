@@ -16,7 +16,8 @@ public class BigAttackState : IState
     {
         brain.navMeshAgent.enabled = false;
         brain.laserpointer.enabled = true;
-
+        brain.navMeshAgent.speed = 0;
+        
         if(brain.DoneAttack1 && brain.DoneAttack2){
             timerDuration = brain.bigBeamDuration;
         }
@@ -60,6 +61,7 @@ public class BigAttackState : IState
 
     private void SmallBeam(){
         if(timerDuration > 0f){
+            brain.animator.SetBool("ShortBeam",true);
             brain.laserpointer.enabled = false;
             brain.smallBeam.enabled = true;
             timerDuration -= Time.deltaTime;
@@ -81,6 +83,7 @@ public class BigAttackState : IState
             }
         }
         else{
+            brain.animator.SetBool("ShortBeam",false);
             brain.laserpointer.enabled = true;
             if(!brain.DoneAttack1) brain.DoneAttack1 = true;
             else if(!brain.DoneAttack2) brain.DoneAttack2 = true;
@@ -91,6 +94,7 @@ public class BigAttackState : IState
 
     private void BigBeam(){
         if(timerDuration > 0f){
+            brain.animator.SetBool("LongBeam",true);
             brain.laserpointer.enabled = false;
             brain.bigBeam.enabled = true;
             timerDuration -= Time.deltaTime;
@@ -112,6 +116,7 @@ public class BigAttackState : IState
             }
         }
         else{
+            brain.animator.SetBool("LongBeam",false);
             brain.laserpointer.enabled = true;
             brain.DoneAttack1 = false;
             brain.DoneAttack2 = false;
