@@ -39,8 +39,8 @@ public class ExplodeOnContact : MonoBehaviour {
 
     private void Explode()
     {
-        if (m_explosion != null)
-        {
+        if (m_explosion != null) {
+            m_explosion.transform.parent = null;
             m_explosion.Play();
             AudioSource.PlayClipAtPoint(m_explosionAudioSource.clip, transform.position);
         }
