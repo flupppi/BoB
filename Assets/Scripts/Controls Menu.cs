@@ -19,7 +19,7 @@ public class ControlsMenu : Menu
 
 
         backToMainMenuButton.onClick.AddListener(BackToMainMenuButtonClicked);
-        volumeSlider.onValueChanged.AddListener(OnVolumeSliderValueChanged);
+        volumeSlider?.onValueChanged.AddListener(OnVolumeSliderValueChanged);
     }
 
     public void changeVolume(float newVolume)
