@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameTimer : MonoBehaviour {
     private bool started;
     private float timer;
-    private event Action<float> OnTimeChange;
+    public event Action<float> OnTimeChange;
 
     public void StartTimer() {
         started = true;
