@@ -40,7 +40,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Albedo_Texture:
-        m_Texture: {fileID: 2800000, guid: 1923c5f502de6364f931f6dee7bccdb5, type: 3}
+        m_Texture: {fileID: 2800000, guid: b77dac2351425ba4890178570aa16c15, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _AnisotropyMap:
@@ -48,7 +48,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseColorMap:
-        m_Texture: {fileID: 2800000, guid: 1923c5f502de6364f931f6dee7bccdb5, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1fedcf166d1151341bd5292e008f967a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BentNormalMap:
@@ -64,7 +64,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailMap:
-        m_Texture: {fileID: 2800000, guid: 63cc4798008fc4d47b8f765ecb8f0f91, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6460df75d159ac442a12225c96e63c89, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Emission_Texture:
@@ -88,11 +88,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 1923c5f502de6364f931f6dee7bccdb5, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1fedcf166d1151341bd5292e008f967a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskMap:
-        m_Texture: {fileID: 2800000, guid: a3d7fa809805ff046b7481e08db2094d, type: 3}
+        m_Texture: {fileID: 2800000, guid: c7f11547782f70b488ee1568312e8c9e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Metallic_Texture:
@@ -100,7 +100,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: 2b6b051116dab0642a10a3e3abfac72b, type: 3}
+        m_Texture: {fileID: 2800000, guid: e5711b11625ad7d469327ee3ce52fba3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMapOS:

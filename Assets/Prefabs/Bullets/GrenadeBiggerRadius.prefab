@@ -5015,6 +5015,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9098920892496411005, guid: a8da07e091a5d1b4891557be2a03b88c,
+        type: 3}
+      propertyPath: m_damage
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098920892496411005, guid: a8da07e091a5d1b4891557be2a03b88c,
+        type: 3}
+      propertyPath: m_explosionForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098920892496411005, guid: a8da07e091a5d1b4891557be2a03b88c,
+        type: 3}
+      propertyPath: m_explosionRange
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

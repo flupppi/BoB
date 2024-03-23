@@ -13,7 +13,6 @@ public class MidEnemyBrain : EnemyBrain
 
         //STATES
         var idleState = new IdleState(this);
-        var moveToTargetState = new MoveToTargetState(this);
         var attackState = new MidAttackState(this);
         var deadState = new DeadState(this);
 
