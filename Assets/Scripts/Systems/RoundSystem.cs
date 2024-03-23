@@ -23,6 +23,12 @@ public class RoundSystem : MonoBehaviour {
     public event Action<int> OnCountdownChange;
     public event Action OnCountdownEnd;
 
+    public AudioClip firstRoundAudioSource;
+    public AudioClip audioSource;
+    public AudioClip audioSource1;
+    public AudioClip audioSource2;
+    public AudioClip audioSource3;
+
     public RoundStatus Status {
         get => m_status;
         private set => m_status = value;
@@ -55,7 +61,6 @@ public class RoundSystem : MonoBehaviour {
 
         OnRoundStart?.Invoke(m_currentRound);
         m_currentRound++;
-        
         return true;
     }
 
