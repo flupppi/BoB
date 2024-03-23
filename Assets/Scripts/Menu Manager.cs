@@ -99,7 +99,12 @@ public class MenuManager : MonoBehaviour
             if (roundSystem) {
                 CountdownMenu countdown = (CountdownMenu)SearchMenu("Countdown Menu");
                 roundSystem.OnRoundStart += (x) => hud.round.text = $"Round {x+1}";
-                roundSystem.OnFinish += (() => MenuManager.ShowMenu("Win"));
+                roundSystem.OnFinish += (() => {
+                    MenuManager.ShowMenu("Win");
+                    roundSystem.m_gameTimer.StopTimer();
+                    OptionsMenu menu = (OptionsMenu) SearchMenu("Options");
+                    menu.endTimer.text = roundSystem.m_gameTimer.EndTimer.ToString("0.00");
+                });
 
                 //ToggleMenuAdditively("Countdown Menu");
                 roundSystem.OnCountdownStart += () => {
