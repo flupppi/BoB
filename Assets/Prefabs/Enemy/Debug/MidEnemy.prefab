@@ -275,6 +275,8 @@ MonoBehaviour:
   m_MaxHealth: 100
   m_currentHealth: 0
   m_isDead: 0
+  damageSound: {fileID: 8300000, guid: 0f0a5ae8f8d760844bad1d170caf954e, type: 3}
+  deathSound: {fileID: 8300000, guid: acb5e31456b1508409594b65f38ebae8, type: 3}
 --- !u!195 &6385933685423012566
 NavMeshAgent:
   m_ObjectHideFlags: 0
