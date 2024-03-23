@@ -15,7 +15,8 @@ public class Dash : AbilityBase
     {
         CharacterController characterController = parent.GetComponent<CharacterController>();
         GameObject lowerBody = GameObject.FindGameObjectWithTag("PlayerLowerBody");
-        
+
+        parent.GetComponent<ParticleSystemExecutor>().PlayStartParticle();
         float elapsedTime = 0f;
         while (elapsedTime < activeTime)
         {
