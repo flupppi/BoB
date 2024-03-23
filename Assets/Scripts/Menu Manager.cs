@@ -96,9 +96,16 @@ public class MenuManager : MonoBehaviour
             }
 
             // Add events to roundSystem
-            if (roundSystem)
-            {
+            if (roundSystem) {
+                CountdownMenu countdown = (CountdownMenu)SearchMenu("Countdown Menu");
+                roundSystem.OnRoundStart += (x) => hud.round.text = $"Round {x+1}";
                 roundSystem.OnFinish += (() => MenuManager.ShowMenu("Win"));
+
+                roundSystem.OnCountdownStart += () => ToggleMenuAdditively("Countdown Menu");
+                roundSystem.OnCountdownChange += (time) => countdown.SetCountdownImage(time);
+                roundSystem.OnCountdownEnd += () => ToggleMenuAdditively("Countdown Menu");
+
+            roundSystem.m_gameTimer.OnTimeChange += (time) => hud.timer.text = time.ToString("0.00");
             }
 
         if (isInGame)

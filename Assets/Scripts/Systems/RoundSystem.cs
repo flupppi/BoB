@@ -6,7 +6,7 @@ using UnityEngine;
 public class RoundSystem : MonoBehaviour {
     [SerializeField] private SpawnerSystem m_spawnerSystem;
     [SerializeField] private UpgradeSystem m_upgradeSystem;
-    [SerializeField] private GameTimer m_gameTimer;
+    [SerializeField] public GameTimer m_gameTimer;
     [SerializeField] private GameObject m_spawnDecals;
     private int m_maxRounds;
     private int m_currentRound = 0;
@@ -19,7 +19,9 @@ public class RoundSystem : MonoBehaviour {
     public event Action OnFinish;
     public event Action<int> OnRoundStart;
     public event Action OnUpgradePhaseStart;
+    public event Action OnCountdownStart;
     public event Action<int> OnCountdownChange;
+    public event Action OnCountdownEnd;
 
     public RoundStatus Status {
         get => m_status;
@@ -116,9 +118,10 @@ public class RoundSystem : MonoBehaviour {
     public IEnumerator StartCountdown() {
         // Spawn Decals
         SpawnDecals();
+        OnCountdownStart?.Invoke();
 
 
-        while (m_countdown > 0) {
+        while (m_countdown > -1) {
             
             OnCountdownChange?.Invoke(m_countdown);
             Debug.LogError($"Countdown: {m_countdown}");
@@ -128,6 +131,8 @@ public class RoundSystem : MonoBehaviour {
 
         // Despawn Decals
         DespawnDecals();
+        OnCountdownEnd?.Invoke();
+
         StartNextRound();
         m_countdown = m_countdownStart;
     }
