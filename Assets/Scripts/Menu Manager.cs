@@ -66,6 +66,7 @@ public class MenuManager : MonoBehaviour
                 upgradeSystem.OnOpenUpgradeWindow += (upgrades) =>
                 {
                     upgradeMenu.gameObject.SetActive(false);
+                    ToggleMenuAdditively("GoToCenter");
                     ToggleMenuAdditively("Upgrade");
 
 
@@ -85,10 +86,11 @@ public class MenuManager : MonoBehaviour
                 };
 
                 upgradeSystem.OnUpgrade += () => { SetAbilitiesIcons(hud); };
+                roundSystem.OnUpgradePhaseStart += GoToCenter;
 
 
 
-                upgradeMenu.slots[0].GetComponent<Button>().onClick = GenerateSelectButtonEvent(upgradeSystem, 0);
+            upgradeMenu.slots[0].GetComponent<Button>().onClick = GenerateSelectButtonEvent(upgradeSystem, 0);
                 upgradeMenu.slots[1].GetComponent<Button>().onClick = GenerateSelectButtonEvent(upgradeSystem, 1);
                 upgradeMenu.slots[2].GetComponent<Button>().onClick = GenerateSelectButtonEvent(upgradeSystem, 2);
             }
@@ -100,9 +102,15 @@ public class MenuManager : MonoBehaviour
             }
 
         if (isInGame)
-            ShowMenu("Game HUD");
+            ShowMenu("Controls Splash");
         else if (!isInGame)
             ShowMenu("Main Menu");
+    }
+
+    private void GoToCenter()
+    {
+        ToggleMenuAdditively("GoToCenter");
+        // Play Go To Center Visual Effect
     }
 
     private Button.ButtonClickedEvent GenerateSelectButtonEvent(UpgradeSystem upgradeSystem, int number) {
