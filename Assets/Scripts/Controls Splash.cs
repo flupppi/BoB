@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class ControlsSplash : Menu
 {
     public Button continueButton;
+    public RoundSystem roundSystem;
 
 
     public void Awake()
@@ -21,6 +22,7 @@ public class ControlsSplash : Menu
     public void Start()
     {
         base.Start();
+        roundSystem = FindObjectOfType<RoundSystem>();
     }
 
     public override void OnMenuDidAppear()
@@ -32,6 +34,7 @@ public class ControlsSplash : Menu
     {
         base.OnMenuWillDisappear();
         Time.timeScale = 1.0f;
+        roundSystem.StartNextRound();
     }
     private void OnContinueButtonClicked()
     {
