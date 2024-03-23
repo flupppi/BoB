@@ -1021,7 +1021,7 @@ MonoBehaviour:
   m_countdownStart: 3
   firstRoundAudioSource: {fileID: 8300000, guid: 8a9b134282d8be948a66083ae5960264,
     type: 3}
-  audioSource: {fileID: 8300000, guid: f2b351770288f5b4586941a21a7e1310, type: 3}
+  trainAudioClip: {fileID: 8300000, guid: ec262d24dc8c152479510fdd0907377d, type: 3}
   audioSource1: {fileID: 8300000, guid: c0fc13309a0bb0c42811957890d002e7, type: 3}
   audioSource2: {fileID: 8300000, guid: 5087b7a58837f2146b6b1dbeef0423ea, type: 3}
   audioSource3: {fileID: 0}
