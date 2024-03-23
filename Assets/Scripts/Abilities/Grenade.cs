@@ -12,9 +12,9 @@ public class Grenade : AbilityBase
         AbilityHolder abilityHolder = parent.GetComponent<AbilityHolder>();
 
         if (!abilityHolder.AbilityLocations[2]) return;
-        GameObject spawnedBullet = Instantiate(bullet, abilityHolder.AbilityLocations[1].position, Quaternion.LookRotation(abilityHolder.AbilityLocations[2].forward) * bullet.transform.localRotation);
+        GameObject spawnedBullet = Instantiate(bullet, abilityHolder.AbilityLocations[2].position, Quaternion.LookRotation(abilityHolder.AbilityLocations[2].forward) * bullet.transform.localRotation);
 
-        Projectile projectileComponent = spawnedBullet.GetComponent<Projectile>();
+        GrenadeProjectile projectileComponent = spawnedBullet.GetComponent<GrenadeProjectile>();
         projectileComponent.Direction = abilityHolder.AbilityLocations[2].forward;
     }
 }
