@@ -14,13 +14,13 @@ public class Dash : AbilityBase
    private IEnumerator PerformDash(GameObject parent)
     {
         CharacterController characterController = parent.GetComponent<CharacterController>();
-        GameObject upperBody = GameObject.FindGameObjectWithTag("PlayerUpperBody");
+        GameObject lowerBody = GameObject.FindGameObjectWithTag("PlayerLowerBody");
         
         float elapsedTime = 0f;
         while (elapsedTime < activeTime)
         {
             // Die lokale Blickrichtung des upperBody-Objekts um -90° verringern
-            Vector3 forwardDirection = upperBody.transform.TransformDirection(Vector3.forward);
+            Vector3 forwardDirection = lowerBody.transform.TransformDirection(Vector3.forward);
             forwardDirection = Quaternion.Euler(0, 90, 0) * forwardDirection;
 
             // Die Richtung des Dashes entsprechend der aktuellen lokalen Blickrichtung des upperBody-Objekts

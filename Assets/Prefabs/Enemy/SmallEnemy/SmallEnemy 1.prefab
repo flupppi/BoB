@@ -35,7 +35,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6775133454481629332}
+  - {fileID: 481571370033756898}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1611713747268245376
@@ -52,10 +52,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthComponent: {fileID: 4860943327797843761}
   navMeshAgent: {fileID: 4557334855933645335}
-  animator: {fileID: 7397498580678060849}
+  animator: {fileID: 0}
   attackRange: 8
   attackCooldown: 100
-  movementSpeed: 55
+  movementSpeed: 45
   target: {fileID: 0}
   distanceToTarget: Infinity
   attacking: 0
@@ -166,7 +166,7 @@ CapsuleCollider:
   m_Height: 10
   m_Direction: 1
   m_Center: {x: 0, y: 5, z: 0}
---- !u!1001 &6384468873591891143
+--- !u!1001 &5044452965511686658
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -174,75 +174,100 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4551613638891369293}
     m_Modifications:
-    - target: {fileID: 476303378583225427, guid: c3608eeb3db98774d92e6b815713f870,
+    - target: {fileID: 4661117462146797792, guid: b62a4ab7ed258ed4ba563919ab008e89,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 476303378583225427, guid: c3608eeb3db98774d92e6b815713f870,
+    - target: {fileID: 4661117462146797792, guid: b62a4ab7ed258ed4ba563919ab008e89,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.36
       objectReference: {fileID: 0}
-    - target: {fileID: 476303378583225427, guid: c3608eeb3db98774d92e6b815713f870,
+    - target: {fileID: 4661117462146797792, guid: b62a4ab7ed258ed4ba563919ab008e89,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 476303378583225427, guid: c3608eeb3db98774d92e6b815713f870,
+    - target: {fileID: 4661117462146797792, guid: b62a4ab7ed258ed4ba563919ab008e89,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: 476303378583225427, guid: c3608eeb3db98774d92e6b815713f870,
+    - target: {fileID: 4661117462146797792, guid: b62a4ab7ed258ed4ba563919ab008e89,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 476303378583225427, guid: c3608eeb3db98774d92e6b815713f870,
+    - target: {fileID: 4661117462146797792, guid: b62a4ab7ed258ed4ba563919ab008e89,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: -0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: 476303378583225427, guid: c3608eeb3db98774d92e6b815713f870,
+    - target: {fileID: 4661117462146797792, guid: b62a4ab7ed258ed4ba563919ab008e89,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 476303378583225427, guid: c3608eeb3db98774d92e6b815713f870,
+    - target: {fileID: 4661117462146797792, guid: b62a4ab7ed258ed4ba563919ab008e89,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 476303378583225427, guid: c3608eeb3db98774d92e6b815713f870,
+    - target: {fileID: 4661117462146797792, guid: b62a4ab7ed258ed4ba563919ab008e89,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: -90
       objectReference: {fileID: 0}
-    - target: {fileID: 476303378583225427, guid: c3608eeb3db98774d92e6b815713f870,
+    - target: {fileID: 4661117462146797792, guid: b62a4ab7ed258ed4ba563919ab008e89,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 997542690431557353, guid: c3608eeb3db98774d92e6b815713f870,
+    - target: {fileID: 5468580571151141466, guid: b62a4ab7ed258ed4ba563919ab008e89,
         type: 3}
       propertyPath: m_Name
-      value: Mech_Spider_Rigged2
+      value: Mech_Spider_Rigged3_with_Eye
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c3608eeb3db98774d92e6b815713f870, type: 3}
---- !u!4 &6775133454481629332 stripped
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5468580571151141466, guid: b62a4ab7ed258ed4ba563919ab008e89,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5090545930506306072}
+  m_SourcePrefab: {fileID: 100100000, guid: b62a4ab7ed258ed4ba563919ab008e89, type: 3}
+--- !u!4 &481571370033756898 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 476303378583225427, guid: c3608eeb3db98774d92e6b815713f870,
+  m_CorrespondingSourceObject: {fileID: 4661117462146797792, guid: b62a4ab7ed258ed4ba563919ab008e89,
     type: 3}
-  m_PrefabInstance: {fileID: 6384468873591891143}
+  m_PrefabInstance: {fileID: 5044452965511686658}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &7397498580678060849 stripped
+--- !u!1 &1001261676423307352 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5468580571151141466, guid: b62a4ab7ed258ed4ba563919ab008e89,
+    type: 3}
+  m_PrefabInstance: {fileID: 5044452965511686658}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5090545930506306072
 Animator:
-  m_CorrespondingSourceObject: {fileID: 4481927560862502902, guid: c3608eeb3db98774d92e6b815713f870,
-    type: 3}
-  m_PrefabInstance: {fileID: 6384468873591891143}
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001261676423307352}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 96b08af6ed3eb0a44954e45e7664f689, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

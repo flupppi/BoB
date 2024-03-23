@@ -255,7 +255,7 @@ MonoBehaviour:
   animator: {fileID: 3722733243286256137}
   attackRange: 7.5
   attackCooldown: 1.5
-  movementSpeed: 35
+  movementSpeed: 30
   target: {fileID: 0}
   distanceToTarget: Infinity
   attacking: 0

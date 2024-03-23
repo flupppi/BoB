@@ -218,12 +218,12 @@ MonoBehaviour:
   animator: {fileID: 0}
   attackRange: 75
   attackCooldown: 10
-  movementSpeed: 25
+  movementSpeed: 15
   target: {fileID: 0}
   distanceToTarget: Infinity
   attacking: 0
   readyToAttack: 1
-  aimMovementSpeed: 15
+  aimMovementSpeed: 5
   hitMaskBeam:
     serializedVersion: 2
     m_Bits: 268435456
@@ -232,9 +232,9 @@ MonoBehaviour:
   bigBeam: {fileID: 2477886302546895001}
   smallBeamDamage: 1
   bigBeamDamage: 10
-  timeBetweenBeam: 2.5
-  smallBeamDuration: 1.5
-  bigBeamDuration: 4
+  timeBetweenBeam: 2
+  smallBeamDuration: 1
+  bigBeamDuration: 3
   beamDelay: 0.25
   muzzlePoint: {fileID: 6789421078619238669}
   beamMaxLength: 150
