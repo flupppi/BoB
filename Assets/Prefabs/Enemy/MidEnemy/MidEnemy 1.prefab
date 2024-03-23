@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 6663947178324107549}
   - component: {fileID: 6315094284277011886}
   - component: {fileID: 8454625450359352307}
-  m_Layer: 0
+  m_Layer: 27
   m_Name: MidEnemy 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -185,7 +185,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8008833070381728730
 Transform:
   m_ObjectHideFlags: 0
