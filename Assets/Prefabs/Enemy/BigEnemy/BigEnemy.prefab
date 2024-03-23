@@ -230,12 +230,12 @@ MonoBehaviour:
   laserpointer: {fileID: 916912304207017740}
   smallBeam: {fileID: 8461905475809461714}
   bigBeam: {fileID: 5583373388765872175}
-  smallBeamDamage: 5
-  bigBeamDamage: 10
-  timeBetweenBeam: 2
+  smallBeamDamage: 7.5
+  bigBeamDamage: 15
+  timeBetweenBeam: 1.5
   smallBeamDuration: 1
   bigBeamDuration: 3
-  beamDelay: 0.25
+  beamDelay: 0.15
   muzzlePoint: {fileID: 4574038808618546078}
   beamMaxLength: 150
   healthpack: {fileID: 8396780118589956143, guid: df359c245ba9b2a47934f3e8ee531e58,
