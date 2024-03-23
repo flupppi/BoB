@@ -55,7 +55,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   attackRange: 8
   attackCooldown: 100
-  movementSpeed: 55
+  movementSpeed: 45
   target: {fileID: 0}
   distanceToTarget: Infinity
   attacking: 0
