@@ -25,7 +25,6 @@ public class MidAttackState : IState
 
     public void Tick()
     {
-        Debug.Log(brain.distanceToTarget);
         if (brain.navMeshAgent.destination != brain.target.position) // Ist aktulle Zielposition nicht gleich der Position des Ziels?
             brain.navMeshAgent.SetDestination(brain.target.position); // Setzen des NavMeshAgent-Ziels auf die Position des aktuellen Ziels
         if(brain.distanceToTarget <= brain.attackRange)
@@ -45,7 +44,7 @@ public class MidAttackState : IState
         {
             // Führe den Raycast aus
             RaycastHit hit;
-            if (Physics.Raycast(brain.transform.position, brain.transform.forward, out hit, brain.attackRange, brain.hitMask))
+            if (Physics.Raycast(brain.transform.position + new Vector3(0,3,0), brain.transform.forward, out hit, brain.attackRange, brain.hitMask))
             {
                 // Wenn der Raycast das Ziel trifft und es sich auf dem richtigen Layer befindet
                 // Rufe die Methode "DealDamage" auf dem getroffenen Objekt auf (falls es einen entsprechenden Schadenkomponenten hat)
