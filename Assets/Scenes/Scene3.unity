@@ -933,6 +933,11 @@ PrefabInstance:
       propertyPath: rotateSmoothing
       value: 250
       objectReference: {fileID: 0}
+    - target: {fileID: 3585471870551787753, guid: 113592f41c5a8ad41907f7c7b3b5678f,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerLowerBody
+      objectReference: {fileID: 0}
     - target: {fileID: 5268803003124856824, guid: 113592f41c5a8ad41907f7c7b3b5678f,
         type: 3}
       propertyPath: m_LocalRotation.w
