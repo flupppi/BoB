@@ -4916,7 +4916,7 @@ PrefabInstance:
     - target: {fileID: 219284826548497702, guid: a8da07e091a5d1b4891557be2a03b88c,
         type: 3}
       propertyPath: m_Name
-      value: GrenadeBiggerRadius
+      value: GrenadeMoreDamage
       objectReference: {fileID: 0}
     - target: {fileID: 800460064803253874, guid: a8da07e091a5d1b4891557be2a03b88c,
         type: 3}
@@ -5018,7 +5018,7 @@ PrefabInstance:
     - target: {fileID: 9098920892496411005, guid: a8da07e091a5d1b4891557be2a03b88c,
         type: 3}
       propertyPath: m_damage
-      value: 40
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 9098920892496411005, guid: a8da07e091a5d1b4891557be2a03b88c,
         type: 3}
@@ -5028,7 +5028,7 @@ PrefabInstance:
     - target: {fileID: 9098920892496411005, guid: a8da07e091a5d1b4891557be2a03b88c,
         type: 3}
       propertyPath: m_explosionRange
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

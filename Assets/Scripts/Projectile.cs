@@ -18,6 +18,7 @@ public class Projectile : MonoBehaviour {
     [SerializeField] private AudioClip m_shotAudioClip;
     [SerializeField] private bool m_explosive;
     [SerializeField] private bool m_explodeOnTouch;
+    [SerializeField] private bool m_explodeOnEnvironment = true;
     [SerializeField] private float m_explosionForce;
     [SerializeField] private float m_explosionRange;
     [SerializeField] private LayerMask m_layer;
@@ -91,7 +92,8 @@ public class Projectile : MonoBehaviour {
         }
         else
         {
-            Explode();
+            if(m_explodeOnEnvironment)
+                Explode();
         }
 
 
