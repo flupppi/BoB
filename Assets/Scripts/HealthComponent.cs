@@ -14,6 +14,9 @@ public class HealthComponent : MonoBehaviour
     public event Action OnHealthChange;
 
     public float MaxHealth => m_MaxHealth;
+    public AudioClip damageSound;
+    public AudioClip deathSound;
+    
     public float Health {
         get => m_currentHealth;
         private set {
@@ -46,10 +49,14 @@ public class HealthComponent : MonoBehaviour
     public void TakeDamage(float damage) {
         Debug.Log("Enemy got damaged");
         if (!m_isInvincible) {
+            if(Health - damage > 0 && damageSound != null)
+                AudioSource.PlayClipAtPoint(damageSound, transform.position);
             Health -= damage;
         }
 
         if (Health <= 0 && !m_isDead) {
+            if(deathSound != null)
+                AudioSource.PlayClipAtPoint(deathSound, transform.position);
             m_isDead = true;
             OnDeath?.Invoke();
         }
