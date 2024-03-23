@@ -24,7 +24,7 @@ public class RoundSystem : MonoBehaviour {
     public event Action OnCountdownEnd;
 
     public AudioClip firstRoundAudioSource;
-    public AudioClip audioSource;
+    public AudioClip trainAudioClip;
     public AudioClip audioSource1;
     public AudioClip audioSource2;
     public AudioClip audioSource3;
@@ -45,6 +45,10 @@ public class RoundSystem : MonoBehaviour {
 
         if (m_currentRound == 0) {
             m_gameTimer.StartTimer();
+        }
+        if (m_currentRound == 8)
+        {
+            AudioSource.PlayClipAtPoint(trainAudioClip, transform.position);
         }
 
         // Spawn wave and get enemies
