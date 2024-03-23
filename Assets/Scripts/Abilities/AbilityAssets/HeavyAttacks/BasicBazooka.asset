@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BasicBazooka
   m_EditorClassIdentifier: 
   nameIcon: {fileID: -39178684, guid: 255b6567b4e22944e8671244eaf0270f, type: 3}
-  description: Shoots a Rocket Missile
+  description: Shoot a Rocket (LT)
   cooldown: 5
   activeTime: 0.2
   Upgrades:
