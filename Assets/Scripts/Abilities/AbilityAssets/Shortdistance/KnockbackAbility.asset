@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: KnockbackAbility
   m_EditorClassIdentifier: 
   nameIcon: {fileID: 1724272498, guid: f0e896af132e0ef4b8745d09121de392, type: 3}
-  description: Pushes Enemies Away
-  cooldown: 3
+  description: Knockback enemies (LB)
+  cooldown: 3.3
   activeTime: 0.2
   Upgrades:
   - {fileID: 11400000, guid: 91d71235e01c9e04392e7c85cbe19c04, type: 2}
@@ -25,9 +25,9 @@ MonoBehaviour:
   descriptionIcon: {fileID: 0}
   AbilitySlot: 3
   m_maxAngleDegrees: 45
-  m_distance: 30
-  m_force: 60
-  m_upwardsForce: 10
+  m_distance: 35
+  m_force: 70
+  m_upwardsForce: 80
   m_enableKinematicAfterTime: 1
   m_layer:
     serializedVersion: 2

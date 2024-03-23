@@ -13,6 +13,7 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _DISABLE_SSR_TRANSPARENT
+  - _NORMALMAP
   - _NORMALMAP_TANGENT_SPACE
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -31,15 +32,15 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseColorMap:
-        m_Texture: {fileID: 2800000, guid: 52e2f64fc1b6dbb44a05573831a9b86c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6df1b79d11377a945abe7ed5a8776b3b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 6df1b79d11377a945abe7ed5a8776b3b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: 752c8853975ebe3439ca8f540f6b486a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6444521e16c57c044a1313672432fa01, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []

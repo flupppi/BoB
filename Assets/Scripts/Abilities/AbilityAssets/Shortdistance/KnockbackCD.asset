@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: KnockbackCD
   m_EditorClassIdentifier: 
   nameIcon: {fileID: 1724272498, guid: f0e896af132e0ef4b8745d09121de392, type: 3}
-  description: Knockback Has a Lower Cooldown
-  cooldown: 1.5
+  description: Cooldown Reduction (LB)
+  cooldown: 2
   activeTime: 0.2
   Upgrades: []
   animation: {fileID: 0}
@@ -22,9 +22,9 @@ MonoBehaviour:
   descriptionIcon: {fileID: 0}
   AbilitySlot: 3
   m_maxAngleDegrees: 45
-  m_distance: 30
-  m_force: 60
-  m_upwardsForce: 5
+  m_distance: 35
+  m_force: 70
+  m_upwardsForce: 80
   m_enableKinematicAfterTime: 1
   m_layer:
     serializedVersion: 2

@@ -3,7 +3,17 @@ guid: 00b1f24017bfa88479b39465cc906a39
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MechaBarrierRahmen
+    second: {fileID: 2100000, guid: 67a1269f0a4ea0644b41952a3d4f5458, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MechaBarrierSurface
+    second: {fileID: 2100000, guid: 908f293d7a8f5854d850e9169f7fc671, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

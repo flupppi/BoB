@@ -7,6 +7,9 @@ using UnityEngine;
 public class NormalShoot : AbilityBase {
     [SerializeField] private GameObject bullet;
 
+    [SerializeField]
+    private LayerMask m_layer;
+
     private Transform m_aimLocation;
     public override void Activate(GameObject parent) {
         AbilityHolder abilityHolder = parent.GetComponent<AbilityHolder>();
@@ -28,7 +31,8 @@ public class NormalShoot : AbilityBase {
         RaycastHit hit;
         Vector3 target;
         Ray ray = new Ray(m_aimLocation.transform.position, m_aimLocation.forward);
-        if (Physics.Raycast(ray, out hit)) {
+        //if (Physics.Raycast(ray, out hit)) {
+        if(Physics.SphereCast(m_aimLocation.transform.position, 2.0f, m_aimLocation.forward, out hit, Mathf.Infinity, m_layer)) {
             target = hit.point;
         }
         else {

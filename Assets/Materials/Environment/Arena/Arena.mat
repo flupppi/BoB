@@ -13,6 +13,7 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _DISABLE_SSR_TRANSPARENT
+  - _NORMALMAP
   - _NORMALMAP_TANGENT_SPACE
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -31,19 +32,29 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseColorMap:
-        m_Texture: {fileID: 2800000, guid: ca58dcd720aa1854d9c273dd2af5b95a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 80b1cd2e198317f45b76919f596221d5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 80b1cd2e198317f45b76919f596221d5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: 5fa6a570fddffcb4d962a645b85fb3d7, type: 3}
+        m_Texture: {fileID: 2800000, guid: a31877608bd57714a86730eab2bea675, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _AORemapMax: 0
+    - _AORemapMin: 0
+    - _MetallicRemapMax: 0
+    - _MetallicRemapMin: 0
+    - _SmoothnessRemapMax: 0.021517575
+    - _SmoothnessRemapMin: 0
     m_Colors: []
   m_BuildTextureStacks: []
 --- !u!114 &7307479362933049378

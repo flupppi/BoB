@@ -6,14 +6,19 @@ using UnityEngine;
 public class RoundSystem : MonoBehaviour {
     [SerializeField] private SpawnerSystem m_spawnerSystem;
     [SerializeField] private UpgradeSystem m_upgradeSystem;
+    [SerializeField] private GameObject m_spawnDecals;
     private int m_maxRounds;
     private int m_currentRound = 0;
     private int m_enemyCount = 0;
     private RoundStatus m_status = RoundStatus.UpgradePhase;
+    [SerializeField] private int m_countdownStart = 3;
+    private int m_countdown;
+    private List<GameObject> m_decals = new List<GameObject>();
 
     public event Action OnFinish;
     public event Action<int> OnRoundStart;
     public event Action OnUpgradePhaseStart;
+    public event Action<int> OnCountdownChange;
 
     public RoundStatus Status {
         get => m_status;
@@ -28,8 +33,6 @@ public class RoundSystem : MonoBehaviour {
             return false;
 
         Status = RoundStatus.Started;
-
-        // Vllt Countdown?
 
         // Spawn wave and get enemies
         m_spawnerSystem.SpawnNextWave();
@@ -83,16 +86,19 @@ public class RoundSystem : MonoBehaviour {
         }
     }
 
-    void Start() {
+    void Start()
+    {
         m_maxRounds = m_spawnerSystem.WaveCount;
         OnUpgradePhaseStart += DestroyDeadEnemies;
-        m_upgradeSystem.OnCloseWindow += () => StartNextRound();
+        m_upgradeSystem.OnCloseWindow += () => StartCoroutine(StartCountdown());
 
         OnRoundStart += (x) => Debug.Log($"Round {x} started");
         OnUpgradePhaseStart += () => Debug.Log("Round finished");
         OnFinish += () => Debug.LogError("Finished");
 
-        StartNextRound();
+        m_countdown = m_countdownStart;
+        MenuManager.ShowMenu("Controls Splash");
+        //StartNextRound();
     }
 
     void Update() {
@@ -100,6 +106,41 @@ public class RoundSystem : MonoBehaviour {
         if (AllEnemiesDead()) {
             EndRound();
         }
+    }
+
+    public IEnumerator StartCountdown() {
+        // Spawn Decals
+        SpawnDecals();
+
+
+        while (m_countdown > 0) {
+            
+            OnCountdownChange?.Invoke(m_countdown);
+            Debug.LogError($"Countdown: {m_countdown}");
+            m_countdown--;
+            yield return new WaitForSeconds(1);
+        }
+
+        // Despawn Decals
+        DespawnDecals();
+        StartNextRound();
+        m_countdown = m_countdownStart;
+    }
+
+    private void SpawnDecals() {
+        Vector3[] enemyPositions = m_spawnerSystem.GetNextWaveEnemyPositions();
+
+        foreach (Vector3 position in enemyPositions) {
+            m_decals.Add(Instantiate(m_spawnDecals, position, Quaternion.Euler(90.0f, 0.0f, 0.0f)));
+        }
+    }
+
+    private void DespawnDecals() {
+        foreach (GameObject decal in m_decals) {
+            Destroy(decal);
+        }
+
+        m_decals.Clear();
     }
 }
 

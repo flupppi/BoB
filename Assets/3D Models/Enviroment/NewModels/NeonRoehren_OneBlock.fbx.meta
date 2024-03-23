@@ -3,7 +3,12 @@ guid: 6ae41c3bc92ba4e488198be96e52829c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NeonPink
+    second: {fileID: 2100000, guid: b8fcb032f34cdda4981786d6ef9155fe, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
