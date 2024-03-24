@@ -6,13 +6,23 @@ using UnityEngine.Audio;
 public class ParticleSystemExecutor : MonoBehaviour
 {
     public List<ParticleSystem> startParticleSystems = new List<ParticleSystem>();
-    public AudioClip whooshSound;
+    public List<ParticleSystem> pushBackParticleSystems = new List<ParticleSystem>();
+    public AudioSource whooshSound;
 
 
     public void PlayStartParticle()
     {
-        AudioSource.PlayClipAtPoint(whooshSound, transform.position);
+        
+        whooshSound.Play();
         foreach(ParticleSystem particleSystem in startParticleSystems)
+        {
+            particleSystem.Play();
+        }
+    }
+    public void StartPushBackParticleSystem()
+    {
+        whooshSound.Play();
+        foreach(ParticleSystem particleSystem in pushBackParticleSystems)
         {
             particleSystem.Play();
         }
