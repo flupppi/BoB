@@ -24,6 +24,9 @@ public class KnockbackAbility : AbilityBase {
             m_particleSystem?.Play();
         }
 
+        parent.GetComponent<ParticleSystemExecutor>().StartPushBackParticleSystem();
+
+
         AbilityHolder abilityHolder = parent.GetComponent<AbilityHolder>();
         if (!abilityHolder.AimLocation) return;
         m_aimLocation = abilityHolder.AimLocation;
