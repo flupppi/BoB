@@ -1019,12 +1019,7 @@ MonoBehaviour:
   m_spawnDecals: {fileID: 3129143279804572142, guid: 4bb5fb20009146d4582293b8c53bf1af,
     type: 3}
   m_countdownStart: 3
-  firstRoundAudioSource: {fileID: 8300000, guid: 8a9b134282d8be948a66083ae5960264,
-    type: 3}
   trainAudioClip: {fileID: 8300000, guid: ec262d24dc8c152479510fdd0907377d, type: 3}
-  audioSource1: {fileID: 8300000, guid: c0fc13309a0bb0c42811957890d002e7, type: 3}
-  audioSource2: {fileID: 8300000, guid: 5087b7a58837f2146b6b1dbeef0423ea, type: 3}
-  audioSource3: {fileID: 0}
 --- !u!114 &7934754326675235270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1045,11 +1040,11 @@ MonoBehaviour:
     - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
     - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
     m_enemyPositions:
-    - {x: 10, y: 0, z: 75}
-    - {x: 20, y: 0, z: 75}
-    - {x: 30, y: 0, z: 75}
-    - {x: 0, y: 0, z: 75}
-    - {x: -10, y: 0, z: 75}
+    - {x: 42, y: 0, z: 58}
+    - {x: 75, y: 0, z: 0}
+    - {x: -41, y: 0, z: 61}
+    - {x: 25.7, y: 0, z: 69.8}
+    - {x: 64.5, y: 0, z: 43.6}
   - m_enemies:
     - {fileID: 1335012235706474992, guid: a8c00dff2d1a4b94db2d1225c2ca3026, type: 3}
     - {fileID: 1335012235706474992, guid: a8c00dff2d1a4b94db2d1225c2ca3026, type: 3}
@@ -1058,55 +1053,65 @@ MonoBehaviour:
     m_enemyPositions:
     - {x: 10, y: 1, z: 75}
     - {x: -10, y: 1, z: 75}
-    - {x: -20, y: 1, z: 75}
-    - {x: 20, y: 1, z: 75}
+    - {x: -75, y: 0, z: 0}
+    - {x: 40, y: 0, z: -60}
   - m_enemies:
     - {fileID: 1335012235706474992, guid: a8c00dff2d1a4b94db2d1225c2ca3026, type: 3}
     - {fileID: 1335012235706474992, guid: a8c00dff2d1a4b94db2d1225c2ca3026, type: 3}
-    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
-    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
+    - {fileID: 1335012235706474992, guid: a8c00dff2d1a4b94db2d1225c2ca3026, type: 3}
+    - {fileID: 1335012235706474992, guid: a8c00dff2d1a4b94db2d1225c2ca3026, type: 3}
     - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
     - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
     - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
     - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
     m_enemyPositions:
-    - {x: 10, y: 1, z: 75}
-    - {x: -10, y: 1, z: 75}
-    - {x: -20, y: 1, z: 75}
-    - {x: 20, y: 1, z: -75}
-    - {x: 0, y: 1, z: -75}
-    - {x: -20, y: 1, z: -75}
-    - {x: -75, y: 1, z: 0}
-    - {x: 75, y: 1, z: 0}
+    - {x: -75, y: 0, z: 0}
+    - {x: 75, y: 0, z: 0}
+    - {x: -48, y: 0, z: -60}
+    - {x: 40, y: 0, z: -60}
+    - {x: 64.5, y: 0, z: 43.6}
+    - {x: -41, y: 0, z: 61}
+    - {x: -74.5, y: 0, z: 43}
+    - {x: 31.7, y: 0, z: 60.5}
   - m_enemies:
-    - {fileID: 1335012235706474992, guid: a8c00dff2d1a4b94db2d1225c2ca3026, type: 3}
-    - {fileID: 1335012235706474992, guid: a8c00dff2d1a4b94db2d1225c2ca3026, type: 3}
-    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
-    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
-    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
-    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
-    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
-    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
-    - {fileID: 1335012235706474992, guid: a8c00dff2d1a4b94db2d1225c2ca3026, type: 3}
-    - {fileID: 1335012235706474992, guid: a8c00dff2d1a4b94db2d1225c2ca3026, type: 3}
     - {fileID: 4589200856714386143, guid: 72f5de8b845e75f42aae22aa9c1b3e33, type: 3}
-    - {fileID: 4589200856714386143, guid: 72f5de8b845e75f42aae22aa9c1b3e33, type: 3}
+    - {fileID: 1335012235706474992, guid: a8c00dff2d1a4b94db2d1225c2ca3026, type: 3}
+    - {fileID: 1335012235706474992, guid: a8c00dff2d1a4b94db2d1225c2ca3026, type: 3}
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
     m_enemyPositions:
-    - {x: 10, y: 1, z: 75}
     - {x: -10, y: 1, z: 75}
-    - {x: -20, y: 1, z: 75}
-    - {x: 20, y: 1, z: -75}
-    - {x: 0, y: 1, z: -75}
+    - {x: -48, y: 0, z: -60}
+    - {x: 40, y: 0, z: -60}
+    - {x: 75, y: 0, z: 0}
     - {x: -20, y: 1, z: -75}
-    - {x: -75, y: 1, z: 0}
-    - {x: 75, y: 1, z: 0}
+    - {x: -75, y: 0, z: 0}
+    - {x: -75, y: 0, z: -23.4}
     - {x: -75, y: 1, z: 20}
-    - {x: 75, y: 1, z: 20}
-    - {x: 30, y: 1, z: 75}
-    - {x: 30, y: 1, z: 75}
   - m_enemies:
+    - {fileID: 4589200856714386143, guid: 72f5de8b845e75f42aae22aa9c1b3e33, type: 3}
+    - {fileID: 4589200856714386143, guid: 72f5de8b845e75f42aae22aa9c1b3e33, type: 3}
     - {fileID: 1335012235706474992, guid: a8c00dff2d1a4b94db2d1225c2ca3026, type: 3}
     - {fileID: 1335012235706474992, guid: a8c00dff2d1a4b94db2d1225c2ca3026, type: 3}
+    - {fileID: 1335012235706474992, guid: a8c00dff2d1a4b94db2d1225c2ca3026, type: 3}
+    - {fileID: 1335012235706474992, guid: a8c00dff2d1a4b94db2d1225c2ca3026, type: 3}
+    - {fileID: 1335012235706474992, guid: a8c00dff2d1a4b94db2d1225c2ca3026, type: 3}
+    m_enemyPositions:
+    - {x: 10, y: 1, z: 75}
+    - {x: -75, y: 0, z: 0}
+    - {x: 31.7, y: 0, z: 43.6}
+    - {x: -41, y: 0, z: 43}
+    - {x: 40, y: 0, z: -60}
+    - {x: -48, y: 0, z: -60}
+    - {x: -75, y: 1, z: 0}
+  - m_enemies:
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
     - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
     - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
     - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
@@ -1116,16 +1121,126 @@ MonoBehaviour:
     - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
     - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
     m_enemyPositions:
-    - {x: 10, y: 1, z: 75}
-    - {x: -10, y: 1, z: 75}
-    - {x: -20, y: 1, z: 75}
-    - {x: 20, y: 1, z: -75}
-    - {x: 0, y: 1, z: -75}
-    - {x: -20, y: 1, z: -75}
+    - {x: 31.7, y: 0, z: 43.6}
+    - {x: 46.5, y: 0, z: 43.6}
+    - {x: 75, y: 0, z: 0}
+    - {x: 75, y: 0, z: -27.49}
+    - {x: 40, y: 0, z: -60}
+    - {x: 40, y: 0, z: -60}
+    - {x: -48, y: 0, z: -60}
+    - {x: -71.69, y: 0, z: -50.62}
+    - {x: -75, y: 0, z: 0}
+    - {x: -75, y: 0, z: 16.13}
+    - {x: -41, y: 0, z: 56.8}
     - {x: -75, y: 1, z: 0}
-    - {x: -75, y: 1, z: 0}
-    - {x: -75, y: 1, z: 0}
-    - {x: -75, y: 1, z: 0}
+  - m_enemies:
+    - {fileID: 4589200856714386143, guid: 72f5de8b845e75f42aae22aa9c1b3e33, type: 3}
+    - {fileID: 4589200856714386143, guid: 72f5de8b845e75f42aae22aa9c1b3e33, type: 3}
+    - {fileID: 4589200856714386143, guid: 72f5de8b845e75f42aae22aa9c1b3e33, type: 3}
+    - {fileID: 4589200856714386143, guid: 72f5de8b845e75f42aae22aa9c1b3e33, type: 3}
+    - {fileID: 4589200856714386143, guid: 72f5de8b845e75f42aae22aa9c1b3e33, type: 3}
+    - {fileID: 4589200856714386143, guid: 72f5de8b845e75f42aae22aa9c1b3e33, type: 3}
+    - {fileID: 1335012235706474992, guid: a8c00dff2d1a4b94db2d1225c2ca3026, type: 3}
+    - {fileID: 1335012235706474992, guid: a8c00dff2d1a4b94db2d1225c2ca3026, type: 3}
+    m_enemyPositions:
+    - {x: 31.7, y: 0, z: 60}
+    - {x: 75, y: 0, z: 0}
+    - {x: 40, y: 0, z: -60}
+    - {x: -48, y: 0, z: -60}
+    - {x: -75, y: 0, z: 0}
+    - {x: -41, y: 0, z: 56.8}
+    - {x: -48, y: 0, z: -60}
+    - {x: -71.69, y: 0, z: -50.62}
+  - m_enemies:
+    - {fileID: 4589200856714386143, guid: 72f5de8b845e75f42aae22aa9c1b3e33, type: 3}
+    - {fileID: 4589200856714386143, guid: 72f5de8b845e75f42aae22aa9c1b3e33, type: 3}
+    - {fileID: 4589200856714386143, guid: 72f5de8b845e75f42aae22aa9c1b3e33, type: 3}
+    - {fileID: 4589200856714386143, guid: 72f5de8b845e75f42aae22aa9c1b3e33, type: 3}
+    - {fileID: 4589200856714386143, guid: 72f5de8b845e75f42aae22aa9c1b3e33, type: 3}
+    - {fileID: 4589200856714386143, guid: 72f5de8b845e75f42aae22aa9c1b3e33, type: 3}
+    - {fileID: 1335012235706474992, guid: a8c00dff2d1a4b94db2d1225c2ca3026, type: 3}
+    - {fileID: 1335012235706474992, guid: a8c00dff2d1a4b94db2d1225c2ca3026, type: 3}
+    - {fileID: 1335012235706474992, guid: a8c00dff2d1a4b94db2d1225c2ca3026, type: 3}
+    - {fileID: 1335012235706474992, guid: a8c00dff2d1a4b94db2d1225c2ca3026, type: 3}
+    - {fileID: 1335012235706474992, guid: a8c00dff2d1a4b94db2d1225c2ca3026, type: 3}
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
+    m_enemyPositions:
+    - {x: 31.7, y: 0, z: 60}
+    - {x: 75, y: 0, z: 0}
+    - {x: 40, y: 0, z: -60}
+    - {x: -48, y: 0, z: -60}
+    - {x: -75, y: 0, z: 0}
+    - {x: -41, y: 0, z: 56.8}
+    - {x: -48, y: 0, z: -60}
+    - {x: -71.69, y: 0, z: -50.62}
+    - {x: -71.69, y: 0, z: -50.62}
+    - {x: -71.69, y: 0, z: -50.62}
+    - {x: -71.69, y: 0, z: -50.62}
+    - {x: -76.9, y: 0, z: 44.4}
+    - {x: 42.7, y: 0, z: 9.6}
+    - {x: -71.69, y: 0, z: -50.62}
+    - {x: -33.9, y: 0, z: -32.6}
+  - m_enemies:
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
+    m_enemyPositions:
+    - {x: 0, y: 0, z: 75}
+    - {x: 0, y: 0, z: 63.2}
+    - {x: 0, y: 0, z: 54.3}
+    - {x: 0, y: 0, z: 42.9}
+    - {x: 0, y: 0, z: 34.3}
+    - {x: 0, y: 0, z: 24.3}
+    - {x: 0, y: 0, z: 15.14}
+    - {x: 0, y: 0, z: 6.6}
+    - {x: 10, y: 0, z: 75}
+    - {x: 10, y: 0, z: 63.2}
+    - {x: 10, y: 0, z: 54.3}
+    - {x: 10, y: 0, z: 42.9}
+    - {x: 10, y: 0, z: 34.3}
+    - {x: 10, y: 0, z: 24.3}
+    - {x: 10, y: 0, z: 15.14}
+    - {x: 10, y: 0, z: 6.6}
+    - {x: -5.2, y: 0, z: -68}
+    - {x: -13.3, y: 0, z: -68}
+    - {x: -20.2, y: 0, z: -68}
+  - m_enemies:
+    - {fileID: 4233379389295330216, guid: 906e2cf1213c3bd4497c579c0f8a8a52, type: 3}
+    - {fileID: 4589200856714386143, guid: 72f5de8b845e75f42aae22aa9c1b3e33, type: 3}
+    - {fileID: 4589200856714386143, guid: 72f5de8b845e75f42aae22aa9c1b3e33, type: 3}
+    - {fileID: 4589200856714386143, guid: 72f5de8b845e75f42aae22aa9c1b3e33, type: 3}
+    - {fileID: 1335012235706474992, guid: a8c00dff2d1a4b94db2d1225c2ca3026, type: 3}
+    - {fileID: 1335012235706474992, guid: a8c00dff2d1a4b94db2d1225c2ca3026, type: 3}
+    - {fileID: 4589200856714386143, guid: 72f5de8b845e75f42aae22aa9c1b3e33, type: 3}
+    - {fileID: 5825183167029564184, guid: 440f3bc0d34f501409927081d05f03fb, type: 3}
+    m_enemyPositions:
+    - {x: 0, y: 0, z: 50}
+    - {x: -50.7, y: 0, z: -55.2}
+    - {x: -26, y: 0, z: 63}
+    - {x: 41, y: 0, z: 63}
+    - {x: 41, y: 0, z: 43.7}
+    - {x: -52, y: 0, z: 37.2}
+    - {x: 21.1, y: 0, z: -55.2}
+    - {x: 34.31, y: 0, z: 28.15}
 --- !u!82 &3884427048666409030
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1137,7 +1252,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: eb553146281da264db8a906b58e17303,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 8952c45d98c29dc48ae2487cf7572401, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8a9b134282d8be948a66083ae5960264, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
