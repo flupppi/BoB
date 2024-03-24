@@ -1019,11 +1019,7 @@ MonoBehaviour:
   m_spawnDecals: {fileID: 3129143279804572142, guid: 4bb5fb20009146d4582293b8c53bf1af,
     type: 3}
   m_countdownStart: 3
-  firstRoundAudioSource: {fileID: 0}
-  audioSource: {fileID: 0}
-  audioSource1: {fileID: 0}
-  audioSource2: {fileID: 0}
-  audioSource3: {fileID: 0}
+  trainAudioClip: {fileID: 8300000, guid: ec262d24dc8c152479510fdd0907377d, type: 3}
 --- !u!114 &7934754326675235270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1252,15 +1248,15 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1582807479568203162}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: eb553146281da264db8a906b58e17303,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 7229039f6a2cda54cadd83d3467dd0cc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8a9b134282d8be948a66083ae5960264, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.004
+  m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1353,7 +1349,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: eb553146281da264db8a906b58e17303,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 6edd39527422d2343b517750c8f3e121, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 04e98ccf30e8aab4fa04ec669d84070d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.08
   m_Pitch: 1
